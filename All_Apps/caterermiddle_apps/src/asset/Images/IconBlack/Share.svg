@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Share</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="UI-KIT" transform="translate(-1040.000000, -4889.000000)" stroke="#000000" stroke-width="1.35">
+            <g id="Share" transform="translate(1041.000000, 4890.000000)">
+                <g id="share">
+                    <path d="M0,7.5 L0,13.5 C0,14.3284271 0.681596351,15 1.52238806,15 L10.6567164,15 C11.4975081,15 12.1791045,14.3284271 12.1791045,13.5 L12.1791045,7.5" id="Shape"></path>
+                    <polyline id="Shape" points="9.13432836 3 6.08955224 0 3.04477612 3"></polyline>
+                    <path d="M6.08955224,0 L6.08955224,9.75" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

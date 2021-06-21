@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Comments icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Comments-icon" transform="translate(9.000000, 9.000000) scale(-1, 1) translate(-9.000000, -9.000000) translate(1.000000, 1.000000)" stroke="#FFFFFF" stroke-width="1.5">
+            <path d="M16,7.55555556 C16.0030589,8.72877139 15.7289501,9.88611963 15.2,10.9333333 C13.9208526,13.4927358 11.3056956,15.1100039 8.44444444,15.1111111 C7.27122861,15.11417 6.11388037,14.8400612 5.06666667,14.3111111 L0,16 L1.68888889,10.9333333 C1.15993879,9.88611963 0.885829998,8.72877139 0.888888889,7.55555556 C0.889996052,4.69430444 2.50726419,2.07914744 5.06666667,0.8 C6.11388037,0.271049902 7.27122861,-0.00305889085 8.44444444,3.55272046e-15 L8.88888889,3.55272046e-15 C12.7251639,0.21164417 15.7883558,3.27483607 16,7.11111111 L16,7.55555556 L16,7.55555556 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

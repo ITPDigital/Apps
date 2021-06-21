@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="UI-KIT" transform="translate(-1109.000000, -4818.000000)" stroke="#000000" stroke-width="1.6">
+            <path d="M1110,4824.44444 L1117,4819 L1124,4824.44444 L1124,4833 C1124,4833.85911 1123.30355,4834.55556 1122.44444,4834.55556 L1111.55556,4834.55556 C1110.69645,4834.55556 1110,4833.85911 1110,4833 L1110,4824.44444 Z" id="Home"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,22 @@
+{
+	"FFFFFF": {
+		"bgColor": "rgb(255, 255, 255)",
+		"fontColor": "rgb(49,49,50)"
+	},
+	"F8F2E5": {
+		"bgColor": "rgb(248,242,229)",
+		"fontColor": "rgb(49,49,50)"
+	},
+	"000000": {
+		"bgColor": "rgb(0,0,0)",
+		"fontColor": "rgb(255, 255, 255)"
+	},
+	"5A5A5C": {
+		"bgColor": "rgb(90,90,92)",
+		"fontColor": "rgb(255, 255, 255)"
+	},
+	"333333": {
+		"bgColor": "rgb(51,51,51)",
+		"fontColor": "rgb(255, 255, 255)"
+	}
+}

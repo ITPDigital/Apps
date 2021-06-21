@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Grid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="UI-KIT" transform="translate(-1040.000000, -5179.000000)" stroke="#FFFFFF" stroke-width="1.35">
+            <path d="M1041,5180 L1046.44444,5180 L1046.44444,5185.44444 L1041,5185.44444 L1041,5180 Z M1049.55556,5180 L1055,5180 L1055,5185.44444 L1049.55556,5185.44444 L1049.55556,5180 Z M1049.55556,5188.55556 L1055,5188.55556 L1055,5194 L1049.55556,5194 L1049.55556,5188.55556 Z M1041,5188.55556 L1046.44444,5188.55556 L1046.44444,5194 L1041,5194 L1041,5188.55556 Z" id="Grid"></path>
+        </g>
+    </g>
+</svg>

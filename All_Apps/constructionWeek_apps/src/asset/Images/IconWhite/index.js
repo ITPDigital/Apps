@@ -1,0 +1,13 @@
+// export aABlackSvg from "./aA.svg";
+// export arrowLeftBlackSvg from "./arrowLeft.svg";
+// export bergurBlackSvg from "./bergur.svg";
+// export bookBlackSvg from "./book.svg";
+// export editBlackSvg from "./edit.svg";
+// export filledBookmarkBlackSvg from "./filledBookmark.svg";
+// export gridBlackSvg from "./grid.svg";
+// export headphonesBlackSvg from "./headphones.svg";
+// export homeBlackSvg from "./home.svg";
+// export playCircleBlackSvg from "./playCircle.svg";
+// export searchBlackSvg from "./search.svg";
+// export shareBlackSvg from "./share.svg";
+// export smallHeartBlackSvg from "./smallHeart.svg";

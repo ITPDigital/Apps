@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background=" #FF3366"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingRight="42dp"
+        android:paddingLeft="19dp"
+      >
+
+        <ImageView
+            android:id="@+id/item_share"
+            android:layout_width="30dp"
+            android:layout_height="34dp"
+            android:scaleType="fitXY"
+            android:padding="8dp"
+            android:gravity="center"
+            android:src="@drawable/ic_share" />
+
+        <ImageView
+            android:id="@+id/item_bookmark"
+            android:layout_width="30dp"
+            android:layout_height="34dp"
+            android:scaleType="fitXY"
+            android:padding="8dp"
+            android:layout_marginLeft="32dp"
+            android:gravity="center"
+            android:src="@drawable/ic_un_bookmark" />
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/video_thumbnail"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/video_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor=" #121D37"
+            android:textStyle="bold"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintLeft_toRightOf="@id/video_thumbnail"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/logo"
+            app:layout_constraintStart_toStartOf="@id/video_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1" />
+
+        <TextView
+            android:id="@+id/video_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:textColor=" #121D37"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/video_thumbnail"
+            app:layout_constraintTop_toBottomOf="@id/video_description" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="24dp"
+            app:layout_constraintBottom_toTopOf="@id/separator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="19dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/video_thumbnail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/logo"
+            app:layout_constraintStart_toStartOf="@id/video_thumbnail"></View>
+
+    </android.support.constraint.ConstraintLayout>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
