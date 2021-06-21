@@ -4,7 +4,7 @@ import {siteKey} from '../Constant';
 // const PRODUCTION = "http://murugappan.pythonanywhere.com/";
 // const PATH = "api/v1/seller/";
 
-function SignUpApi(
+function SignUpApi( 
   name,
   email,
   password,
@@ -28,11 +28,11 @@ function SignUpApi(
       siteKey +
       'url' +
       url
-  );
-
+  );  
+  
   return PaywallItpIntance.post(url, {
    email,
-    sitekey: "ABEN",
+    sitekey: "OAG",
     name,
     password:password
   })

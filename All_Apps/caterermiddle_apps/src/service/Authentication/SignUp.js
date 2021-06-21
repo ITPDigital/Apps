@@ -32,7 +32,7 @@ function SignUpApi(
 
   return PaywallItpIntance.post(url, {
    email,
-    sitekey: "ABEN",
+    sitekey: "CAT",
     name,
     password:password
   })

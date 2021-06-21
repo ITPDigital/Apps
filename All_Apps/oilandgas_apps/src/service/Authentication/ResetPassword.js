@@ -32,7 +32,7 @@ const ResetPasswordApi = (
   console.log('help :' + email + ',site_key: ' + siteKey);
   PaywallItpIntance.post(url, {
     email,
-    sitekey: 'ABEN',
+    sitekey: 'OAG',
   })
     .then((response: any) => {
       console.log('help response :' + JSON.stringify(response.data.status));

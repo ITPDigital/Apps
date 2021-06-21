@@ -1,9 +1,27 @@
 import axios from "axios";
 
+//~~~~~For dev server~~~~~//
+// const BASE_URL = "http://trove-drupal.itp.com/";
+// const ITP_URL = "http://trove.itp.com/";
+// const COMMENTS_URL = "https://firestore.googleapis.com/"; 
+// const PAYWALL_URL = "https://paywalldemo.itp.com/";
+
+
+//~~~~~For Staging server~~~~~//
 const BASE_URL = "http://trove-drupal.itp.com/";
 const ITP_URL = "http://trove.itp.com/";
-const COMMENTS_URL = "https://firestore.googleapis.com/";
+const COMMENTS_URL = "https://firestore.googleapis.com/"; 
 const PAYWALL_URL = "https://paywall.itp.com/";
+
+
+
+//~~~~~For Live server~~~~~//
+// const BASE_URL = "http://trove-drupal.itp.com/";
+// const ITP_URL = "http://trove.itp.com/";
+// const COMMENTS_URL = "https://firestore.googleapis.com/"; 
+// const PAYWALL_URL = "https://paywall.itp.com/";
+  
+
 
 export const BaseAxiosInstance = axios.create({
 	baseURL: BASE_URL,

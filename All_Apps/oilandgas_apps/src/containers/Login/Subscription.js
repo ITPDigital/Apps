@@ -141,9 +141,9 @@ class Subscription extends Component {
       online_ucode: '17',
       bank_id: '0',
       email: 'logu.vijay1@itp.com',//email
-      subs_type: 'D',
+      subs_type: 'D', 
       subs_cat: 'Free',
-      sitekey: 'ABEN',
+      sitekey: 'OAG',
     })
       .then((response) => {
         console.log('subscribe :' + JSON.stringify(response));

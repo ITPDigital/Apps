@@ -143,7 +143,7 @@ class Subscription extends Component {
       email: 'logu.vijay1@itp.com',//email
       subs_type: 'D',
       subs_cat: 'Free',
-      sitekey: 'ABEN',
+      sitekey: 'CAT',
     })
       .then((response) => {
         console.log('subscribe :' + JSON.stringify(response));
