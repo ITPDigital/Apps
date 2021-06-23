@@ -1,6 +1,8 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
 import {logError} from '.';
 import {siteKey} from '../Constant';
+import subUrls from '../../config.js';   
+const subUrl =   subUrls();
 
 const LoginApi = (
   email,
@@ -13,10 +15,10 @@ const LoginApi = (
 ) => {
   //In login first we ahve to check is email is registered with us by hiting emial registr api and theb check authenticate api
   //const url = "ws/sign-in";
-  const isVerifiedMailApiUrl = 'mobileapp/ulistnewtable';
-  const authenticateApiUrl = 'mobileapp/authenticate';
+  const isVerifiedMailApiUrl = subUrl+'ulistnewtable';
+  const authenticateApiUrl = subUrl+'authenticate';
 
-  PaywallItpIntance.post(isVerifiedMailApiUrl, {
+  PaywallItpIntance.post(isVerifiedMailApiUrl, { 
     email,
     site_key: 'OAG',
   })
@@ -158,7 +160,7 @@ const SocialLogin = (
         //not verify then call register api
         //then call sm_authenticate
 
-        PaywallItpIntance.post('mobileapp/ulistnewtable', {
+        PaywallItpIntance.post(subUrl+'ulistnewtable', {
           email: email_id,
           sitekey: 'OAG',
         })
@@ -166,7 +168,7 @@ const SocialLogin = (
             console.log("social ulistnewtable: "+ JSON.stringify(response))
             if (response.status == 200) {
               //call sm_authenticate,here no catch block bcz if user is verified only then we are calling api
-              PaywallItpIntance.post('mobileapp/sm_authenticate', {
+              PaywallItpIntance.post(subUrl+'sm_authenticate', {
                 email: email_id,
                 sitekey: 'OAG',
               }).then((response: any) => {
@@ -199,7 +201,7 @@ const SocialLogin = (
                 console.log('signup - api status code: ' + response.status);
                 if (response.status == '200') {
                   //call sm+authenticateF
-                  PaywallItpIntance.post('mobileapp/sm_authenticate', {
+                  PaywallItpIntance.post(subUrl+'sm_authenticate', {
                     email: email_id,
                     sitekey: 'OAG',
                   }).then((response: any) => {
@@ -220,7 +222,7 @@ const SocialLogin = (
         onFailure(response.data, sm_id, sm_type);
       }
     })
-    .catch((error: any) => {
+    .catch((error: any) => {  
       logError(email_id, error, url);
 
       console.log('Social login error:', error);  
@@ -228,7 +230,7 @@ const SocialLogin = (
     });
 };
 const smAuthenticate = () => {
-  PaywallItpIntance.post('mobileapp/sm_authenticate', {
+  PaywallItpIntance.post(subUrl+'sm_authenticate', {
     email: email_id,
     sitekey: 'OAG',
   })

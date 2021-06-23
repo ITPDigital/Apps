@@ -1,46 +1,25 @@
 import axios from "axios";
-
-//~~~~~For dev server~~~~~//
-// const BASE_URL = "http://trove-drupal.itp.com/";
-// const ITP_URL = "http://trove.itp.com/";
-// const COMMENTS_URL = "https://firestore.googleapis.com/"; 
-// const PAYWALL_URL = "https://paywalldemo.itp.com/";
-
-
-//~~~~~For Staging server~~~~~//
-const BASE_URL = "http://trove-drupal.itp.com/";   
-const ITP_URL = "http://trove.itp.com/";
-const COMMENTS_URL = "https://firestore.googleapis.com/"; 
-const PAYWALL_URL = "https://paywall.itp.com/";
-
-
-
-//~~~~~For Live server~~~~~//
-// const BASE_URL = "http://trove-drupal.itp.com/";
-// const ITP_URL = "http://trove.itp.com/";
-// const COMMENTS_URL = "https://firestore.googleapis.com/"; 
-// const PAYWALL_URL = "https://paywall.itp.com/";
-
-
+import subUrls, {mainUrls} from '../config.js';   
+const mainUrl =   mainUrls();  
 
 export const BaseAxiosInstance = axios.create({
-	baseURL: BASE_URL,
+	baseURL: mainUrl.BASE_URL,
 	timeout: 60000,
 	headers: {
-		"Content-Type": "application/json",
+		"Content-Type": "application/json", 
 		"Cache-Control": "no-cache",
 	},
-});
-
+}); 
+ 
 export const setGlobalHeader = (token: string) => {
 	// console.log("token", token);
 	ItpAxiosInstance.defaults.headers.common = { Authorization: "Bearer " + token };
 	PaywallItpIntance.defaults.headers.common = { Authorization: "Bearer " + token };
 
-};
+};   
 
-export const ItpAxiosInstance = axios.create({
-	baseURL: ITP_URL,
+export const ItpAxiosInstance = axios.create({   
+	baseURL: mainUrl.ITP_URL,
 	timeout: 600000,
 	headers: {
 		"Content-Type": "application/json",
@@ -48,8 +27,8 @@ export const ItpAxiosInstance = axios.create({
 	},
 });
 
-export const PaywallItpIntance = axios.create({  
-	baseURL: PAYWALL_URL,
+export const PaywallItpIntance = axios.create({
+	baseURL: mainUrl.PAYWALL_URL,
 	timeout: 600000,
 	headers: {
 		"Content-Type": "application/json",
@@ -83,7 +62,7 @@ ItpAxiosInstance.interceptors.response.use(
 );
 
 export const commentsAxiosInstance = axios.create({
-	baseURL: COMMENTS_URL,
+	baseURL: mainUrl.COMMENTS_URL,
 	timeout: 600000,
 	headers: {
 		"Content-Type": "application/json",

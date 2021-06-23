@@ -1,5 +1,7 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
 import {siteKey} from '../Constant';
+import subUrls from '../../config.js';   
+const subUrl =   subUrls();    
 
 // const PRODUCTION = "http://murugappan.pythonanywhere.com/";
 // const PATH = "api/v1/seller/";
@@ -10,11 +12,11 @@ function SignUpApi(
   password,
   deviceId,
   onSuccess,
-  onFailure,
+  onFailure, 
   onError,
   onRegisteredEmail
 ) {
-  const url = 'mobileapp/register'; //'ws/create-user';
+  const url = subUrl+'register'; //'ws/create-user';
   console.log(
     'signup : name: ' +
       name +

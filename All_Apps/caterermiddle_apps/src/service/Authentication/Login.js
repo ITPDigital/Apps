@@ -1,26 +1,28 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
 import {logError} from '.';
-import {siteKey} from '../Constant';
-
-const LoginApi = (
+import {siteKey} from '../Constant';  
+import subUrls from '../../config.js';     
+const subUrl =   subUrls();     
+      
+const LoginApi = (     
   email,
   password,
   onSuccess,
   onFailure,
   onError,
   onUnregisterUser,
-  onInvalidCredentials
+  onInvalidCredentials  
 ) => {
   //In login first we ahve to check is email is registered with us by hiting emial registr api and theb check authenticate api
   //const url = "ws/sign-in";
-  const isVerifiedMailApiUrl = 'mobileapp/ulistnewtable';
-  const authenticateApiUrl = 'mobileapp/authenticate';
+  const isVerifiedMailApiUrl = subUrl+'ulistnewtable';
+  const authenticateApiUrl = subUrl+'authenticate';
 
   PaywallItpIntance.post(isVerifiedMailApiUrl, {
     email,
-    site_key: 'CAT',
+    site_key: 'CAT', 
   })
-    .then((response: any) => {
+    .then((response: any) => { 
       console.log('login ulist' + response.status);
       if (response.status == 200) {
         //call authenticate api to login
@@ -36,9 +38,9 @@ const LoginApi = (
               onSuccess(response);
             } else {
               // alert("login failed: "+response.status);
-              onFailure(response);
+              onFailure(response);  
             }
-          })
+          }) 
           .catch((error: any) => {
             onInvalidCredentials(error.request.status);
             logError(email, error, authenticateApiUrl);
@@ -49,8 +51,8 @@ const LoginApi = (
             );
           });
       }
-    })
-    .catch((error: any) => {
+    })  
+    .catch((error: any) => {   
       // logError(email, error, isVerifiedMailApiUrl);
       //onError(error);
       console.log('Error: in login: ', JSON.stringify(error.request.status));
@@ -159,7 +161,7 @@ const SocialLogin = (
         //not verify then call register api
         //then call sm_authenticate
 
-        PaywallItpIntance.post('mobileapp/ulistnewtable', {
+        PaywallItpIntance.post(subUrl+'ulistnewtable', {
           email: email_id,
           sitekey: 'CAT',
         })
@@ -167,7 +169,7 @@ const SocialLogin = (
             console.log("social ulistnewtable: "+ JSON.stringify(response))
             if (response.status == 200) {
               //call sm_authenticate,here no catch block bcz if user is verified only then we are calling api
-              PaywallItpIntance.post('mobileapp/sm_authenticate', {
+              PaywallItpIntance.post(subUrl+'sm_authenticate', {
                 email: email_id,
                 sitekey: 'CAT',
               }).then((response: any) => {
@@ -200,7 +202,7 @@ const SocialLogin = (
                 console.log('signup - api status code: ' + response.status);
                 if (response.status == '200') {
                   //call sm+authenticateF
-                  PaywallItpIntance.post('mobileapp/sm_authenticate', {
+                  PaywallItpIntance.post(subUrl+'sm_authenticate', {
                     email: email_id,
                     sitekey: 'CAT',
                   }).then((response: any) => {
@@ -229,7 +231,7 @@ const SocialLogin = (
     });
 };
 const smAuthenticate = () => {
-  PaywallItpIntance.post('mobileapp/sm_authenticate', {
+  PaywallItpIntance.post(subUrl+'sm_authenticate', {
     email: email_id,
     sitekey: 'CAT',
   })

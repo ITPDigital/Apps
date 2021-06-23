@@ -12,7 +12,8 @@ import {
 import { PaywallItpIntance } from '../../service/axios';
 import * as RNIap from "react-native-iap";
 import { getCurrentUserEmailStorage } from "../../storage";
-
+import subUrls from '../../config.js';   
+const subUrl =   subUrls();
 
 const subscriptionItems = Platform.select({
   ios: ["com.pagesuite.arabianbusiness.monthly"],
@@ -121,12 +122,12 @@ export default class SubscriptionOld extends Component {
   addOrder = () => {
     const { navigation } = this.props;
     let email = '';
-    getCurrentUserEmailStorage().then((mailId) =>
+    getCurrentUserEmailStorage().then((mailId) => 
       email = mailId
     );
 
     console.log("emaill: " + mailId)
-    PaywallItpIntance.post('mobileapp/order_det', {
+    PaywallItpIntance.post(subUrl+'order_det', {
       online_ucode: '17',
       bank_id: '0',
       email: 'logu.vijay1@itp.com',//email

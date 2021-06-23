@@ -16,6 +16,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Actions} from '../../redux';
 import SplashScreen from "react-native-splash-screen";
+import subUrls from '../../config.js';   
+const subUrl =   subUrls();   
 
 const subscriptionItems = Platform.select({
   ios: ["com.pagesuite.arabianbusiness.monthly"],
@@ -130,14 +132,14 @@ class Subscription extends Component {
   };
 
   addOrder = () => {
-    const { navigation } = this.props;
+    const { navigation } = this.props; 
     let email = '';
     getCurrentUserEmailStorage().then((mailId) =>
       email = mailId
     );
 
     console.log("emaill: " + mailId)
-    PaywallItpIntance.post('mobileapp/order_det', {
+    PaywallItpIntance.post(subUrl+'order_det', {
       online_ucode: '17',
       bank_id: '0',
       email: 'logu.vijay1@itp.com',//email

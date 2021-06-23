@@ -1,6 +1,7 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
 import {siteKey} from '../Constant';
-
+import subUrls from '../../config.js';   
+const subUrl =   subUrls();
 const ResetPasswordApi = (
   email,
   onSuccess: Function,
@@ -8,7 +9,7 @@ const ResetPasswordApi = (
   onError,
   onFaliureEmail
 ) => {
-  const url = 'mobileapp/forgot_password'; //"ws/reset-pwd";
+  const url = subUrl+'forgot_password'; //"ws/reset-pwd";
   // login='robodiego'
   // password='Buddy6jar!'
   // ItpAxiosInstance.post(url, {
