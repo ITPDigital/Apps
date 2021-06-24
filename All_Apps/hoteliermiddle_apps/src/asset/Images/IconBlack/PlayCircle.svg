@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>play-circle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="UI-KIT" transform="translate(-1178.000000, -4818.000000)" stroke="#000000" stroke-width="1.5">
+            <g id="play-circle" transform="translate(1179.000000, 4819.000000)">
+                <circle id="Oval" cx="7.5" cy="7.5" r="7.5"></circle>
+                <polygon id="Shape" points="6 4.5 10.5 7.5 6 10.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
