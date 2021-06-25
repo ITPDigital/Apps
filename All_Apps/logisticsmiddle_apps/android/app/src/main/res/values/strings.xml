@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Logistics MiddleEast</string>     
+    <string name="facebook_app_id"></string>   
+    <string name="fb_login_protocol_scheme"></string>
+    <string name="playerview_text">player view</string>
+    <string name="error_player">Error occurred</string>
+    <string name="related_article">Related videos</string>
+</resources>
