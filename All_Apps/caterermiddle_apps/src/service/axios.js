@@ -1,12 +1,9 @@
 import axios from "axios";
-
-const BASE_URL = "http://trove-drupal.itp.com/";
-const ITP_URL = "http://trove.itp.com/";
-const COMMENTS_URL = "https://firestore.googleapis.com/";
-const PAYWALL_URL = "https://paywall.itp.com/";
+import subUrls, {mainUrls} from '../config.js';   
+const mainUrl =   mainUrls();  
 
 export const BaseAxiosInstance = axios.create({
-	baseURL: BASE_URL,
+	baseURL: mainUrl.BASE_URL,
 	timeout: 60000,
 	headers: {
 		"Content-Type": "application/json",
@@ -22,7 +19,7 @@ export const setGlobalHeader = (token: string) => {
 };
 
 export const ItpAxiosInstance = axios.create({
-	baseURL: ITP_URL,
+	baseURL: mainUrl.ITP_URL,
 	timeout: 600000,
 	headers: {
 		"Content-Type": "application/json",
@@ -31,7 +28,7 @@ export const ItpAxiosInstance = axios.create({
 });
 
 export const PaywallItpIntance = axios.create({
-	baseURL: PAYWALL_URL,
+	baseURL: mainUrl.PAYWALL_URL,
 	timeout: 600000,
 	headers: {
 		"Content-Type": "application/json",
@@ -65,7 +62,7 @@ ItpAxiosInstance.interceptors.response.use(
 );
 
 export const commentsAxiosInstance = axios.create({
-	baseURL: COMMENTS_URL,
+	baseURL: mainUrl.COMMENTS_URL,
 	timeout: 600000,
 	headers: {
 		"Content-Type": "application/json",

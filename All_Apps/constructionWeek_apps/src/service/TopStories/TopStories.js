@@ -1,8 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
 import { siteKey } from "../Constant";
-
+import {apis} from "../apis";
 const TopStoriesApi = (pageNumber, onSuccess, onFailure, onError) => {
-	const url = "ws/topstories";
+	const url = apis.topstories; 
 	console.log("TopStoriesApi called for page number ", pageNumber);
 	ItpAxiosInstance.post(url, {
 		user_id: "1",

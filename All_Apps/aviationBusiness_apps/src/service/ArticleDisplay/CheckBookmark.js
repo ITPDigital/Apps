@@ -1,8 +1,9 @@
 import { ItpAxiosInstance } from "../axios";
 import { Analytics, Events } from "../../Analytics";
+import {apis} from "../apis";   
 
 const CheckBookmark = (userId, BookmarkIds, onSuccess, onFailure, onError) => {
-	const CheckBookmarkUrl = "ws/check-bookmark";
+	const CheckBookmarkUrl = apis.check_bookmark;  
 	console.log("CheckBookmark details, ", userId, BookmarkIds);
 	ItpAxiosInstance.post(CheckBookmarkUrl, {
 		user_id: userId,

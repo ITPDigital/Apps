@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";  
 
 const SubscribedMagazineApi = (id, onSuccess, onFailure, onError) => {
-	const url = `ws/get-mag-subscriptions/${id}`;
+	const url = apis.get_mag_subscriptions+`/${id}`; 
 	ItpAxiosInstance.get(url)
 		.then((response: any) => {
 			if (response.status == 200) {

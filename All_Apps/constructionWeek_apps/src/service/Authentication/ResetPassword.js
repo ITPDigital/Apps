@@ -1,16 +1,17 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
-import {siteKey} from '../Constant';
+import {siteKey, mainSiteKey} from '../Constant';
 import subUrls from '../../config.js';   
-const subUrl =   subUrls();
+import {apis} from "../apis";   
 
+const subUrl =   subUrls();
 const ResetPasswordApi = (
   email,
   onSuccess: Function,
   onFailure,
-  onError, 
+  onError,
   onFaliureEmail
 ) => {
-  const url = subUrl+'forgot_password'; //"ws/reset-pwd";
+  const url = subUrl+apis.forgot_password; //"ws/reset-pwd"; 
   // login='robodiego'
   // password='Buddy6jar!'
   // ItpAxiosInstance.post(url, {
@@ -32,9 +33,9 @@ const ResetPasswordApi = (
   // 		onError(error);
   // 	});
   console.log('help :' + email + ',site_key: ' + siteKey);
-  PaywallItpIntance.post(url, {
+  PaywallItpIntance.post(url, { 
     email,
-    sitekey: 'CWO',
+    sitekey: mainSiteKey,
   })
     .then((response: any) => {
       console.log('help response :' + JSON.stringify(response.data.status));

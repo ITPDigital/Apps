@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
 const BrandsArticleApi = (brand, onSuccess, onFailure, onError) => {
-	const url = "ws/article-list";
+	const url = apis.article_list;  
 	console.log("my trove api :", { brand });
 	ItpAxiosInstance.post(url, { brand, user_id: "1" })
 		.then((response: any) => {

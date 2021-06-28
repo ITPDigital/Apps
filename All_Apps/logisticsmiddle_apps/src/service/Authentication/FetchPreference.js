@@ -1,8 +1,9 @@
 import { ItpAxiosInstance } from "../axios";
 import { siteKey } from "../Constant";
+import {apis} from "../apis";   
 
 const FetchPreferenceApi = (userId, onSuccess, onFailure, onError) => {
-	const url = `ws/user-preferences/${userId}`;
+	const url = apis.user_preferences+`/${userId}`; 
 	ItpAxiosInstance.get(url, { site_key: siteKey })
 		.then((response: any) => {
 			console.log("STARTUP2DATA", response);

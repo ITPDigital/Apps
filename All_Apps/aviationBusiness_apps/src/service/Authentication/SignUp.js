@@ -1,22 +1,23 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
-import {siteKey} from '../Constant';
+import {siteKey,mainSiteKey} from '../Constant';
 import subUrls from '../../config.js';   
 const subUrl =   subUrls();  
+import {apis} from "../apis";   
 
 // const PRODUCTION = "http://murugappan.pythonanywhere.com/";
 // const PATH = "api/v1/seller/";
 
-function SignUpApi(
+function SignUpApi(   
   name,
   email,
-  password,
+  password,  
   deviceId,
   onSuccess,
   onFailure,
-  onError,
+  onError, 
   onRegisteredEmail  
 ) {
-  const url = subUrl+'register'; //'ws/create-user';
+  const url = subUrl+apis.register; //'ws/create-user';
   console.log(
     'signup : name: ' +
       name +
@@ -32,9 +33,9 @@ function SignUpApi(
       url
   );
 
-  return PaywallItpIntance.post(url, {     
-   email,
-    sitekey: "AVB",
+  return PaywallItpIntance.post(url, {      
+   email,    
+    sitekey: mainSiteKey,
     name,
     password:password
   })

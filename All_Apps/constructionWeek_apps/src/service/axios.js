@@ -2,7 +2,7 @@ import axios from "axios";
 import subUrls, {mainUrls} from '../config.js';   
 const mainUrl =   mainUrls();  
 
-export const BaseAxiosInstance = axios.create({ 
+export const BaseAxiosInstance = axios.create({
 	baseURL: mainUrl.BASE_URL,
 	timeout: 60000,
 	headers: {

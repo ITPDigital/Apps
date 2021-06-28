@@ -1,6 +1,7 @@
 import { ItpAxiosInstance } from "../axios";
 import { Strings } from "../../asset";
 import { siteKey } from "../Constant";
+import {apis} from "../apis";
 
 const SaveDeviceInfo = (userId: any, deviceInfo: any, flag: any) => {
 	console.log(
@@ -10,7 +11,7 @@ const SaveDeviceInfo = (userId: any, deviceInfo: any, flag: any) => {
 		deviceInfo,
 		Strings.device.deviceId,
 	);
-	const url = "ws/save-notification";
+	const url = apis.save_notification;
 	ItpAxiosInstance.post(url, {
 		user_id: userId,
 		notification_token: deviceInfo,

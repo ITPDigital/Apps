@@ -1,7 +1,8 @@
 import { BaseAxiosInstance } from "../axios";
+import {apis} from "../apis";
 
 const TopicApi = (onSuccess, onFailure, onError) => {
-	const url = "ws/topics_select?_format=json";
+	const url = apis.topics_select; 
 	BaseAxiosInstance.get(url)
 		.then((response: any) => {
 			if (response) {

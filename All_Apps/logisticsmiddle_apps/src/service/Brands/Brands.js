@@ -1,7 +1,8 @@
 import { BaseAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
 const BrandApi = (onSuccess, onFailure, onError) => {
-	const url = "ws/brands_select?_format=json";
+	const url = apis.brands_select;      
 	BaseAxiosInstance.get(url)
 		.then((response: any) => {
 			if (response) {

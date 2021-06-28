@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";  
 
 const EditorailHighlightsApi = (pageNumber, onSuccess, onFailure, onError) => {
-	const url = "ws/get-editors-choice";
+	const url = apis.get_editors_choice; 
 	console.log("EditorailHighlightsApi called for page number ", pageNumber);
 	ItpAxiosInstance.post(url, { user_id: "1", page: pageNumber, device: "tablet" })
 		.then((response: any) => {

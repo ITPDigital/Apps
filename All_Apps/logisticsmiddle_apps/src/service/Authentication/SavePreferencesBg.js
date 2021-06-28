@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
 const SavePreferencesBgApi = (userId, value, onSuccess, onFailure, onError) => {
-	const url = "ws/save-preferences/art-bg";
+	const url = apis.save_preferences_art_bg; 
 	console.log("value inside save preference: ", `"${value}"`);
 	const val = `"${value}"`;
 	console.log("userId", val);

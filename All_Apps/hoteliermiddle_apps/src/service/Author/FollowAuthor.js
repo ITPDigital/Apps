@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
-const FollowAuthor = (authorId, siteKey, followFlag) => {
-	const url = "ws/save-preferences/author";
+const FollowAuthor = (authorId, siteKey, followFlag) => { 
+	const url = apis.save_preferences_author;  
 	const key = authorId + "~" + siteKey;
 	console.log("Author Details API is calling for the author: ", key);
 

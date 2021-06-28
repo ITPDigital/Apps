@@ -1,4 +1,5 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
 // function getBrandString(selectedBrands) {
 // 	//console.log(selectedBrands);
@@ -14,7 +15,7 @@ import { ItpAxiosInstance } from "../axios";
 // }
 
 const BrandsPreferenceAPI = (userId, selectedBrands, onSuccess, onFailure, onError) => {
-	const url = "ws/save-preferences/brand";
+	const url = apis.save_preferences_brand; 
 	ItpAxiosInstance.post(url, { user_id: userId, values: selectedBrands })
 		.then((response: any) => {
 			if (response) {

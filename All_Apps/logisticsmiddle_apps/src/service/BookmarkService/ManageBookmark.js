@@ -1,16 +1,17 @@
 import { ItpAxiosInstance } from "../axios";
 import { Analytics, Events } from "../../Analytics";
+import {apis} from "../apis";   
 
 const ManageBoookmarkApi = (
 	userId,
 	nodeId,
 	siteKey,
-	manageFlag,
+	manageFlag,    
 	onSuccess,
 	onFailure,
 	onError,
 ) => {
-	const managaeBookmarkUrl = "ws/save-bookmark";
+	const managaeBookmarkUrl = apis.save_bookmark;
 	console.log("user details, ", userId, nodeId, siteKey, manageFlag ? "U" : "F");
 	manageFlag
 		? Analytics.logEvent(Events.unBookmark, {})

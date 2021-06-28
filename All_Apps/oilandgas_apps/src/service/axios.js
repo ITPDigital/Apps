@@ -6,19 +6,19 @@ export const BaseAxiosInstance = axios.create({
 	baseURL: mainUrl.BASE_URL,
 	timeout: 60000,
 	headers: {
-		"Content-Type": "application/json", 
+		"Content-Type": "application/json",
 		"Cache-Control": "no-cache",
 	},
-}); 
- 
+});
+
 export const setGlobalHeader = (token: string) => {
 	// console.log("token", token);
 	ItpAxiosInstance.defaults.headers.common = { Authorization: "Bearer " + token };
 	PaywallItpIntance.defaults.headers.common = { Authorization: "Bearer " + token };
 
-};   
+};
 
-export const ItpAxiosInstance = axios.create({   
+export const ItpAxiosInstance = axios.create({
 	baseURL: mainUrl.ITP_URL,
 	timeout: 600000,
 	headers: {

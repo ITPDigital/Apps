@@ -1,26 +1,26 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
 import {logError} from '.';
-import {siteKey} from '../Constant';
-import subUrls from '../../config.js';   
-const subUrl =   subUrls();
-
-const LoginApi = (
+import {siteKey,mainSiteKey} from '../Constant';
+import subUrls from '../../config.js';    
+const LoginApi = (  
   email,
   password,
   onSuccess,
-  onFailure,
+  onFailure, 
   onError,
-  onUnregisterUser,
-  onInvalidCredentials
+  onUnregisterUser,  
+  onInvalidCredentials 
 ) => {
   //In login first we ahve to check is email is registered with us by hiting emial registr api and theb check authenticate api
   //const url = "ws/sign-in";
-  const isVerifiedMailApiUrl = subUrl+'ulistnewtable';
-  const authenticateApiUrl = subUrl+'authenticate';
+  // alert(JSON.stringify(subUrl)); 
+  const subUrl =   subUrls();
+  const isVerifiedMailApiUrl = subUrl+'/ulistnewtable';
+  const authenticateApiUrl = subUrl+'/authenticate';
 
   PaywallItpIntance.post(isVerifiedMailApiUrl, { 
     email,
-    site_key: 'OAG',
+    site_key: mainSiteKey,
   })
     .then((response: any) => {
       console.log('login ulist' + response.status);
@@ -29,7 +29,7 @@ const LoginApi = (
         PaywallItpIntance.post(authenticateApiUrl, {
           email,
           password,
-          sitekey: 'OAG',
+          sitekey: mainSiteKey,
         })
           .then((response: any) => {
             console.log('login response' + response);
@@ -97,10 +97,11 @@ const SocialLogin = (
   sm_type,
   name,
   email_id,
-  onSuccess,
+  onSuccess, 
   onFailure,
   onError
 ) => {
+  
   //"mobileapp/sm_authenticate";
   const url = 'ws/login-sm';
   console.log('social', email_id, name);
@@ -119,7 +120,7 @@ const SocialLogin = (
   //   //sm_type,
   //   //name,
   //   email,
-  //   siteKey: "OAG",
+  //   siteKey: mainSiteKey,
   // })
   //   .then((response: any) => {
   //     console.log('Social login response:', JSON.stringify(response));
@@ -144,7 +145,7 @@ const SocialLogin = (
   //       onError(error);
   //     }
   //   });
-  ItpAxiosInstance.post(url, {
+  ItpAxiosInstance.post(url, { 
     sm_id,
     sm_type,
     name,
@@ -160,18 +161,18 @@ const SocialLogin = (
         //not verify then call register api
         //then call sm_authenticate
 
-        PaywallItpIntance.post(subUrl+'ulistnewtable', {
+        PaywallItpIntance.post(subUrl+'/ulistnewtable', {
           email: email_id,
-          sitekey: 'OAG',
+          sitekey: mainSiteKey,
         })
           .then((response) => {
             console.log("social ulistnewtable: "+ JSON.stringify(response))
             if (response.status == 200) {
               //call sm_authenticate,here no catch block bcz if user is verified only then we are calling api
-              PaywallItpIntance.post(subUrl+'sm_authenticate', {
+              PaywallItpIntance.post(subUrl+'/sm_authenticate', {
                 email: email_id,
-                sitekey: 'OAG',
-              }).then((response: any) => {
+                sitekey: mainSiteKey,
+              }).then((response: any) => { 
                 console.log("social sm_authenticate: "+ JSON.stringify(response))
 
                 if (response.status == 200) {
@@ -180,7 +181,7 @@ const SocialLogin = (
                 }
               });
             }
-          })
+          }) 
           .catch((error) => {
             console.log("social ulist error: "+ JSON.stringify(error))
 
@@ -188,8 +189,8 @@ const SocialLogin = (
               //user is not register
               //then call registre api
 
-              PaywallItpIntance.post("mobileapp/register", {
-                sitekey: 'OAG',
+              PaywallItpIntance.post(subUrl+"/register", {
+                sitekey: mainSiteKey,
                 email: email_id,
                 twitter_id: sm_type === "TWITTER" ? email_id:"",
                 fb_id : sm_type ==="FACEBOOK"?  email_id:"",
@@ -201,38 +202,39 @@ const SocialLogin = (
                 console.log('signup - api status code: ' + response.status);
                 if (response.status == '200') {
                   //call sm+authenticateF
-                  PaywallItpIntance.post(subUrl+'sm_authenticate', {
+                  PaywallItpIntance.post(subUrl+'/sm_authenticate', {
                     email: email_id,
-                    sitekey: 'OAG',
+                    sitekey: mainSiteKey,
                   }).then((response: any) => {
                     console.log("social sm_authenticate second: "+ JSON.stringify(response))
 
                     if (response.status == 200) {
-                      console.log('login success: ' + response);
-                      onSuccess(response);
+                      console.log('login success: ' + response); 
+                      onSuccess(response); 
                     }
                   });
                 }
               });
             }
-          });
+          }); 
 
-      } else if (response.data.status === 'Failed') {
-        console.log('Social login Failed:', response.data);
+      } else if (response.data.status === 'Failed') {  
+        console.log('Social login Failed:', response.data);  
         onFailure(response.data, sm_id, sm_type);
       }
     })
-    .catch((error: any) => {  
-      logError(email_id, error, url);
+    .catch((error: any) => { 
+      logError(email_id, error, url); 
 
-      console.log('Social login error:', error);  
+      console.log('Social login error:', error); 
       onError(error);
     });
 };
+
 const smAuthenticate = () => {
-  PaywallItpIntance.post(subUrl+'sm_authenticate', {
+  PaywallItpIntance.post(subUrl+'/sm_authenticate', { 
     email: email_id,
-    sitekey: 'OAG',
+    sitekey: mainSiteKey,
   })
     .then((response: any) => {
       if (response.status == 200) {
@@ -244,9 +246,9 @@ const smAuthenticate = () => {
       if (error.request.status == 400) {
         //user is not register
         //then call registre api
-        PaywallItpIntance.post(url, {
+        PaywallItpIntance.post(url, { 
           email,
-          sitekey: 'OAG',
+          sitekey: mainSiteKey,
           email: email_id,
           twitter_id: email_id,
         }).then((response: any) => {

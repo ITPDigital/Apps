@@ -1,9 +1,10 @@
 import { ItpAxiosInstance } from "../axios";
 import { Constants } from "../../asset";
 import { siteKey } from "../Constant";
+import {apis} from "../apis";   
 
 function logError(email, api_response, api_request, error_log, error_message) {
-	const url = "ws/log-error";
+	const url = apis.log_error; 
 	let message = Constants.errorMessages.general;
 	if (api_response.toString().includes(Constants.errorMessages.checkNetwork)) {
 		message = Constants.errorMessages.network;

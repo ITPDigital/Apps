@@ -1,9 +1,10 @@
 import { ItpAxiosInstance } from "../axios";
 import { siteKey } from "../Constant";
+import {apis} from "../apis";   
 
 const ShowBoookmarkApi = (userId, pageNumber, onSuccess, onFailure, onError) => {
 	console.log("Show book mark API calling............", userId);
-	const url = "ws/show-bookmarks/";
+	const url = apis.show_bookmarks; 
 	const bookmarkUrl = `${url}${userId}?site_key=${siteKey}&page=${pageNumber}`;
 	console.log("Show Bookmark Url: ", bookmarkUrl);
 	ItpAxiosInstance.get(bookmarkUrl)

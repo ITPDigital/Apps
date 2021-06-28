@@ -1,5 +1,5 @@
 import { ItpAxiosInstance } from "../axios";
-
+import {apis} from "../apis";
 // function getTopicString(selectedTopics) {
 // 	//console.log(selectedBrands);
 // 	let topics;
@@ -16,7 +16,7 @@ import { ItpAxiosInstance } from "../axios";
 // }
 
 const TopicsPreferenceAPI = (userId, selectedTopics, onSuccess, onFailure, onError) => {
-	const url = "ws/save-preferences/topic";
+	const url = apis.save_preferences_topic;
 	console.log(
 		"TopicsPreferenceAPI got called:with userId:",
 		userId,

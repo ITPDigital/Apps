@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
 const SavePreferencesFontApi = (userId, value, onSuccess, onFailure, onError) => {
-	const url = "ws/save-preferences/art-fontsize";
+	const url = apis.save_preferences_art_font; 
 	ItpAxiosInstance.post(url, {
 		user_id: userId,
 		values: `${value}`,

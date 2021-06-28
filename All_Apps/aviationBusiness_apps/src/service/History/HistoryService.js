@@ -1,10 +1,11 @@
 import { ItpAxiosInstance } from "../axios";
 import { siteKey } from "../Constant";
+import {apis} from "../apis";  
 
 const ShowHistoryApi = (userId, pageNumber, onSuccess, onFailure, onError) => {
 	//console.log("TAGIDIS1.....", tagid);
 
-	const url = "ws/show-history/";
+	const url = apis.show_history;
 	const historyUrl = `${url}${userId}?page=${pageNumber}&site_key=${siteKey}`;
 	console.log("ShowhistoryUrl: ", historyUrl);
 	ItpAxiosInstance.get(historyUrl)

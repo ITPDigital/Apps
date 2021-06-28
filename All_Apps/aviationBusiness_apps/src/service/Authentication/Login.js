@@ -1,6 +1,6 @@
 import {ItpAxiosInstance, PaywallItpIntance} from '../axios';
 import {logError} from '.';
-import {siteKey} from '../Constant';
+import {siteKey,mainSiteKey} from '../Constant';
 import subUrls from '../../config.js';    
 const LoginApi = (  
   email,
@@ -18,9 +18,9 @@ const LoginApi = (
   const isVerifiedMailApiUrl = subUrl+'/ulistnewtable';
   const authenticateApiUrl = subUrl+'/authenticate';
 
-  PaywallItpIntance.post(isVerifiedMailApiUrl, {
+  PaywallItpIntance.post(isVerifiedMailApiUrl, { 
     email,
-    site_key: 'AVB',
+    site_key: mainSiteKey,
   })
     .then((response: any) => {
       console.log('login ulist' + response.status);
@@ -29,7 +29,7 @@ const LoginApi = (
         PaywallItpIntance.post(authenticateApiUrl, {
           email,
           password,
-          sitekey: 'AVB',
+          sitekey: mainSiteKey,
         })
           .then((response: any) => {
             console.log('login response' + response);
@@ -120,7 +120,7 @@ const SocialLogin = (
   //   //sm_type,
   //   //name,
   //   email,
-  //   siteKey: "AVB",
+  //   siteKey: mainSiteKey,
   // })
   //   .then((response: any) => {
   //     console.log('Social login response:', JSON.stringify(response));
@@ -163,7 +163,7 @@ const SocialLogin = (
 
         PaywallItpIntance.post(subUrl+'/ulistnewtable', {
           email: email_id,
-          sitekey: 'AVB',
+          sitekey: mainSiteKey,
         })
           .then((response) => {
             console.log("social ulistnewtable: "+ JSON.stringify(response))
@@ -171,8 +171,8 @@ const SocialLogin = (
               //call sm_authenticate,here no catch block bcz if user is verified only then we are calling api
               PaywallItpIntance.post(subUrl+'/sm_authenticate', {
                 email: email_id,
-                sitekey: 'AVB',
-              }).then((response: any) => {
+                sitekey: mainSiteKey,
+              }).then((response: any) => { 
                 console.log("social sm_authenticate: "+ JSON.stringify(response))
 
                 if (response.status == 200) {
@@ -190,7 +190,7 @@ const SocialLogin = (
               //then call registre api
 
               PaywallItpIntance.post(subUrl+"/register", {
-                sitekey: 'AVB',
+                sitekey: mainSiteKey,
                 email: email_id,
                 twitter_id: sm_type === "TWITTER" ? email_id:"",
                 fb_id : sm_type ==="FACEBOOK"?  email_id:"",
@@ -204,7 +204,7 @@ const SocialLogin = (
                   //call sm+authenticateF
                   PaywallItpIntance.post(subUrl+'/sm_authenticate', {
                     email: email_id,
-                    sitekey: 'AVB',
+                    sitekey: mainSiteKey,
                   }).then((response: any) => {
                     console.log("social sm_authenticate second: "+ JSON.stringify(response))
 
@@ -234,7 +234,7 @@ const SocialLogin = (
 const smAuthenticate = () => {
   PaywallItpIntance.post(subUrl+'/sm_authenticate', { 
     email: email_id,
-    sitekey: 'AVB',
+    sitekey: mainSiteKey,
   })
     .then((response: any) => {
       if (response.status == 200) {
@@ -248,7 +248,7 @@ const smAuthenticate = () => {
         //then call registre api
         PaywallItpIntance.post(url, { 
           email,
-          sitekey: 'AVB',
+          sitekey: mainSiteKey,
           email: email_id,
           twitter_id: email_id,
         }).then((response: any) => {

@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";  
 
 const SaveHistoryApi = (userId, nodeId, siteKey) => {
-	const saveHistoryUrl = "ws/save-history";
+	const saveHistoryUrl = apis.save_history;  
 	ItpAxiosInstance.post(saveHistoryUrl, {
 		user_id: userId,
 		node_id: nodeId,

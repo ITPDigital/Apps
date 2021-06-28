@@ -2,10 +2,10 @@ import React, { PureComponent } from "react";
 import { ToastAndroid } from "react-native";
 import { ItpAxiosInstance } from "../axios";
 import { Strings } from "../../asset";
-
+import {apis} from "../apis";
 const ProfilePicUpload = (userId, path, fileName, imageType) => {
 	console.log("path", path);
-	const uploadURL = "ws/upload-profile-pic/";
+	const uploadURL = apis.upload_profile_pic;  
 	const ProfilePicUploadUrl = uploadURL + userId;
 	const formData = new FormData();
 	formData.append("prof_pic", {

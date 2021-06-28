@@ -1,7 +1,8 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";   
 
 const BrandTabletPageApi = (brand, pageNumber, onSuccess, onFailure, onError) => {
-	const url = "ws/brands-listing";
+	const url = apis.brands_listing;  
 	console.log("BrandPageApi called for page number ", pageNumber, "brand:", brand);
 	ItpAxiosInstance.post(url, { brand, user_id: "1", page: pageNumber, device: "tablet" })
 		.then((response: any) => {

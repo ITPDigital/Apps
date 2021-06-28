@@ -1,9 +1,10 @@
 import { ItpAxiosInstance } from "../axios";
+import {apis} from "../apis";  
 
 const MagazineIssueApi = (onSuccess, onFailure, onError) => {
 	console.log("INMAGAZINESDATA");
 
-	const url = "ws/mag-issue-listing";
+	const url = apis.mag_issue_listing;  
 	ItpAxiosInstance.get(url)
 		.then((response: any) => {
 			if (response.status == 200) {

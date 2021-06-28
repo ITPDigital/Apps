@@ -1,14 +1,15 @@
-import { ItpAxiosInstance } from "../axios";
+import { ItpAxiosInstance } from "../axios"; 
+import {apis} from "../apis";  
 
 const Subscribe = (id, brand, flag, onSuccessSubscribe, onError) => {
-	const url = "ws/save-preferences/podcast";
-	// login='robodiego'
+	const url = apis.save_preferences_podcast;   
+	// login='robodiego'  
 	// password='Buddy6jar!'
-	ItpAxiosInstance.post(url, {
+	ItpAxiosInstance.post(url, { 
 		user_id: id,
 		values: brand,
 		flag,
-	})
+	}) 
 		.then((response: any) => {
 			console.log("subscribe response", response);
 			if (response.status === 200) {

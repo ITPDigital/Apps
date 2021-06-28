@@ -1,10 +1,10 @@
 // import { ToastAndroid } from "react-native";
 import { ItpAxiosInstance } from "../axios";
 import { Alert } from "react-native";
-
+import {apis} from "../apis";
 const ChangePasswordAPI = (userId, existingPassword, newPassword, userName) => {
-	const changePasswordUrl = "ws/update-user-details";
-	ItpAxiosInstance.post(changePasswordUrl, {
+	const changePasswordUrl = apis.update_user_details;
+	ItpAxiosInstance.post(changePasswordUrl, {   
 		id: userId,
 		existing_pass: existingPassword,
 		new_pass: newPassword,
