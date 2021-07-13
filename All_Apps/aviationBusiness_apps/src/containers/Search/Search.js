@@ -117,7 +117,7 @@ class Search extends PureComponent {
 		return (
 			<View>
 				<ProfileHeader
-				style={{backgroundColor:'#000'}} 
+				// style={{backgroundColor:'#000'}}  
 					onBack={() => navigation.goBack()}
 					onAction={() => {
 						navigation.navigate("ProfileDrawerScreen");

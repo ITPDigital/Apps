@@ -163,14 +163,14 @@ class VideoHome extends PureComponent {
 		const { video, loading, refreshKey, refresh } = this.state;
 		const { navigation, control } = this.props;
 		return (
-			<AnimatedHeaderList
+			<AnimatedHeaderList 
 				header={() => (
 					// <ProfileHeader
 					// 	navigation={navigation}
 					// 	onSearch={() => navigation.navigate("SearchDrawerScreen")}
 					// 	color={Colors.bgPrimaryLight}
 					// />
-					<HomeHeaderContainer navigation={navigation}  title={"Videos"} isCollapsed = {true}/>
+					<HomeHeaderContainer navigation={navigation}  title={"Videos"} />
 				)}
 				flatListProps={{
 					data: video,
@@ -226,7 +226,7 @@ class VideoHome extends PureComponent {
 const styles = StyleSheet.create({ 
 	container: { flex: 1 },
 	authorDetails: {
-		flexDirection: "row",
+		flexDirection: "row", 
 		width: ScalePerctFullWidth(100),
 	},
 	footer: {

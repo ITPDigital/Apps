@@ -85,7 +85,7 @@ class TabletVideoHome extends PureComponent<Props> {
 		) : (
 			<View style={styles.listStyle}>
 				<AnimatedHeaderList
-					header={() => <HomeHeaderContainer navigation={this.props.navigation} />}
+					header={() => <HomeHeaderContainer navigation={this.props.navigation} title={"Videos"} />}
 					flatListProps={{
 						data: list,
 						renderItem: ({ item, index }) => (

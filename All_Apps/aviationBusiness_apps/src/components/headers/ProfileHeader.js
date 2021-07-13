@@ -183,7 +183,7 @@ const renderTitle = (
   brandIcon: string,
   isCollapsed:Boolean
 ) => {
-  console.log('renderTitlerandIcon', title);
+  console.log('renderTitlerandIcon123', title);
   let content = <Text style={styles.title}>{title}</Text>;
   if (logoUrl) {
     content = brandIcon ? (
@@ -284,7 +284,8 @@ const tabStyles = StyleSheet.create({
     height: Metrics.HEADER_HEIGHT,
     borderBottomWidth: Metrics.LINE_WIDTH,   
     borderColor: Colors.linePrimary,
-    backgroundColor: 'green', 
+    backgroundColor: "#ddd",
+    // backgroundColor: 'green', 
   },
   headerContainer: {
     flex: 1,
@@ -329,7 +330,7 @@ const tabStyles = StyleSheet.create({
     borderRadius: 10,
     //backgroundColor: Colors.bgPrimaryBlack,
     width: 20,
-    height: 30,
+    height: 30, 
   },
   emptyView: {padding: 18},
   titleContainer: {
@@ -339,14 +340,14 @@ const tabStyles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     padding: 8,
-    backgroundColor: '#fff', 
+    // backgroundColor: '#fff', 
   },
   pageText: {
-    color: Colors.bodyPrimaryLight,
+    color: Colors.bodyPrimaryLight, 
     fontSize: Metrics.SMALL_TEXT_SIZE,
   },
   title: {
-    color: '#0f4660',  
+    color: '#0f4660',   
     fontSize: Metrics.MEDIUM_TEXT_SIZE,
     fontWeight: 'bold',
     paddingRight: 41,

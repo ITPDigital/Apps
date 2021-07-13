@@ -235,7 +235,7 @@ export default function ProfileHeader(props: Props) {
   //console.log("source value: "+ JSON.stringify(source));
 
   return (
-    <View style={StyleSheet.flatten([styles.container, style])}>
+    <View style={StyleSheet.flatten([styles.container, style])}> 
       <StatusBar
         //backgroundColor={color || "transparent"}
         backgroundColor="#ddd" 
@@ -284,12 +284,13 @@ const tabStyles = StyleSheet.create({
     height: Metrics.HEADER_HEIGHT,
     borderBottomWidth: Metrics.LINE_WIDTH,
     borderColor: Colors.linePrimary,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
+    // backgroundColor: "#ddd",
   },
   headerContainer: {
     flex: 1,
     alignSelf: 'stretch',
-    marginTop: Metrics.STATUS_BAR_HEIGHT,
+    paddingTop: Metrics.STATUS_BAR_HEIGHT,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -339,17 +340,17 @@ const tabStyles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     padding: 8,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
   },
   pageText: {
     color: Colors.bodyPrimaryLight,
     fontSize: Metrics.SMALL_TEXT_SIZE,
   },
   title: {
-    color: '#fff',
+    color: '#000',
     fontSize: Metrics.MEDIUM_TEXT_SIZE,
     fontWeight: 'bold',
-    paddingRight: 41,
+    // paddingRight: 41,
     //alignSelf: "center",
   },
   logo: {

@@ -35,7 +35,7 @@ export default function TabletMagazinedetail(props: Props) {
 				title=""
 				isBottomBorder={false}
 				bgColor={Colors.bgPink}
-				contentColor={Colors.bgPrimaryDark}
+				// contentColor={Colors.bgPrimaryDark}
 			/>
 			{/* {renderbanner()} */}
 			{data && (

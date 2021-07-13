@@ -6,7 +6,7 @@ export default class
 	render() {
 		const { navigation, color,isCollapsed,title } = this.props;
 		return (
-			<ProfileHeader
+			<ProfileHeader 
 				navigation={navigation}
 				// onGrid={() => navigation.navigate("TopicsStackScreen")}
 				title={title}
@@ -14,7 +14,7 @@ export default class
 				// isLogo
 				onSearch={() => navigation.navigate("SearchDrawerScreen")}
 				color={'#fff'}
-				isCollapsed={isCollapsed}
+				isCollapsed={isCollapsed} 
 				//source={source}
 			/>
 		);

@@ -219,7 +219,7 @@ export default function DetailHeader(props: Props) {
 				animated={true}
 				translucent
 				barStyle="dark-content"
-			/>
+			/> 
 			<View style={[styles.headerContainer]}>
 				{renderBackbtn(onBack, onGrid, contentColor, dynamicColor)}
 				{onSearch && renderSearchbuffer()}
@@ -253,16 +253,17 @@ const tabStyles = StyleSheet.create({
 		height: Metrics.HEADER_HEIGHT,
 		borderBottomWidth: Metrics.LINE_WIDTH,
 		borderColor: Colors.linePrimary,
-		backgroundColor: Colors.bgPrimaryLight,
+		// backgroundColor: "#ddd",
 	},
 	headerContainer: {
 		flex: 1,
 		alignSelf: "stretch",
-		marginTop: Metrics.STATUS_BAR_HEIGHT,
+		// marginTop: Metrics.STATUS_BAR_HEIGHT,
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		padding: 10
+		padding: 10,
+		backgroundColor: "#ddd",
 	},
 	buttonContainer: {
 		flexDirection: "column",

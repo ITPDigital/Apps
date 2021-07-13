@@ -10,7 +10,7 @@ import { SocialLogin, setGlobalHeader, InitialWebService, MenuTopics } from "../
 import {
 	setCurrentUserIdStorage,
 	setCurrentUserToken,
-	setCurrentUserEmailStorage,
+	setCurrentUserEmailStorage, 
 	setMenuTopics,
 } from "../../storage";
 import { AlertComp } from "../../components";
@@ -92,7 +92,7 @@ class FirstAuthScreen extends PureComponent<Props> {
 		this.setAllSections(response);
 	};
 
-	onMenuSuccess = (response: any) => {
+	onMenuSuccess = (response: any) => { 
 		const { menuTopics } = this.state;
 		console.log("Menutopics API Success");
 		console.log("response in menu", response);

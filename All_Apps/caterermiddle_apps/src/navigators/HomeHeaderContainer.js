@@ -10,11 +10,11 @@ export default class
 				navigation={navigation}
 				// onGrid={() => navigation.navigate("TopicsStackScreen")}
 				title={title}
-				isBottomBorder={false}
+				isBottomBorder={false} 
 				// isLogo
 				onSearch={() => navigation.navigate("SearchDrawerScreen")}
-				color={'#fff'}
-				isCollapsed={isCollapsed}
+				color={'#000'}
+				isCollapsed={isCollapsed} 
 				//source={source}
 			/>
 		);

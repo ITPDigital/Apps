@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Actions} from '../../redux';
 import {Colors, ScalePerctFullWidth, ScalePerctFullHeight} from '../../asset';
 import {
-  getCurrentUserIdStorage,
+  getCurrentUserIdStorage,  
   getCurrentUserToken,
   getSubscribeUserIdStorage,
   setMenuTopics,

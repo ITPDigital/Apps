@@ -80,13 +80,15 @@ export default class LoginUI extends PureComponent<Props> {
 		console.log("onesignal close", "OneSignal.configure");
 		return (
 			<Button
-				title={Strings.authentication.LOGIN}
+				title={Strings.authentication.LOGIN} 
 				buttonStyle={{
 					marginTop: ScalePerctFullHeight(8),
 					marginBottom: ScalePerctFullHeight(4),
+					color:'#fff',
+				
 				}}
 				disabled={showLoader}
-				//showLoader={showLoader}
+				showLoader={showLoader}
 				onPress={
 					!showLoader
 						? () => {
@@ -97,8 +99,8 @@ export default class LoginUI extends PureComponent<Props> {
 				}
 				button={Images.loginButton}
 				imageStyle={{
-					width: ScalePerctFullWidth(100),
-					height: 100,
+					width: ScalePerctFullWidth(50),
+					// height: 100,
 				}}
 				top={11}
 			/>

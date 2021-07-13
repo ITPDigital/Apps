@@ -73,8 +73,8 @@ export default function MagazineListUI(props: Props) {
 						navigation={navigation}
 						onBack={() => navigation.goBack()}
 						title="Magazine"
-						isBottomBorder
-						color="#fff"  
+						isBottomBorder 
+						// color="#fff"  
 					/>
 					{renderbanner()}
 				</View>

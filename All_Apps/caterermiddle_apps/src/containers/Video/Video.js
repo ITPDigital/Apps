@@ -248,8 +248,8 @@ class ListVideoScreen extends PureComponent<Props> {
 				<ActivityIndicator size="large" color="red" />
 			</View>
 		) : (
-			<View style={{ flex: 1 }}>
-				<HomeHeaderContainer navigation={this.props.navigation} />
+			<View style={{ flex: 1 }}> 
+				<HomeHeaderContainer navigation={this.props.navigation}  />
 
 				<View style={style.container}>{list}</View>
 			</View>

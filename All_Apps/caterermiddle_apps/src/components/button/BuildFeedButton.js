@@ -52,7 +52,7 @@ const tabStyles = StyleSheet.create({
 		borderRadius: ScalePerctFullWidth(23),
 	},
 	text: {
-		color: Colors.bgPrimaryLight,
+		color: '#fff',
 		fontSize: 12,
 		fontWeight: "bold",
 		alignSelf: "center",
@@ -61,7 +61,7 @@ const tabStyles = StyleSheet.create({
 	linearGradient: {
 		flex: 1,
 		paddingLeft: 15,
-		paddingRight: 15,
+		paddingRight: 15, 
 		borderRadius: 5,
 	},
 });
@@ -76,8 +76,8 @@ const normalStyles = StyleSheet.create({
 		borderRadius: ScalePerctFullWidth(23),
 	},
 	text: {
-		position: "absolute",
-		color: Colors.bgPrimaryLight,
+		position: "absolute", 
+		color: '#fff',
 		fontSize: 12,
 		fontWeight: "bold",
 		width: "100%",
