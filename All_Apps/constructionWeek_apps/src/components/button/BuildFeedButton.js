@@ -31,7 +31,7 @@ export default class BuildFeedButton extends Component {
 					borderRadius={ScalePerctFullWidth(23)}
 				/>
 				<Text style={styles.text}>{title ? title : "Build My Feed"}</Text> */}
-				<ImageBackground
+				<ImageBackground 
 					source={require("../../asset/Images/subscribe.png")}
 					resizeMode={"stretch"}
 					style={[styles.container, style]}
@@ -52,7 +52,7 @@ const tabStyles = StyleSheet.create({
 		borderRadius: ScalePerctFullWidth(23),
 	},
 	text: {
-		color: Colors.bgPrimaryLight,
+		color: '#fff', 
 		fontSize: 12,
 		fontWeight: "bold",
 		alignSelf: "center",
@@ -77,7 +77,8 @@ const normalStyles = StyleSheet.create({
 	},
 	text: {
 		position: "absolute",
-		color: Colors.bgPrimaryLight,
+		color: '#fff',
+		// color: Colors.bgPrimaryLight,
 		fontSize: 12,
 		fontWeight: "bold",
 		width: "100%",

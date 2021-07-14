@@ -54,7 +54,7 @@ class VideoDetail extends PureComponent {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) { 
     apiEndTime = new Date();
     console.log('time api call end video:' + new Date());
     let time = Math.floor(
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  subContainer: {
+  subContainer: { 
     width: '100%',
     height: '100%',
     backgroundColor: 'rgb(27, 27, 27)',

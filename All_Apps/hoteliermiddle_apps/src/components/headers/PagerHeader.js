@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
 		height: Metrics.HEADER_HEIGHT,
 		borderBottomWidth: Metrics.LINE_WIDTH,
 		borderColor: Colors.linePrimary,
-		backgroundColor: Colors.bgLightBlack,
+		// backgroundColor: Colors.bgLightBlack,
 		paddingHorizontal: 8,
+		// backgroundColor: "#ddd",
 	},
 	headerContainer: {
 		flex: 1,

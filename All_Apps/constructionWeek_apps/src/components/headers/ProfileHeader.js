@@ -275,7 +275,7 @@ ProfileHeader.defaultProps = {
 };
 
 const tabStyles = StyleSheet.create({
-  container: {
+  container: { 
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -284,16 +284,16 @@ const tabStyles = StyleSheet.create({
     height: Metrics.HEADER_HEIGHT,
     borderBottomWidth: Metrics.LINE_WIDTH,
     borderColor: Colors.linePrimary,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
   },
   headerContainer: {
     flex: 1,
     alignSelf: 'stretch',
-    marginTop: Metrics.STATUS_BAR_HEIGHT,
+    paddingTop: Metrics.STATUS_BAR_HEIGHT,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: "#f99509",
+    backgroundColor: "#f99509", 
   },
   buttonContainer: {
     flexDirection: 'column',
@@ -339,18 +339,18 @@ const tabStyles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     padding: 8,
-    backgroundColor: 'black',
+    color: 'black',
   },
   pageText: {
     color: Colors.bodyPrimaryLight,
     fontSize: Metrics.SMALL_TEXT_SIZE,
   },
   title: {
-    color: Colors.bodyPrimaryDark,
+    color: 'black',
     fontSize: Metrics.MEDIUM_TEXT_SIZE,
     fontWeight: 'bold',
     paddingRight: 41,
-    //alignSelf: "center",
+    //alignSelf: "center", 
   },
   logo: {
     // //alignSelf: "center",

@@ -167,7 +167,7 @@ export default class SignUpUI extends PureComponent<Props> {
 			<TouchableOpacity onPress={this.handleCheckbox} style={{ padding: 2 }}>
 				<Icon
 					name={this.state.checked ? "check-square" : "square-o"}
-					size={18}
+					size={20}
 					color={Colors.bgPrimaryLight}
 				/>
 			</TouchableOpacity>
@@ -325,10 +325,10 @@ const styles = StyleSheet.create({
 const tabStyles = StyleSheet.create({
 	abLogo: {
 		width: 150,
-		height: 18,
+		height: 18, 
 	},
 
-	logoContainer: {
+	logoContainer: { 
 		flex: 1,
 		margin: ScalePerctFullHeight(20),
 		alignItems: "center",
@@ -374,7 +374,7 @@ const tabStyles = StyleSheet.create({
 		flexDirection: "row",
 	},
 	paddingHorizontal: {
-		paddingHorizontal: ScalePerctFullWidth(35),
+		paddingHorizontal: ScalePerctFullWidth(10),
 		alignItems: "center",
 	},
 	imageStyle: {

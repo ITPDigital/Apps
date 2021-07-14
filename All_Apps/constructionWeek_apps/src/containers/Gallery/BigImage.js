@@ -68,7 +68,7 @@ class BigImage extends PureComponent<Props> {
 				/> */}
 				<View
 					style={{
-						backgroundColor: "black",
+						backgroundColor: "#f99509",
 						flexDirection: "row",
 						justifyContent: "space-between",
 						width: ScalePerctFullWidth(100),

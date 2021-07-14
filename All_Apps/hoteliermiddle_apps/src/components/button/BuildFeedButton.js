@@ -45,14 +45,14 @@ export default class BuildFeedButton extends Component {
 
 const tabStyles = StyleSheet.create({
 	container: {
-		height: ScalePerctFullHeight(6),
+		height: ScalePerctFullHeight(6), 
 		width: ScalePerctFullWidth(25),
 		justifyContent: "center",
 		alignItems: "center",
 		borderRadius: ScalePerctFullWidth(23),
 	},
 	text: {
-		color: Colors.bgPrimaryLight,
+		color: '#fff',
 		fontSize: 12,
 		fontWeight: "bold",
 		alignSelf: "center",

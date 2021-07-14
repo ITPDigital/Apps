@@ -12,7 +12,7 @@ type Props = {
 	style?: number | Object | Array<number>,
 };
 
-export default function VideoDetailHeader(props: Props) {
+export default function VideoDetailHeader(props: Props) { 
 	const { style, onShare, onBack, title, navigation } = props;
 	return (
 		<View style={StyleSheet.flatten([styles.container, style])}>
@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
 		top: 0,
 		// Colors.bgTransparent
 	},
-	buttonContainer: {
+	buttonContainer: { 
 		justifyContent: "flex-start",
-		alignItems: "flex-start",
+		alignItems: "flex-start", 
 		marginTop: 10,
-		// alignContent: "center",
+		// alignContent: "center", 
 		paddingHorizontal: Metrics.DEFAULT_PADDING,
 		paddingVertical: 8,
 	},

@@ -185,7 +185,7 @@ class GalleryView extends PureComponent<Props> {
 					// 		  articleDisplay.brand_logo
 					// 		: null
 					// }
-					isLogo
+					// isLogo
 
 					//brandIcon={isLogoVisible ? Images.ABlogo : null}
 					//contentColor={Colors.bodyPrimaryLight}

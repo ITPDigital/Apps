@@ -293,9 +293,9 @@ class ExpandableItemComponent extends Component {
 				<TouchableOpacity
 					activeOpacity={0.8}
 					onPress={this.props.onClickFunction}
-					style={styles.header}>
+					style={styles.header}> 
 					<Text style={styles.headerText}>{this.props.item.name} 	{this.props.item.sub.length > 0?<Icon name="chevron-down" size={14} />:''} </Text>
-					<View style={{borderBottomWidth:1, borderColor:'#ccc', paddingBottom:10,}}></View>    
+					<View style={{borderBottomWidth:1, borderColor:'#ccc', paddingBottom:10,}}></View>     
 				</TouchableOpacity> 
 				<View
 					style={{

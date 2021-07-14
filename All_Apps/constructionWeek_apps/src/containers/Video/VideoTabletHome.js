@@ -83,7 +83,7 @@ class TabletVideoHome extends PureComponent<Props> {
 				<ActivityIndicator size="large" color="red" />
 			</View>
 		) : (
-			<View style={styles.listStyle}>
+			<View style={styles.listStyle}> 
 				<AnimatedHeaderList
 					header={() => <HomeHeaderContainer navigation={this.props.navigation} />}
 					flatListProps={{

@@ -42,7 +42,7 @@ export default function TabletMagazinedetail(props: Props) {
 				<ScrollView style={styles.dataView}>
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
 						<ImageLoad
-							resizeMode={"stretch"}
+							resizeMode={"contain"}
 							style={styles.imageOne}
 							placeholderStyle={styles.imageOne}
 							isShowActivity={false}

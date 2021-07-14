@@ -88,7 +88,7 @@ class TabletVideoHome extends PureComponent<Props> {
 					header={() => <HomeHeaderContainer navigation={this.props.navigation} />}
 					flatListProps={{
 						data: list,
-						renderItem: ({ item, index }) => (
+						renderItem: ({ item, index }) => ( 
 							<ListVideoScreen
 								data={item}
 								index={index}

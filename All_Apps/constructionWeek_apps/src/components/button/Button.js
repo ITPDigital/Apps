@@ -47,11 +47,11 @@ const mobileStyles = StyleSheet.create({
 	},
 	text: {
 		color: '#fff',
-		fontSize: Metrics.SMALL_TEXT_SIZE,
+		fontSize: Metrics.SMALL_TEXT_SIZE, 
 		fontFamily: "BentonSans Bold",
 	},
 	imageStyle: {
-		width: ScalePerctFullWidth(100),
+		width: ScalePerctFullWidth(100),  
 		height: 100,
 	},
 	innerContainer: {
@@ -66,7 +66,7 @@ const mobileStyles = StyleSheet.create({
 
 const tabStyles = StyleSheet.create({
 	container: {
-		height: ScalePerctFullHeight(3.4),
+		height: ScalePerctFullHeight(3.4), 
 		// width: ScalePerctFullWidth(31),
 		// justifyContent: "center",
 		// alignItems: "center",
@@ -74,7 +74,7 @@ const tabStyles = StyleSheet.create({
 		// borderRadius: Metrics.LARGE_RADIUS,
 	},
 	text: {
-		color: Colors.bgPrimaryLight,
+		color: '#fff',
 		fontSize: Metrics.SMALL_TEXT_SIZE,
 		fontFamily: "BentonSans Bold",
 	},

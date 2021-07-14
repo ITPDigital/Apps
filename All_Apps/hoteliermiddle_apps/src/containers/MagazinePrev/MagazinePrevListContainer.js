@@ -207,7 +207,7 @@ class MagazinePrevListContainer extends PureComponent<Props> {
 				loading={loading}
 				message={message}
 				refresh={refresh}
-				{...this.props}
+				{...this.props} 
 				data={data}
 				passedItem={item}
 				title={title}

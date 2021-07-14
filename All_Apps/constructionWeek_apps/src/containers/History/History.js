@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component, PureComponent } from "react";
 import {
 	View,
 	StyleSheet,
@@ -30,22 +30,22 @@ import {
 } from "../../asset";
 import { ShowHistoryApi, ManageBoookmarkApi } from "../../service";
 import {TopicsArticleApi} from '../../service/Articles'
-import { TabModal } from "../ChaptorPodcastScreen";
+import { TabModal } from "../ChaptorPodcastScreen"; 
 import { Analytics } from "../../Analytics";
 import { getCurrentUserToken,getTagIdStorage, getTopicNameStorage } from "../../storage";
-
+var self = this;
 type Props = {
 	navigation: any,
 };
 
-class History extends PureComponent<Props> {
+class History extends PureComponent<Props>  {
 	constructor(props) {
 		super(props);
 		this.state = {
 			history: [],
 			loading: true,
-			refreshKey: 1,
-			pageNumber: 0,
+			refreshKey:  Math.random(), 
+			pageNumber: 5,
 			manageHistoryLoad: false,
 			imageUrl: "https://facebook.github.io/react-native/docs/assets/favicon.png",
 			showModal: false,
@@ -62,56 +62,103 @@ class History extends PureComponent<Props> {
 
 	}
 
-	componentDidMount(){
 
-		getTagIdStorage().then((tagid)=>{
-			console.log("TAGIDIS", tagid);
-			this.setState({
-				tagid : tagid
-			})
-			if(this.state.tagid == 0){
-				// console.log("TAGIDIS1", tagid);
-				// const { user, history, setArticleHistory } = this.props;
 
-				// if (history && !prevProps.history) {
-					ShowHistoryApi(1, 0, this.onSuccess, this.onFailure, this.onError);
-					setArticleHistory(false);
-				// } else if (history) {
-				// 	setArticleHistory(false);
-				// }
-			}else{
-				console.log("TAGIDIS2", this.state.tagid);
-				TopicsArticleApi(this.state.tagid, this.props.user.id, 0, 'mobile', this.onArticleListSuccess, this.onFailure, this.onError);
-			}
+	componentDidMount(){ 
 
-		});
+		this.getRequiredData();  
+		
+				// alert('done'+Math.random());  
+				getTagIdStorage().then((tagids)=>{
+					console.log("TAGIDIS", tagids);  
+					this.setState({ tagid : tagids }) 
+					if(this.state.tagid == 0){
+						// console.log("TAGIDIS1", tagid);
+						// const { user, history, setArticleHistory } = this.props;
+		
+						// if (history && !prevProps.history) {
+							ShowHistoryApi(1, 0, this.onSuccess, this.onFailure, this.onError);
+							setArticleHistory(false);
+						// } else if (history) {
+						// 	setArticleHistory(false); 
+						// }
+					}else{
+						console.log("TAGIDIS2", this.state.tagid);
+						TopicsArticleApi(this.state.tagid, this.props.user.id, 0, 'mobile', this.onArticleListSuccess, this.onFailure, this.onError);
+					}
+		
+				}); 
+		
+				getTopicNameStorage().then((topicnames)=>{
+					// alert('dip');
+					this.setState({ topicname: topicnames }) 
+				});
 
-		getTopicNameStorage().then((topicname)=>{
-			this.setState({
-				topicname: topicname
-			})
-		});
+		this.listener = this.props.navigation.addListener("didFocus", this.getRequiredData  );
+
 
 	}
 
+	getRequiredData(){
+  
+
+	}
 	
+	// shouldComponentUpdate(){
 
-	
+	// 	this.onRefresh();
 
-	// componentDidUpdate(prevProps) {
-	// 	Analytics.setCurrentScreen("HISTORY");
-
-	// 	TopicsArticleApi(this.state.tagid, this.props.user.id, 0, 'mobile', this.onArticleListSuccess, this.onFailure, this.onError);
-
-
-	// 	// const { user, history, setArticleHistory } = this.props;
-	// 	// if (history && !prevProps.history) {
-	// 	// 	ShowHistoryApi(user.id, 0, this.onSuccess, this.onFailure, this.onError);
-	// 	// 	setArticleHistory(false);
-	// 	// } else if (history) {
-	// 	// 	setArticleHistory(false);
-	// 	// }
 	// }
+
+
+	componentWillUpdate(previousProps, previousState) { 
+
+	
+		// alert('dip'+previousState.tagid); 
+
+		getTagIdStorage().then((tagids)=>{
+			console.log("TAGIDIS", tagids);
+			this.setState({ tagid : tagids })   
+	
+
+		});    
+
+		getTopicNameStorage().then((topicnames)=>{
+			// alert('dip');
+			this.setState({ topicname: topicnames })    
+		});
+
+ 
+		this.executeTimeout();
+		 
+		clearTimeout(firstCall);
+		if (previousState.tagid !== this.state.tagid) {
+		
+			// 
+		}
+		// Analytics.setCurrentScreen("HISTORY");
+
+		// TopicsArticleApi(this.state.tagid, this.props.user.id, 0, 'mobile', this.onArticleListSuccess, this.onFailure, this.onError);
+		// this.onRefresh();
+//  alert('dip');
+		// const { user, history, setArticleHistory } = this.props;
+		// if (history && !prevProps.history) {
+		// 	ShowHistoryApi(user.id, 0, this.onSuccess, this.onFailure, this.onError);
+		// 	setArticleHistory(false);
+		// } else if (history) {  
+		// 	setArticleHistory(false);
+		// }
+	}
+
+
+	executeTimeout(){  
+
+	 firstCall = setTimeout(() => { 
+			alert('test');
+			this.onRefresh();    
+		}, 1000);
+		
+	}
 
 	onSuccess = (historyResponse: any) => {
 		//alert("alert1");
@@ -133,9 +180,9 @@ class History extends PureComponent<Props> {
 			history: updated,
 			loading: false,
 			manageHistoryLoad: false,
-			refreshKey: Math.random(),
+			// refreshKey: Math.random(),
 		});
-		setArticleHistory(false);
+		setArticleHistory(true);
 	};
 
 	onArticleListSuccess = (historyResponse: any) => {
@@ -251,8 +298,10 @@ class History extends PureComponent<Props> {
 		//ShowHistoryApi(user.id, 0, this.onSuccess, this.onFailure, this.onError);
 		// this.setState({ manageHistoryLoad: false, refreshKey: Math.random() });
 		if(this.state.tagid == 0){
+			// alert('1');
 			ShowHistoryApi(1, 0, this.onSuccess, this.onFailure, this.onError);			
 		}else{
+			// alert('2');
 			TopicsArticleApi(this.state.tagid, this.props.user.id, 0, 'mobile', this.onArticleListSuccess, this.onFailure, this.onError);
 		}
 	};
@@ -349,19 +398,23 @@ class History extends PureComponent<Props> {
 		return (
 			<View style={styles.container}>
 				<AnimatedHeaderList
+				key={Math.random()}
 					header={() => (
 						<ProfileHeader
 							onAction={() => {
 								navigation.navigate("ProfileDrawerScreen");
 							}}
 							onBack={() => {
+								// navigation.navigate("HomeDrawerScreen");
 								navigation.goBack(null);
+								
+							
 							}}
 							title={this.state.topicname.split('&amp;').join('&')}
 						/>
 					)}
 					flatListProps={{
-
+						key:Math.random(),
 						data: history,
 						style: styles.ListItems,
 						onRefresh: () => this.onRefresh(),
@@ -372,7 +425,7 @@ class History extends PureComponent<Props> {
 						keyExtractor: (x, i) => i.toString(),
 						contentContainerStyle: styles.contentContainerStyles,
 						numColumns: noOfColumn,
-						ListFooterComponent: () => <ListLoading loading={loading} />,
+						ListFooterComponent: () => <ListLoading loading={loading} key={Math.random()} />,
 						renderItem: ({ item, index }) => (
 
 							<Article
@@ -380,14 +433,14 @@ class History extends PureComponent<Props> {
 									this.onItemPress(item.nid, item.site, item, item.bookmark);
 								}}
 								onPressBookmark={() =>
-									this.onManageBookmark(
+									this.onManageBookmark( 
 										item.nid,
 										item.site,
 										item.bookmark,
 										index,
 									)
 								}
-								key={index.toString()}
+								key={Math.random()}
 								order={
 									TemplateConfig.articleTemplates[
 										// Metrics.isTablet ? 15 : item.template 
@@ -400,7 +453,7 @@ class History extends PureComponent<Props> {
 										index == 0 ? 1:2
 									]
 								}
-								data={item}
+								data={item} 
 								// refreshKey={refreshKey}
 								tabContainerStyle={styles.tabContainerStyle}
 								numberOfLines={numberOfLines}
@@ -413,15 +466,15 @@ class History extends PureComponent<Props> {
 								bookmarkRequired
 								routeFlag={1}
 								isFromHomePage={true}
-								isIndustryTemplete={true}
+								isIndustryTemplete={true}    
 							/>
 						),
 					}}
 					headerHeight={Metrics.HEADER_HEIGHT}
 				/>
 				{this.isEmpty()}
-				{!showModal ? flag && <PodcastPlayView onPress={this.handlePlay} /> : null}
-				{showModal && <TabModal showModal={showModal} handlePlay={this.handlePlay} />}
+				{!showModal ? flag && <PodcastPlayView key={Math.random()} onPress={this.handlePlay} /> : null}
+				{showModal && <TabModal key={Math.random()} showModal={showModal} handlePlay={this.handlePlay} />}
 				{/* <BottomBar navigation={navigation} /> */}
 			</View>
 		);
@@ -558,9 +611,9 @@ const tabStyles = StyleSheet.create({
 	},
 });
 
-const styles = Metrics.isTablet ? tabStyles : mobileStyles;
+const styles = Metrics.isTablet ? tabStyles : mobileStyles;  
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => ({ 
 	currentRoute: state.currentRoute,
 	user: state.user,
 	history: state.history,
@@ -572,8 +625,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-	mapStateToProps,
+	mapStateToProps, 
 	mapDispatchToProps,
 )(History);
+// export default History;
 
 History.defaultProps = {};

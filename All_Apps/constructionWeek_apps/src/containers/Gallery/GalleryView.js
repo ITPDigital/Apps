@@ -171,7 +171,7 @@ class GalleryView extends PureComponent<Props> {
 		console.log("article display in gallery", articleDisplay);
 
 		return (
-			<View style={styles.container}>
+			<View style={styles.container}> 
 				<DetailHeader
 					navigation={navigation}
 					title=""

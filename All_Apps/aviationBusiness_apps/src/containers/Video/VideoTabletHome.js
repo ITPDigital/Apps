@@ -113,11 +113,11 @@ const mapStateToProps = state => ({
 	user: state.user,
 	topics: state.user.topics,
 	brands: state.user.brands,
-	control: state.podcastPlayControl,
+	control: state.podcastPlayControl,  
 });
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators(Actions, dispatch);
+	return bindActionCreators(Actions, dispatch); 
 }
 
 export default connect(

@@ -88,10 +88,10 @@ const tabStyles = StyleSheet.create({
 	},
 	titleText: {
 		fontSize: Metrics.EXTRA_LARGE_TEXT_SIZE,
-		// padding: Metrics.DEFAULT_PADDING,
+		padding: Metrics.DEFAULT_PADDING,
 		lineHeight: Metrics.EXTRA_LARGE_LINE_HEIGHT,
 		fontFamily: "BentonSans Bold",
-		color: '#fff',
+		color: '#e4013a', 
 		//backgroundColor: "yellow",
 		// paddingLeft: 5,
 		// flex: 1,

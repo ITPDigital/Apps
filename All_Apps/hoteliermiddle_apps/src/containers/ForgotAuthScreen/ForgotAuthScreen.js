@@ -126,14 +126,16 @@ class ForgotAuthScreen extends PureComponent<Props> {
 
   renderButton = () =>
     Metrics.isTablet ? (
-      <BuildFeedButton
+      <Button
         title={Strings.authentication.RETRIEVE_PASSWORD}
         onPress={!this.state.showLoader ? this.handleLoginEvent : null}
-        style={{
+        buttonStyle={{
           marginTop: ScalePerctFullHeight(8),
           marginBottom: ScalePerctFullHeight(4),
           width: ScalePerctFullWidth(30.3),
           height: ScalePerctFullHeight(4),
+          backgroundColor:'#e4013a' ,
+          borderRadius: 50 
         }}
         disabled={this.state.showLoader}
       />
@@ -143,7 +145,7 @@ class ForgotAuthScreen extends PureComponent<Props> {
         buttonStyle={{
           marginTop: ScalePerctFullHeight(8),
           marginBottom: ScalePerctFullHeight(4),
-          backgroundColor:'red' ,
+          backgroundColor:'#e4013a' ,
           width:ScalePerctFullWidth(70),  
           borderRadius: 50 
         }}
@@ -294,9 +296,10 @@ const tabStyles = StyleSheet.create({
   },
   formStyle: {
     alignSelf: 'stretch',
+   
   },
   paddingHorizontal: {
-    paddingHorizontal: ScalePerctFullWidth(35),
+    paddingHorizontal: ScalePerctFullWidth(15),
     alignItems: 'center',
   },
   indicator: {

@@ -24,9 +24,9 @@ import { ShowHistoryApi, ManageBoookmarkApi } from "../../service";
 import { TabModal } from "../ChaptorPodcastScreen";
 import ArticletabletSmall from "../../components/articleListItems/ArticleTabletSmall";
 import { Analytics } from "../../Analytics";
-import { getCurrentUserToken } from "../../storage";
+import { getCurrentUserToken, getTopicNameStorage } from "../../storage";  
 
-class HistoryTablet extends PureComponent {
+class HistoryTablet extends PureComponent {  
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -37,11 +37,12 @@ class HistoryTablet extends PureComponent {
 			manageHistoryLoad: false,
 			imageUrl: "https://facebook.github.io/react-native/docs/assets/favicon.png",
 			showModal: false,
+			topicname:'',
 		};
 		ShowHistoryApi(props.user.id, 0, this.onSuccess, this.onFailure, this.onError);
 	}
 
-	componentDidUpdate(prevProps) {
+	componentDidUpdate(prevProps) { 
 		Analytics.setCurrentScreen("HISTORY");
 
 		const { user, history, setArticleHistory } = this.props;
@@ -51,6 +52,14 @@ class HistoryTablet extends PureComponent {
 		} else if (history) {
 			setArticleHistory(false);
 		}
+	}
+
+	componentDidMount(){ 
+
+		getTopicNameStorage().then((topicnames)=>{
+			// alert('dip');
+			this.setState({ topicname: topicnames }) 
+		});
 	}
 
 	onSuccess = (historyResponse: any) => {
@@ -188,7 +197,7 @@ class HistoryTablet extends PureComponent {
 		return (
 			<View style={styles.container}>
 				<AnimatedHeaderList
-					header={() => (
+					header={() => ( 
 						<ProfileHeader
 							onAction={() => {
 								navigation.navigate("ProfileDrawerScreen");
@@ -196,7 +205,8 @@ class HistoryTablet extends PureComponent {
 							onBack={() => {
 								navigation.goBack(null);
 							}}
-							title="History"
+							title={this.state.topicname.split('&amp;').join('&')}
+
 						/>
 					)}
 					flatListProps={{

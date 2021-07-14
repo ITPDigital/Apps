@@ -84,9 +84,11 @@ export default class LoginUI extends PureComponent<Props> {
 				buttonStyle={{
 					marginTop: ScalePerctFullHeight(8),
 					marginBottom: ScalePerctFullHeight(4),
-					backgroundColor:'red' ,
-					width:ScalePerctFullWidth(70),    
-					borderRadius: 50 
+					backgroundColor:'#e4013a' ,
+					width:ScalePerctFullWidth(50),     
+					borderRadius: 50,
+					height:50,
+					color:'#fff' 
 				}}
 				disabled={showLoader}
 				//showLoader={showLoader}

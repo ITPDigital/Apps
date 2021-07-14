@@ -67,6 +67,7 @@ export default class LoginUI extends PureComponent<Props> {
 					onPress={handleForgotPassword}
 					onSubmitEditing={() => handleLogin(email, password)}
 					disabled={showLoader}
+					style={{color:'#000'}}
 				/>
 			</View>
 		);
@@ -97,7 +98,7 @@ export default class LoginUI extends PureComponent<Props> {
 				}
 				button={Images.loginButton}
 				imageStyle={{
-					width: ScalePerctFullWidth(100),
+					width: ScalePerctFullWidth(50),
 					height: 100,
 				}}
 				top={11}
@@ -171,6 +172,7 @@ const styles = StyleSheet.create({
 		letterSpacing: 0.3,
 		marginBottom: ScalePerctFullHeight(8),
 		color: Colors.bgPrimaryLight,
+		
 	},
 	formStyle: {
 		alignSelf: "stretch",

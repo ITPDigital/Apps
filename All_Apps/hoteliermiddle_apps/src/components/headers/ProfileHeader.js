@@ -284,7 +284,8 @@ const tabStyles = StyleSheet.create({
     height: Metrics.HEADER_HEIGHT,
     borderBottomWidth: Metrics.LINE_WIDTH,
     borderColor: Colors.linePrimary,
-    backgroundColor: 'green',
+    backgroundColor: "#ddd",
+    // backgroundColor: 'green',
   },
   headerContainer: {
     flex: 1,
@@ -339,7 +340,7 @@ const tabStyles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     padding: 8,
-    backgroundColor: '#fff', 
+    // backgroundColor: '#fff', 
   },
   pageText: {
     color: Colors.bodyPrimaryLight,
@@ -377,6 +378,7 @@ const mobileStyles = StyleSheet.create({
     borderBottomWidth: Metrics.LINE_WIDTH,
     borderColor: Colors.linePrimary,
     // backgroundColor: 'red',
+    
   },
   headerContainer: {
     flex: 1,

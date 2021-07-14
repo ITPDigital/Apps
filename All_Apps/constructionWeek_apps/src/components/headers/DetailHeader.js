@@ -253,18 +253,19 @@ const tabStyles = StyleSheet.create({
 		height: Metrics.HEADER_HEIGHT,
 		borderBottomWidth: Metrics.LINE_WIDTH,
 		borderColor: Colors.linePrimary,
-		backgroundColor: Colors.bgPrimaryLight,
+		// backgroundColor: Colors.bgPrimaryLight,
+		// paddingTop: Metrics.STATUS_BAR_HEIGHT
 	},
 	headerContainer: {
-		flex: 1,
+		flex: 1, 
 		alignSelf: "stretch",
-		marginTop: Metrics.STATUS_BAR_HEIGHT,
+		paddingTop: Metrics.STATUS_BAR_HEIGHT,
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		padding: 10
+		padding: 10    
 	},
-	buttonContainer: {
+	buttonContainer: {   
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",

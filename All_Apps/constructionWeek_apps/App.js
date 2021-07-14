@@ -9,9 +9,9 @@ import { saveDeviceInfo } from "./src/redux/Actions/DeviceInfo";
 import { DeeplinkService, NavigationService } from "./src/service";
 // import { NativeModules } from "react-native";
 
-import { setLanguage } from '../constructionWeek-apps/src/storage'
+// import { setLanguage } from '../constructionWeek-apps/src/storage'
 
-type Props = {};
+type Props = {};    
 
 // firebase.analytics().setCurrentScreen("app");
 
@@ -39,8 +39,8 @@ export default class App extends PureComponent<Props> {
 		OneSignal.addEventListener("opened", this.onOpened);
 		OneSignal.addEventListener("ids", this.onIds);
 
-		setLanguage("Ar");
-		I18nManager.forceRTL(true);
+		// setLanguage("Ar");
+		// I18nManager.forceRTL(true);
 	}
 
 	componentWillUnmount() {

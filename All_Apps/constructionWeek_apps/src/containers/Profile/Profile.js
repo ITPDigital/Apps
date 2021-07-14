@@ -190,7 +190,7 @@ class Profile extends Component {
 					}}
 					onSave={this.onSave}
 				/>
-				<KeyboardAwareScrollView>
+				<KeyboardAwareScrollView> 
 					{/* <View style={styles.image}>{this.renderDefaultImage()}</View> */}
 					<TouchableOpacity onPress={this.toggleModal}>
 						<Image
@@ -270,8 +270,8 @@ class Profile extends Component {
 					</View>
 
 					<View style={{justifyContent:'center', alignItems:'center', marginTop:25}}>
-						<TouchableOpacity onPress={()=>this.gotoLogout()}>
-						<View style={{backgroundColor:'#000', color:'#000', paddingHorizontal:widths*0.25, paddingVertical:10, borderRadius:25}}> 
+						<TouchableOpacity onPress={()=>this.gotoLogout()}> 
+						<View style={{backgroundColor:'#f99509', color:'#000', paddingHorizontal:widths*0.25, paddingVertical:20, borderRadius:25}}> 
 						<Text style={{color:'#fff', fontWeight:'bold'}}>Logout</Text>
 						</View>
 						</TouchableOpacity>

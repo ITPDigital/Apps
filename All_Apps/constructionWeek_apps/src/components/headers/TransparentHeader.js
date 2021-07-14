@@ -119,7 +119,7 @@ export default function TransparentHeader(props: Props) {
 	return (
 		<View style={StyleSheet.flatten([styles.container, style])}>
 			<StatusBar backgroundColor="rgba(0,0,0,0)" translucent barStyle="dark-content"  />
-			<View style={[styles.headerContainer]}>
+			<View style={[styles.headerContainer]}>  
 				{renderBackbtn(onBack, onGrid, contentColor)}
 				{onSearch && renderSearchbuffer()}
 				{renderTitle(title, isLogo, logoUrl)}

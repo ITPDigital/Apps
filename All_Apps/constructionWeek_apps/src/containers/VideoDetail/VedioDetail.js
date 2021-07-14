@@ -45,7 +45,7 @@ class VideoDetail extends PureComponent {
     if (backgroundData != null) {
 		this.onBackgroundSuccess(backgroundData)
     } else {
-      ArticleDisplayApi(
+      ArticleDisplayApi(  
         `${itemId}~${site}`,
         this.onSuccess,
         this.onFailure,

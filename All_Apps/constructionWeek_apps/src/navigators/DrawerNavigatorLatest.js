@@ -341,7 +341,7 @@ class ExpandableItemComponent extends Component {
 	render() {
 		return (
 			<View>
-				{/*Header of the Expandable List Item*/}
+				{/*Header of the Expandable List Item*/} 
 				<TouchableOpacity
 					activeOpacity={0.8}
 					 onPress={() => {
@@ -351,17 +351,17 @@ class ExpandableItemComponent extends Component {
 					<Text style={styles.headerText}>{this.props.item.category_name}</Text>
 					{/* <View style={styles.separator_header} /> */}
 
-				</TouchableOpacity>
+				</TouchableOpacity>  
 				<View
 					style={{
 						height: this.state.layoutHeight,
 						overflow: 'hidden',
-					}}>
+					}}>  
 					{/*Content under the header of the Expandable List Item*/}
 					{this.props.item.subcategory.map((item, key) => (
 						<TouchableOpacity
 							key={key}
-							style={styles.content}
+							style={styles.content} 
 							onPress={() => alert('Id: ' + item.id + ' val: ' + item.val)}>
 							<Text style={{ fontSize: 18, color: '#606070', paddingLeft: 20, paddingVertical : 5 }}>
 								{item.val}
