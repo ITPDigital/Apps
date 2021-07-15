@@ -89,20 +89,20 @@ export default class SignUpUI extends PureComponent<Props> {
 		let deviceId = null;
 		deviceId = Metrics.isTablet ? "Tablet" : "Mobile";
 		return Metrics.isTablet ? (
-			<BuildFeedButton
+			<Button
 				title={Strings.authentication.SIGN_UP}
 				onPress={
 					!showLoader
 						? () => handleSignUp(name, email, password, deviceId, checked)
 						: null
 				}
-				style={{
+				buttonStyle={{
 					marginTop: ScalePerctFullHeight(4),
 					marginBottom: ScalePerctFullHeight(4), 
 					width: ScalePerctFullWidth(30.3),
 					height: ScalePerctFullHeight(4),
 					backgroundColor:'#f27c00' ,
-					// width:ScalePerctFullWidth(70),  
+					width:ScalePerctFullWidth(50),  
 					borderRadius: 50 
 				}}
 				disabled={showLoader}
@@ -173,7 +173,7 @@ export default class SignUpUI extends PureComponent<Props> {
 			<TouchableOpacity onPress={this.handleCheckbox} style={{ padding: 2 }}>
 				<Icon
 					name={this.state.checked ? "check-square" : "square-o"}
-					size={18}
+					size={22} 
 					color={Colors.bgPrimaryLight}
 				/>
 			</TouchableOpacity>
@@ -353,19 +353,19 @@ const tabStyles = StyleSheet.create({
 	},
 	text: {
 		color: Colors.bgPrimaryLight,
-		fontSize: Metrics.VVV_SMALL_TEXT_SIZE,
+		fontSize: Metrics.SMALL_TEXT_SIZE,
 		fontFamily: "AkzidenzGrotesk-Roman",
 		lineHeight: 18,
 	},
 	privacy: {
-		fontSize: Metrics.VVV_SMALL_TEXT_SIZE,
+		fontSize: Metrics.SMALL_TEXT_SIZE,
 		textDecorationLine: "underline",
 		color: Colors.bgPrimaryLight,
 		fontFamily: "AkzidenzGrotesk-Roman",
 	},
 	textTerms: {
 		color: Colors.bgPrimaryLight,
-		fontSize: Metrics.VVV_SMALL_TEXT_SIZE,
+		fontSize: Metrics.SMALL_TEXT_SIZE,
 		fontFamily: "AkzidenzGrotesk-Roman",
 	},
 	textContainer: {
@@ -380,7 +380,7 @@ const tabStyles = StyleSheet.create({
 		flexDirection: "row",
 	},
 	paddingHorizontal: {
-		paddingHorizontal: ScalePerctFullWidth(35),
+		paddingHorizontal: ScalePerctFullWidth(15),
 		alignItems: "center",
 	},
 	imageStyle: {

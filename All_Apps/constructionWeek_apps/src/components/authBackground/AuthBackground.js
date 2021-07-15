@@ -50,14 +50,14 @@ export default function AuthBackground(props: Props) {
 				source={Images.loginScreen}
 				resizeMode="contain"
 				style={{
-					width: ScalePerctFullWidth(80),
-					height: ScalePerctFullHeight(100),
+					// width: ScalePerctFullWidth(65),
+					// height: Metrics.isTablet ? ScalePerctFullHeight(100):ScalePerctFullHeight(100),
 					zIndex: -2,
 					position: "absolute",
 					// alignSelf: 'flex-start',
-					// top: -100,
+					top: Metrics.isTablet ? ScalePerctFullHeight(25):ScalePerctFullHeight(25),
 					// left: 0,
-					bottom: 150,
+					// bottom: 150, 
 					// right: 0,
 				}}
 			/>

@@ -29,9 +29,8 @@ export default function MagazineListItem(props: Props) {
 			toValue  : 1,
 			duration : 250
 		}).start()
-
-	// })
-
+    
+	// })  
 
 	return (
 		<Animated.View activeOpacity={1.0} style={[style.container]}>

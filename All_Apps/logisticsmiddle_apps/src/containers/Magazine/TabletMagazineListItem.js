@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect } from "react";
 import {
 	View,
 	Text,
@@ -19,10 +19,16 @@ type Props = {
 
 export default function TabletMagazineListItem(props: Props) {
 	const { onPress, index, data } = props;
+
+	Animated.timing(new Animated.Value(0), {
+		toValue  : 1,
+		duration : 250
+	}).start()
+
 	console.log("data[0].nid", data[0].nid);
 	return (
-		<View activeOpacity={1.0} style={[style.container]}>
-			<View style={style.imageContainer}>
+		<Animated.View activeOpacity={1.0} style={[style.container]}>
+			<Animated.View style={style.imageContainer}>
 				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
 					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
 					<ImageLoad
@@ -90,9 +96,9 @@ export default function TabletMagazineListItem(props: Props) {
 						/>
 					</TouchableOpacity>
 				)}
-			</View>
+			</Animated.View>
 			<Image source={Images.shelf} style={style.imageShelf} />
-			<View style={style.titleContainer}>
+			<Animated.View style={style.titleContainer}>
 				<TouchableOpacity onPress={() => onPress(data[0])}>
 					<Text style={style.titleLeft} numberOfLines={2}>
 						{data[0].title}
@@ -119,8 +125,8 @@ export default function TabletMagazineListItem(props: Props) {
 						</Text>
 					</TouchableOpacity>
 				)}
-			</View>
-		</View>
+			</Animated.View>
+		</Animated.View>
 	);
 }
 

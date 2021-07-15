@@ -62,7 +62,34 @@ class History extends PureComponent<Props>  {
 
 	}
 
-
+	componentWillMount(){
+		this._subscribe = this.props.navigation.addListener('didFocus', () => {
+			getTagIdStorage().then((tagids)=>{
+				console.log("TAGIDIS", tagids);  
+				this.setState({ tagid : tagids }) 
+				if(this.state.tagid == 0){
+					// console.log("TAGIDIS1", tagid);
+					// const { user, history, setArticleHistory } = this.props;
+	
+					// if (history && !prevProps.history) {
+						ShowHistoryApi(1, 0, this.onSuccess, this.onFailure, this.onError);
+						setArticleHistory(false);
+					// } else if (history) {
+					// 	setArticleHistory(false); 
+					// }
+				}else{
+					console.log("TAGIDIS2", this.state.tagid);
+					TopicsArticleApi(this.state.tagid, this.props.user.id, 0, 'mobile', this.onArticleListSuccess, this.onFailure, this.onError);
+				}
+	
+			});
+	
+			getTopicNameStorage().then((topicnames)=>{
+				// alert('dip');
+				this.setState({ topicname: topicnames }) 
+			});
+		 //Put your Data loading function here instead of my this.LoadData()
+		});}
 
 	componentDidMount(){ 
 

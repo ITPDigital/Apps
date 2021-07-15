@@ -285,12 +285,12 @@ const tabStyles = StyleSheet.create({
     height: Metrics.HEADER_HEIGHT,
     borderBottomWidth: Metrics.LINE_WIDTH,   
     borderColor: Colors.linePrimary,
-    backgroundColor: 'green', 
+    // backgroundColor: 'green', 
   },
   headerContainer: {
     flex: 1,
-    alignSelf: 'stretch',
-    marginTop: Metrics.STATUS_BAR_HEIGHT,
+    alignSelf: 'stretch', 
+    paddingTop: Metrics.STATUS_BAR_HEIGHT,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -340,7 +340,7 @@ const tabStyles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     padding: 8,
-    backgroundColor: '#fff', 
+    // backgroundColor: '#fff', 
   },
   pageText: {
     color: Colors.bodyPrimaryLight,
@@ -350,7 +350,7 @@ const tabStyles = StyleSheet.create({
     color: '#f27c00',  
     fontSize: Metrics.MEDIUM_TEXT_SIZE,
     fontWeight: 'bold',
-    paddingRight: 41,
+    // paddingRight: 41,
     //alignSelf: "center",
   },
   logo: {

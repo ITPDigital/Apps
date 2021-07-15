@@ -63,9 +63,9 @@ class MagazineListContainer extends PureComponent<Props> {
 			message: Constants.emptyMessages.noRecord,
 			data: newData,
 		});
-	};
+	}; 
 
-	onFetchFailure = () => {
+	onFetchFailure = () => {     
 		this.setState({
 			loading: false,
 			refresh: false,

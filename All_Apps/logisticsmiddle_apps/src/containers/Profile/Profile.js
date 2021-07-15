@@ -271,7 +271,7 @@ class Profile extends Component {
 
 					<View style={{justifyContent:'center', alignItems:'center', marginTop:25}}>
 						<TouchableOpacity onPress={()=>this.gotoLogout()}> 
-						<View style={{backgroundColor:'#f27c00', color:'#f27c00', paddingHorizontal:widths*0.25, paddingVertical:10, borderRadius:25}}> 
+						<View style={{backgroundColor:'#f27c00', color:'#f27c00', paddingHorizontal:widths*0.25, paddingVertical:20, borderRadius:25}}> 
 						<Text style={{color:'#fff', fontWeight:'bold'}}>Logout</Text>
 						</View>
 						</TouchableOpacity>

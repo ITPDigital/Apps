@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 		alignItems: "stretch",
 		// flexDirection: "column",
 		justifyContent: "center",
-		// backgroundColor: "black",  
+		// backgroundColor: "#fff",   
 		top: 0,
 		// Colors.bgTransparent
 	},

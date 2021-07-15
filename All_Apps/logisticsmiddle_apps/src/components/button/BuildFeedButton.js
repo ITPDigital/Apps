@@ -52,7 +52,7 @@ const tabStyles = StyleSheet.create({
 		borderRadius: ScalePerctFullWidth(23),
 	},
 	text: {
-		color: Colors.bgPrimaryLight,
+		color: '#fff', 
 		fontSize: 12,
 		fontWeight: "bold",
 		alignSelf: "center",
