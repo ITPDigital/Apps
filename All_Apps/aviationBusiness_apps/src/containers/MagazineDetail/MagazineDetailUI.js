@@ -3,7 +3,7 @@ import {
 	StyleSheet,
 	View,
 	Text,
-	ImageBackground,
+	ImageBackground, 
 	TouchableOpacity,
 	ScrollView,
 	ActivityIndicator,

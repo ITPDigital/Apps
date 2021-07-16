@@ -189,7 +189,7 @@ HomeStack.navigationOptions = ({ navigation }) => {
 
 const HistoryStack = createStackNavigator(
 	{
-		History: { screen: Metrics.isTablet ? HistoryTablet : History , key: Math.random(), navigationOptions: { header: null } },
+		History: { screen: Metrics.isTablet ? History : History , key: Math.random(), navigationOptions: { header: null } },
 		ArticleDisplayHomeScreen: { screen: ArticleView, navigationOptions: { header: null } },
 		BrandsPage: { screen: Metrics.isTablet ? BrandTablet : Brand, navigationOptions: { header: null } },
 		Author: { screen: Metrics.isTablet ? AuthorTablet : Author, navigationOptions: { header: null } },

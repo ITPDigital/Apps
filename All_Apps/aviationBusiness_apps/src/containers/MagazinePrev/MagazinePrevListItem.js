@@ -5,7 +5,7 @@ import {
 	StyleSheet,
 	Image,
 	TouchableOpacity,
-	TouchableWithoutFeedback,
+	TouchableWithoutFeedback, 
 	I18nManager,
 	Animated
 

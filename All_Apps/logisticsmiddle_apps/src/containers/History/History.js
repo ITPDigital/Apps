@@ -435,11 +435,9 @@ class History extends PureComponent<Props>  {
 							onBack={() => {
 								// navigation.navigate("HomeDrawerScreen");
 								navigation.goBack(null);
-								
-							
-							}}
+							}} 
 							title={this.state.topicname.split('&amp;').join('&')}
-						/>
+						/> 
 					)}
 					flatListProps={{
 						key:Math.random(),
@@ -509,12 +507,13 @@ class History extends PureComponent<Props>  {
 	}
 }
 
-const mobileStyles = StyleSheet.create({
+const mobileStyles = StyleSheet.create({ 
 	container: {
 		height: ScalePerctFullHeight(100),
 		width: ScalePerctFullWidth(100),
 		// backgroundColor:"red"
-	},
+	}, 
+
 	authorDetails: {
 		flexDirection: "row",
 		width: ScalePerctFullWidth(100),

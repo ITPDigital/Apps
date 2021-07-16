@@ -257,8 +257,8 @@ const tabStyles = StyleSheet.create({
 	},
 	headerContainer: {
 		flex: 1,
-		alignSelf: "stretch",
-		marginTop: Metrics.STATUS_BAR_HEIGHT,
+		alignSelf: "stretch", 
+		paddingTop: Metrics.STATUS_BAR_HEIGHT,
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",

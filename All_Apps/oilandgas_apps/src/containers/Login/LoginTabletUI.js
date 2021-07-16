@@ -64,6 +64,7 @@ export default class LoginUI extends PureComponent<Props> {
 					}}
 					onChangeText={text => this.setState({ password: text })}
 					buttonLabel="HELP"
+					// style={{color:'#000'}}
 					onPress={handleForgotPassword}
 					onSubmitEditing={() => handleLogin(email, password)}
 					disabled={showLoader}
@@ -97,7 +98,7 @@ export default class LoginUI extends PureComponent<Props> {
 				}
 				button={Images.loginButton}
 				imageStyle={{
-					width: ScalePerctFullWidth(100),
+					width: ScalePerctFullWidth(50),
 					height: 100,
 				}}
 				top={11}

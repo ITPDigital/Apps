@@ -222,6 +222,7 @@ class ListVideoScreen extends PureComponent<Props> {
 						<HomeHeaderContainer
 							navigation={this.props.navigation}
 							color={Colors.bgPrimaryLight}
+							title="Videos"
 						/>
 					)}
 					flatListProps={{

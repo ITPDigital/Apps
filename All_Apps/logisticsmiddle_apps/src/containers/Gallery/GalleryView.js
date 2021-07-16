@@ -125,7 +125,7 @@ class GalleryView extends PureComponent<Props> {
 		const { articleDisplay, navigation } = this.props;
 		const site = this.props.navigation.getParam("site");
 		return (
-			<View style={styles.header}>
+			<View style={styles.header}> 
 				{/* <GalleryLogo
 					data={articleDisplay}
 					onPressBrand={() =>
@@ -185,7 +185,7 @@ class GalleryView extends PureComponent<Props> {
 					// 		  articleDisplay.brand_logo
 					// 		: null
 					// }
-					isLogo
+					// isLogo
 
 					//brandIcon={isLogoVisible ? Images.ABlogo : null}
 					//contentColor={Colors.bodyPrimaryLight}

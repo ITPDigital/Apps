@@ -105,6 +105,14 @@ export default class ArticleListItem extends PureComponent<Props> {
               marginHorizontal: 16,
                 opacity:fadeAnim,
               marginTop: 20,
+              transform: [          
+                {
+                  translateX: fadeAnim.interpolate({     
+                    inputRange: [0, 1],  
+                    outputRange: [50,0] 
+                  })
+                }
+              ], 
             }}
           >
             <ImageLoad
@@ -130,7 +138,14 @@ export default class ArticleListItem extends PureComponent<Props> {
       if (type === 'onlyTitle') {
         return (
           <Animated.View
-            style={{flex: 1, flexDirection: 'column', marginHorizontal: 16,   opacity:fadeAnim,}}
+            style={{flex: 1, flexDirection: 'column', marginHorizontal: 16,   opacity:fadeAnim,     transform: [          
+              {
+                translateX: fadeAnim.interpolate({     
+                  inputRange: [0, 1],  
+                  outputRange: [50,0] 
+                })
+              }
+            ],}}
           >
             <Text
               style={[

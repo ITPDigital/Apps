@@ -74,9 +74,13 @@ const tabStyles = StyleSheet.create({
 		// borderRadius: Metrics.LARGE_RADIUS,
 	},
 	text: {
-		color: Colors.bgPrimaryLight,
+		color: '#fff',
 		fontSize: Metrics.SMALL_TEXT_SIZE,
 		fontFamily: "BentonSans Bold",
+	},
+	imageStyle: {
+		width: ScalePerctFullWidth(50),
+		height: 100,
 	},
 	innerContainer: {
 		position: "absolute",

@@ -30,36 +30,7 @@ type Props = {
 	refresh: boolean,
 };
 
-// const renderbanner = (passedItem: any, navigation: any) => {
-// 	return (
-// 		<TouchableOpacity
-// 			onPress={() => {
-// 				const item = navigation.getParam("item");
-// 				const data = navigation.getParam("data");
-// 				navigation.navigate("MagazineSubscriptionHomeScreen", { data, item });
-// 			}}
-// 		>
-// 			<View style={[styles.banner]}>
-// 				<View style={[styles.imageView]}>
-// 					<ImageLoad
-// 						resizeMode={"contain"}
-// 						style={styles.imageLeft}
-// 						placeholderStyle={styles.imageLeft}
-// 						isShowActivity={false}
-// 						loadingStyle={{ size: "large", color: "grey" }}
-// 						//source={{ uri: passedItem.image }}
-// 						placeholderSource={Images.protrait}
-// 					/>
-// 				</View>
-// 				<Text style={styles.subscribeText}>
-// 					<Text style={styles.textBold}>{"Subscribe "}</Text>
-// 					{/* {`your ${passedItem.title} Issue`} */}
-// 				</Text>
-// 				{/* <Text style={styles.clickHereText}>{"Click here"}</Text> */}
-// 			</View>
-// 		</TouchableOpacity>
-// 	);
-// };
+
 
 const renderbanner = () => {
 	return (
@@ -85,11 +56,11 @@ export default function MagazineListUI(props: Props) {
 		isBanner,
 	} = props;
 	return (
+
 		<AnimatedHeaderList
 			header={() => (
 				<HomeHeaderContainer navigation={navigation} 
-				// color={Colors.bgPrimaryLight}
-				title={magazinetitle}
+				title={magazinetitle}  
 				isCollapsed = {true}
 				 />
 			)}

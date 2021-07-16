@@ -9,7 +9,7 @@ import {
 	Linking,
 } from "react-native";
 import Video from "react-native-video";
-import { ScalePerctFullHeight, Images, ScalePerctFullWidth } from "../../asset";
+import {Metrics, ScalePerctFullHeight, Images, ScalePerctFullWidth } from "../../asset";
 import { Button } from "react-native-share";
 
 type Props = {

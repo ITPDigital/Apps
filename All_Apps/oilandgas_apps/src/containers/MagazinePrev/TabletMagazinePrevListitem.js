@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
 	View,
 	Text,
-	StyleSheet,
+	StyleSheet, 
 	Image,
 	TouchableOpacity,
 	TouchableWithoutFeedback,
+	Animated
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ScalePerctFullHeight, ScalePerctFullWidth, Metrics, Colors, Images } from "../../asset";
@@ -19,11 +20,28 @@ type Props = {
 
 export default function TabletMagazinePrevListItem(props: Props) {
 	const { onPress, index, data } = props;
+	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+
+	React.useEffect(() => {
+		Animated.timing(
+		  fadeAnim,
+		  {
+			toValue: 1,
+			duration: 3000, 
+		  }
+		).start();
+	  }, [fadeAnim])
+
 	// console.log("tab data for mag", data);
 	// console.log("data[0].nid", data && data[0] && data[0].nid);
 	return (
 		<View activeOpacity={1.0} style={[style.container]}>
-			<View style={style.imageContainer}>
+			<Animated.View style={[style.imageContainer,{opacity: fadeAnim,     transform: [{
+			translateY: fadeAnim.interpolate({
+				inputRange: [0, 1],
+				outputRange: [150, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+			}),
+			}],}]}>
 				<TouchableOpacity
 					onPress={() => onPress(data && data[0])}
 					style={style.imageLeftCont}
@@ -94,7 +112,7 @@ export default function TabletMagazinePrevListItem(props: Props) {
 						/>
 					</TouchableOpacity>
 				)}
-			</View>
+			</Animated.View>
 			{/* <Image source={Images.shelf} style={style.imageShelf} /> */}
 			<View style={style.titleContainer}>
 				<TouchableOpacity onPress={() => onPress(data && data[0])}>
