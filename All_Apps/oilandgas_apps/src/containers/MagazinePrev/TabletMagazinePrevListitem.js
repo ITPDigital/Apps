@@ -6,7 +6,8 @@ import {
 	Image,
 	TouchableOpacity,
 	TouchableWithoutFeedback,
-	Animated
+	Animated,
+	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ScalePerctFullHeight, ScalePerctFullWidth, Metrics, Colors, Images } from "../../asset";
@@ -23,11 +24,12 @@ export default function TabletMagazinePrevListItem(props: Props) {
 	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
 
 	React.useEffect(() => {
-		Animated.timing(
+		Animated.spring(
 		  fadeAnim,
 		  {
 			toValue: 1,
-			duration: 3000, 
+			friction: 1,
+			// easing:  Easing.bezier(0, 2, 1, -1) 
 		  }
 		).start();
 	  }, [fadeAnim])
@@ -37,9 +39,9 @@ export default function TabletMagazinePrevListItem(props: Props) {
 	return (
 		<View activeOpacity={1.0} style={[style.container]}>
 			<Animated.View style={[style.imageContainer,{opacity: fadeAnim,     transform: [{
-			translateY: fadeAnim.interpolate({
+			scale: fadeAnim.interpolate({
 				inputRange: [0, 1],
-				outputRange: [150, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+				outputRange: [0, 1] // 0 : 150, 0.5 : 75, 1 : 0
 			}),
 			}],}]}>
 				<TouchableOpacity
@@ -110,7 +112,7 @@ export default function TabletMagazinePrevListItem(props: Props) {
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
-					</TouchableOpacity>
+					</TouchableOpacity> 
 				)}
 			</Animated.View>
 			{/* <Image source={Images.shelf} style={style.imageShelf} /> */}

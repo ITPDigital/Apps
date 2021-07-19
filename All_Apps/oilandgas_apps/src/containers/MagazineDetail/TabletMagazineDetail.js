@@ -7,7 +7,8 @@ import {
 	TouchableOpacity,
 	ScrollView,
 	ActivityIndicator,
-	Animated
+	Animated,
+	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ProfileHeader, BuildFeedButton } from "../../components";
@@ -34,27 +35,28 @@ export default function TabletMagazinedetail(props: Props) {
 		  fadeAnim,
 		  {
 			toValue: 1,
-			duration: 3000,  
+			duration: 3000, 
+			easing: Easing.inOut(Easing.elastic(1)) ,
 		  }
 		).start();
 	  }, [fadeAnim])
 
 	return (
-		<View style={styles.container}>
+		<View style={styles.container}> 
 			<ProfileHeader
-				navigation={navigation}
-				onBack={() => navigation.goBack()}
+				navigation={navigation} 
+				onBack={() => navigation.goBack()} 
 				title=""
 				isBottomBorder={false}
 				bgColor={Colors.bgPink}
-				contentColor={Colors.bgPrimaryDark}
+				contentColor={Colors.bgPrimaryDark} 
 			/>
 			{/* {renderbanner()} */}
 			{data && (
 				<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
-					translateY: fadeAnim.interpolate({
-					  inputRange: [0, 1], 
-					  outputRange: [150, 0.5]  // 0 : 150, 0.5 : 75, 1 : 0
+					rotate: fadeAnim.interpolate({   
+						inputRange: [0, 1],
+						outputRange: ['0deg', '720deg']// 0 : 150, 0.5 : 75, 1 : 0
 					}),
 				  }],}]}>
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
@@ -68,7 +70,7 @@ export default function TabletMagazinedetail(props: Props) {
 								uri: data.field_image,
 							}}
 							placeholderSource={Images.protrait}
-							borderRadius={4}
+							borderRadius={4} 
 						/>
 					</TouchableOpacity>
 
@@ -81,7 +83,7 @@ export default function TabletMagazinedetail(props: Props) {
 					<ActivityIndicator size="large" color={Colors.bodyPrimaryLight} />
 				</View>
 			)}
-			{data && (
+			{data && ( 
 				<View
 					style={{
 						position: "absolute",
@@ -97,8 +99,8 @@ export default function TabletMagazinedetail(props: Props) {
 						onPress={onDownloadPress}
 						style={{
 							alignSelf: "center",
-							height: ScalePerctFullHeight(3.7),
-							width: ScalePerctFullWidth(17),
+							height: ScalePerctFullHeight(5),
+							width: ScalePerctFullWidth(50),
 						}}
 					/>
 				</View>

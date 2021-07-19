@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useRef, useEffect } from "react";
+import { Text, StyleSheet, TouchableOpacity, Animated } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ScalePerctFullHeight, ScalePerctFullWidth, Metrics, Colors, Images } from "../../asset";
 import { getTimeAgo } from "../../utilities";
@@ -14,6 +14,18 @@ type Props = {
 export default function VideoCard(props: Props) {
 	const { onPress, margin, index, data, tabContainerStyle, tabImageStyle } = props;
 	const time = getTimeAgo(data.pubDate);
+	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+
+	React.useEffect(() => {
+		Animated.timing(
+			fadeAnim,
+			{
+				toValue: 1,
+				duration: 3000,
+			}
+		).start(); 
+	}, [fadeAnim])
+
 	console.log("data video card", data);
 	return (
 		<TouchableOpacity
@@ -26,42 +38,51 @@ export default function VideoCard(props: Props) {
 			]}
 			onPress={onPress}
 		>
-			{margin ? (
-				<ImageLoad
-					resizeMode="cover"
-					style={Metrics.isTablet && index === 0 ? style.imageIndex : style.viewAll}
-					placeholderStyle={
-						Metrics.isTablet && index === 0 ? style.imageIndex : style.viewAll
-					}
-					isShowActivity={false}
-					loadingStyle={{ size: "large", color: "grey" }}
-					source={data.image ? { uri: data.image } : Images.square}
-					placeholderSource={Images.square}
-				/>
-			) : (
-				<ImageLoad
-					resizeMode="cover"
-					style={
-						Metrics.isTablet && index === 0
-							? style.imageIndex
-							: [style.image, tabImageStyle || null]
-					}
-					placeholderStyle={
-						Metrics.isTablet && index === 0
-							? style.imageIndex
-							: [style.image, tabImageStyle || null]
-					}
-					isShowActivity={false}
-					loadingStyle={{ size: "large", color: "grey" }}
-					source={data.image ? { uri: data.image } : Images.square}
-					placeholderSource={Images.square}
-				/>
-			)}
+			<Animated.View style={[style.container, {
+				opacity: fadeAnim, transform: [{
+					translateY: fadeAnim.interpolate({
+						inputRange: [0, 1],
+						outputRange: [1, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+					}),
+				}],
+			}]}>
+				{margin ? (
+					<ImageLoad
+						resizeMode="cover"
+						style={Metrics.isTablet && index === 0 ? style.imageIndex : style.viewAll}
+						placeholderStyle={
+							Metrics.isTablet && index === 0 ? style.imageIndex : style.viewAll
+						}
+						isShowActivity={false}
+						loadingStyle={{ size: "large", color: "grey" }}
+						source={data.image ? { uri: data.image } : Images.square}
+						placeholderSource={Images.square}
+					/>
+				) : (
+						<ImageLoad
+							resizeMode="cover"
+							style={
+								Metrics.isTablet && index === 0
+									? style.imageIndex
+									: [style.image, tabImageStyle || null]
+							}
+							placeholderStyle={
+								Metrics.isTablet && index === 0
+									? style.imageIndex
+									: [style.image, tabImageStyle || null]
+							}
+							isShowActivity={false}
+							loadingStyle={{ size: "large", color: "grey" }}
+							source={data.image ? { uri: data.image } : Images.square}
+							placeholderSource={Images.square}
+						/>
+					)}
 
-			<Text style={style.title} numberOfLines={2}>
-				{data.title}
-			</Text>
-			<Text style={style.description}>{time}</Text>
+				<Text style={style.title} numberOfLines={2}>
+					{data.title}
+				</Text>
+				<Text style={style.description}>{time}</Text>
+			</Animated.View>
 		</TouchableOpacity>
 	);
 }

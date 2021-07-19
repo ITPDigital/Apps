@@ -1,4 +1,4 @@
-import React from "react";
+import React,  { useRef, useEffect }  from "react";
 import {
 	StyleSheet,
 	View,
@@ -7,6 +7,7 @@ import {
 	TouchableOpacity,
 	ScrollView,
 	ActivityIndicator,
+	Animated
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ProfileHeader, BuildFeedButton } from "../../components";
@@ -27,6 +28,17 @@ const renderbanner = () => {
 
 export default function TabletMagazinedetail(props: Props) {
 	const { data, navigation, onItemPress, isBrandId, onDownloadPress } = props;
+	const fadeAnim = useRef(new Animated.Value(0)).current ;
+	React.useEffect(() => {
+		Animated.timing(
+		  fadeAnim,
+		  {
+			toValue: 1,
+			duration: 3000,  
+		  }
+		).start();
+	  }, [fadeAnim])
+
 	return (
 		<View style={styles.container}>
 			<ProfileHeader
@@ -39,10 +51,15 @@ export default function TabletMagazinedetail(props: Props) {
 			/>
 			{/* {renderbanner()} */}
 			{data && (
-				<ScrollView style={styles.dataView}>
+				<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
+					scale: fadeAnim.interpolate({ 
+					  inputRange: [0, 1], 
+					  outputRange: [0, 1]  // 0 : 150, 0.5 : 75, 1 : 0
+					}),
+				  }],}]}>
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
 						<ImageLoad
-							resizeMode={"contain"}
+							resizeMode={"stretch"}
 							style={styles.imageOne}
 							placeholderStyle={styles.imageOne}
 							isShowActivity={false}
@@ -56,7 +73,7 @@ export default function TabletMagazinedetail(props: Props) {
 					</TouchableOpacity>
 
 					{/* <View style={{ flex: 1, marginTop: 30 }} /> */}
-				</ScrollView>
+				</Animated.ScrollView>
 			)}
 
 			{!data && (
@@ -64,7 +81,7 @@ export default function TabletMagazinedetail(props: Props) {
 					<ActivityIndicator size="large" color={Colors.bodyPrimaryLight} />
 				</View>
 			)}
-			{data && (
+			{data && ( 
 				<View
 					style={{
 						position: "absolute",
