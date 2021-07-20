@@ -5,7 +5,7 @@ import {
 	StyleSheet, 
 	Image,
 	TouchableOpacity,
-	TouchableWithoutFeedback,
+	TouchableWithoutFeedback, 
 	Animated,
 	Easing
 } from "react-native";
@@ -28,7 +28,7 @@ export default function TabletMagazinePrevListItem(props: Props) {
 		  fadeAnim,
 		  {
 			toValue: 1,
-			friction: 1,
+			friction: 1
 			// easing:  Easing.bezier(0, 2, 1, -1) 
 		  }
 		).start();
@@ -39,9 +39,9 @@ export default function TabletMagazinePrevListItem(props: Props) {
 	return (
 		<View activeOpacity={1.0} style={[style.container]}>
 			<Animated.View style={[style.imageContainer,{opacity: fadeAnim,     transform: [{
-			scale: fadeAnim.interpolate({
-				inputRange: [0, 1],
-				outputRange: [0, 1] // 0 : 150, 0.5 : 75, 1 : 0
+			translateY: fadeAnim.interpolate({
+				inputRange: [0, 5],
+				outputRange: [0, -100] // 0 : 150, 0.5 : 75, 1 : 0
 			}),
 			}],}]}>
 				<TouchableOpacity

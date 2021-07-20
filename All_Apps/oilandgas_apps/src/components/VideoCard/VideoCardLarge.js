@@ -14,15 +14,17 @@ type Props = {
 export default function VideoCardLarge(props: Props) {
 	const { onPress, margin, index, data, tabContainerStyle, tabImageStyle } = props;
 	const time = getTimeAgo(data.pubDate);
-	const fadeAnim = useRef(new Animated.Value(0.3)).current  // Initial value for opacity: 0
+	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
 
 	React.useEffect(() => {
-		Animated.timing(
+		Animated.timing( 
 			fadeAnim,
 			{
-				toValue: 1, 
-				duration: 3000,
-				easing: Easing.inOut(Easing.elastic(1))
+				toValue: 1,
+				friction: 3,
+				duration:3000,
+				// tension: 40,
+				easing: Easing.linear 
 			}
 		).start();
 	}, [fadeAnim])
@@ -30,8 +32,10 @@ export default function VideoCardLarge(props: Props) {
 	return (
 		<TouchableOpacity onPress={onPress} style={style.container}>
 			<Animated.View style={[style.container, {
-				opacity: fadeAnim, transform: [{  
-						scale:fadeAnim    // 0 : 150, 0.5 : 75, 1 : 0
+				opacity: fadeAnim, transform: [{   
+						translateY:fadeAnim.interpolate({  
+								inputRange: [0, 1],
+						outputRange: [-110, 0] })  // 0 : 150, 0.5 : 75, 1 : 0
 					
 				}],
 			}]}>

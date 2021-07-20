@@ -10,7 +10,7 @@ import {
 	Animated,
 	Easing
 } from "react-native";
-import Video from "react-native-video";
+import Video from "react-native-video";  
 import { Metrics, ScalePerctFullHeight, Images, ScalePerctFullWidth } from "../../asset";
 import { Button } from "react-native-share";
 
@@ -27,9 +27,9 @@ export default function AuthBackground(props: Props) {
 			fadeAnim,
 			{   
 				toValue: 1,     
-				// friction:1  
-				duration:1000,
-				easing: Easing.bounce
+				// friction:1 , 
+				duration:3000,
+				// easing: Easing.linear
 			}
 		).start();
 	}, [fadeAnim]); 
@@ -44,12 +44,12 @@ export default function AuthBackground(props: Props) {
 	  };
 
 	return (
-		<Animated.View style={[styles.container,{ 
+		<Animated.View style={[styles.container,{  
 			opacity: fadeAnim, transform: [{
-				scale: fadeAnim.interpolate({    
+				translateY: fadeAnim.interpolate({    
 					inputRange: [0, 1],
-					outputRange: [0, 1],
-					extrapolate: 'clamp',  // 0 : 150, 0.5 : 75, 1 : 0
+					outputRange: [100, 0.5]
+					// extrapolate: 'clamp',  // 0 : 150, 0.5 : 75, 1 : 0
 				}),
 			}],
 		}]}>  
@@ -71,7 +71,7 @@ export default function AuthBackground(props: Props) {
 				onPress={() => this.handleSignup()}
 			>
 			<Image
-				source={Images.loginScreen}
+				source={Images.loginScreen} 
 				resizeMode="contain"
 				style={{
 				// width: ScalePerctFullWidth(65),

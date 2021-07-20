@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
 	StyleSheet,
 	TouchableWithoutFeedback,
@@ -7,9 +7,11 @@ import {
 	StatusBar,
 	Image,
 	Linking,
+	Animated,
+	Easing
 } from "react-native";
-import Video from "react-native-video";
-import {Metrics, ScalePerctFullHeight, Images, ScalePerctFullWidth } from "../../asset";
+import Video from "react-native-video"; 
+import { Metrics, ScalePerctFullHeight, Images, ScalePerctFullWidth } from "../../asset";
 import { Button } from "react-native-share";
 
 type Props = {
@@ -18,8 +20,22 @@ type Props = {
 
 export default function AuthBackground(props: Props) {
 	const { children } = props;
+	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
 
-	handleSignUp = () => {
+	React.useEffect(() => {        
+		Animated.timing(  
+			fadeAnim,
+			{   
+				toValue: 1,     
+				friction:1 , 
+				duration:1000,
+				easing: Easing.linear
+			}
+		).start();
+	}, [fadeAnim]); 
+
+
+	handleSignUp = () => { 
 		// const {navigation} = this.props;
 		// navigation.navigate('SignUpAuthScreen');
 	
@@ -28,7 +44,15 @@ export default function AuthBackground(props: Props) {
 	  };
 
 	return (
-		<View style={styles.container}>
+		<Animated.View style={[styles.container,{  
+			opacity: fadeAnim, transform: [{
+				scale: fadeAnim.interpolate({    
+					inputRange: [0, 1],
+					outputRange: [0, 1],
+					extrapolate: 'clamp',  // 0 : 150, 0.5 : 75, 1 : 0
+				}),
+			}],
+		}]}>  
 			<StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
 			{children}
 			{/* <Video
@@ -47,10 +71,10 @@ export default function AuthBackground(props: Props) {
 				onPress={() => this.handleSignup()}
 			>
 			<Image
-				source={Images.loginScreen}
+				source={Images.loginScreen} 
 				resizeMode="contain"
 				style={{
-					// width: ScalePerctFullWidth(65),
+				// width: ScalePerctFullWidth(65),
 					// height: Metrics.isTablet ? ScalePerctFullHeight(100):ScalePerctFullHeight(100),
 					zIndex: -2,
 					position: "absolute",
@@ -62,7 +86,7 @@ export default function AuthBackground(props: Props) {
 				}}
 			/>
 			</TouchableWithoutFeedback>
-		</View>
+		</Animated.View> 
 	);
 }
 

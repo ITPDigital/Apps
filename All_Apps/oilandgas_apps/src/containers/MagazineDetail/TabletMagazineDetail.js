@@ -36,7 +36,7 @@ export default function TabletMagazinedetail(props: Props) {
 		  {
 			toValue: 1,
 			duration: 3000, 
-			easing: Easing.inOut(Easing.elastic(1)) ,
+			easing: Easing.easeOutBack ,
 		  }
 		).start();
 	  }, [fadeAnim])
@@ -54,9 +54,9 @@ export default function TabletMagazinedetail(props: Props) {
 			{/* {renderbanner()} */}
 			{data && (
 				<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
-					rotate: fadeAnim.interpolate({   
-						inputRange: [0, 1],
-						outputRange: ['0deg', '720deg']// 0 : 150, 0.5 : 75, 1 : 0
+					scale: fadeAnim.interpolate({   
+						inputRange: [0, 0.5, 1],
+						outputRange: [1, 1.1, 1] // 0 : 150, 0.5 : 75, 1 : 0
 					}),
 				  }],}]}>
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
@@ -100,7 +100,7 @@ export default function TabletMagazinedetail(props: Props) {
 						style={{
 							alignSelf: "center",
 							height: ScalePerctFullHeight(5),
-							width: ScalePerctFullWidth(50),
+							width: ScalePerctFullWidth(30),
 						}}
 					/>
 				</View>

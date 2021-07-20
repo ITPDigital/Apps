@@ -1,4 +1,4 @@
-import React from "react";
+import React,  { useRef, useEffect }  from "react";
 import {
 	StyleSheet,
 	View,
@@ -7,6 +7,8 @@ import {
 	TouchableOpacity,
 	ScrollView,
 	ActivityIndicator,
+	Animated,
+	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ProfileHeader, BuildFeedButton } from "../../components";
@@ -27,19 +29,36 @@ const renderbanner = () => {
 
 export default function TabletMagazinedetail(props: Props) {
 	const { data, navigation, onItemPress, isBrandId, onDownloadPress } = props;
+	const fadeAnim = useRef(new Animated.Value(0)).current ;
+	React.useEffect(() => {
+		Animated.timing(
+		  fadeAnim,
+		  {
+			toValue: 1,
+			duration: 3000, 
+			easing: Easing.easeOutBack ,
+		  }
+		).start();
+	  }, [fadeAnim])
+
 	return (
-		<View style={styles.container}>
+		<View style={styles.container}> 
 			<ProfileHeader
-				navigation={navigation}
-				onBack={() => navigation.goBack()}
+				navigation={navigation} 
+				onBack={() => navigation.goBack()} 
 				title=""
 				isBottomBorder={false}
 				bgColor={Colors.bgPink}
-				// contentColor={Colors.bgPrimaryDark}
+				contentColor={Colors.bgPrimaryDark} 
 			/>
 			{/* {renderbanner()} */}
 			{data && (
-				<ScrollView style={styles.dataView}>
+				<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
+					scale: fadeAnim.interpolate({   
+						inputRange: [0, 0.5, 1],
+						outputRange: [1, 1.1, 1] // 0 : 150, 0.5 : 75, 1 : 0
+					}),
+				  }],}]}>
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
 						<ImageLoad
 							resizeMode={"stretch"}
@@ -51,12 +70,12 @@ export default function TabletMagazinedetail(props: Props) {
 								uri: data.field_image,
 							}}
 							placeholderSource={Images.protrait}
-							borderRadius={4}
+							borderRadius={4} 
 						/>
 					</TouchableOpacity>
 
 					{/* <View style={{ flex: 1, marginTop: 30 }} /> */}
-				</ScrollView>
+				</Animated.ScrollView>
 			)}
 
 			{!data && (
@@ -64,7 +83,7 @@ export default function TabletMagazinedetail(props: Props) {
 					<ActivityIndicator size="large" color={Colors.bodyPrimaryLight} />
 				</View>
 			)}
-			{data && (
+			{data && ( 
 				<View
 					style={{
 						position: "absolute",
@@ -80,8 +99,8 @@ export default function TabletMagazinedetail(props: Props) {
 						onPress={onDownloadPress}
 						style={{
 							alignSelf: "center",
-							height: ScalePerctFullHeight(3.7),
-							width: ScalePerctFullWidth(17),
+							height: ScalePerctFullHeight(5),
+							width: ScalePerctFullWidth(30),
 						}}
 					/>
 				</View>
