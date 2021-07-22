@@ -1,13 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React ,{ useRef, useEffect }  from "react";
 import {
 	StyleSheet,
 	View,
 	Text,
-	ImageBackground, 
+	ImageBackground,
 	TouchableOpacity,
 	ScrollView,
 	ActivityIndicator,
-	Animated
+	Animated,
+	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ProfileHeader } from "../../components";
@@ -20,20 +21,20 @@ type Props = {
 export default function MagazineListUI(props: Props) {
 	const { data, navigation, onItemPress, isBrandId, onDownloadPress } = props;
 	console.log("MAGAZINESDATA"+data);
-	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
-
+	const fadeAnim = useRef(new Animated.Value(0)).current ;
 	React.useEffect(() => {
 		Animated.timing(
 		  fadeAnim,
 		  {
 			toValue: 1,
-			duration: 3000,  
+			duration: 3000, 
+			// easing: Easing.easeOutBack ,
 		  }
 		).start();
-	  }, [fadeAnim])
+	  }, [fadeAnim]);
 
 	return (
-		<View style={styles.container}> 
+		<View style={styles.container}>
 			<ProfileHeader
 				navigation={navigation}
 				onBack={() => navigation.goBack()}
@@ -41,13 +42,14 @@ export default function MagazineListUI(props: Props) {
 				isBottomBorder={false}
 				bgColor={Colors.bgPrimaryLight} 
 				contentColor='#fff'
-				style={{ backgroundColor: '#fff'}}
+				style={{ backgroundColor: '#000'}}
 			/>
 			{data && (
-				<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
-					translateY: fadeAnim.interpolate({
-					  inputRange: [0, 1], 
-					  outputRange: [150, 0.5]  // 0 : 150, 0.5 : 75, 1 : 0
+						<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
+					scale: fadeAnim.interpolate({   
+						inputRange: [0, 1],
+						outputRange: [-10, 1],
+						// extrapolate: 'clamp',// 0 : 150, 0.5 : 75, 1 : 0
 					}),
 				  }],}]}>
 					{/* <View style={styles.imageView}> */}
@@ -73,8 +75,8 @@ export default function MagazineListUI(props: Props) {
 							placeholderStyle={styles.imageTwo}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							// source={Images.downloadButton}
-							// placeholderSource={Images.downloadButton}
+							source={Images.downloadButton}
+							placeholderSource={Images.downloadButton}
 							borderRadius={4}
 						>
 							<TouchableOpacity
@@ -128,7 +130,7 @@ const styles = StyleSheet.create({
 		width: ScalePerctFullWidth(100) - 40,
 		padding: 20,
 		height: imgHeight + 70,
-		backgroundColor: 'red',
+		backgroundColor: 'grey',
 		borderRadius: 10,
 		marginBottom: 57,
 	},
@@ -138,24 +140,22 @@ const styles = StyleSheet.create({
 	},
 	imageTwo: {
 		width: 200,
-		// height: 80,
-		backgroundColor:'#0f4660',    
-		borderRadius:50  
+		height: 180,
 	},
 	btnView: {
 		position: "absolute",
 		zIndex: 1,
-		top: imgHeight + 50, 
+		top: imgHeight + 30,
 		right: 0,
 		left: 0,
 		width: ScalePerctFullWidth(100),
-		height: 50,
+		height: 150,
 		alignItems: "center",
 		flexDirection: "column",
 		
 	},
 	downloadView: {
-		marginTop: 18,
+		marginTop: 44,
 		paddingVertical: 10,
 		paddingHorizontal: 10,
 		justifyContent:'center',

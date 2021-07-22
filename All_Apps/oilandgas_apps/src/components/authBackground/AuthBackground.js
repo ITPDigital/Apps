@@ -44,11 +44,11 @@ export default function AuthBackground(props: Props) {
 	  };
 
 	return (
-		<Animated.View style={[styles.container,{  
+		<Animated.View style={[styles.container,{    
 			opacity: fadeAnim, transform: [{
 				translateY: fadeAnim.interpolate({    
 					inputRange: [0, 1],
-					outputRange: [100, 0.5]
+					outputRange: [0, 25],
 					// extrapolate: 'clamp',  // 0 : 150, 0.5 : 75, 1 : 0
 				}),
 			}],

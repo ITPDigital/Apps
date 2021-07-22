@@ -70,9 +70,9 @@ const GOOGLE_CLIENT_ID =
 	'239361211085-2rugfv38hml5a8sh5ms5nc811i14116u.apps.googleusercontent.com';
 
 
-const GOOGLE_CLIENT_SECRET = 'Ek0bp-ICt8mjUEKWSYpj-OcN';
-const FB_CLIENT_ID = '264360454444930';
-const FB_CLIENT_SECRET = '2d883dc57200e3dca7ca972d6948aa1c';
+// const GOOGLE_CLIENT_SECRET = 'Ek0bp-ICt8mjUEKWSYpj-OcN';
+// const FB_CLIENT_ID = '264360454444930';
+// const FB_CLIENT_SECRET = '2d883dc57200e3dca7ca972d6948aa1c';
 
 // manager.deauthorize("google"); //TODO: to be removed later
 // manager.deauthorize("twitter");
@@ -199,77 +199,77 @@ const afterLoginComplete = async (token) => {
 
 };
 
-const faceBookLogin = (handleSocialLogin: Function) => {
-	const { LoginManager } = Platform.OS === 'android' && require('react-native-fbsdk');
-	const { AccessToken } = Platform.OS === 'android' && require('react-native-fbsdk');
-	if (LoginManager) {
-		LoginManager.setLoginBehavior("web_only")
-		LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(
-			result => {
-				if (result.isCancelled) {
-					console.log('Login cancelled');
-				} else {
-					AccessToken.getCurrentAccessToken().then(data => {
-						//console.log('FBLOGINDATAVALUESARE : ', data);
+// const faceBookLogin = (handleSocialLogin: Function) => {
+// 	const { LoginManager } = Platform.OS === 'android' && require('react-native-fbsdk');
+// 	const { AccessToken } = Platform.OS === 'android' && require('react-native-fbsdk');
+// 	if (LoginManager) {
+// 		LoginManager.setLoginBehavior("web_only")
+// 		LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(
+// 			result => {
+// 				if (result.isCancelled) {
+// 					console.log('Login cancelled');
+// 				} else {
+// 					AccessToken.getCurrentAccessToken().then(data => {
+// 						//console.log('FBLOGINDATAVALUESARE : ', data);
 
-						const { accessToken } = data;
-						let myusernameval = ''
-						let myemailid = ''
-						// initUser(accessToken).then((val) => {
-						// 	myusernameval = val
-						// 	const facebookId = data.userID;
-						// 	handleSocialLogin(accessToken, 'FACEBOOK', '', val);
-						// })
-						afterLoginComplete(accessToken).then((resultdata) => {
-							handleSocialLogin(accessToken, 'FACEBOOK', resultdata.email, resultdata.name);
-							console.log("GETFBDATA:", resultdata)
+// 						const { accessToken } = data;
+// 						let myusernameval = ''
+// 						let myemailid = ''
+// 						// initUser(accessToken).then((val) => {
+// 						// 	myusernameval = val
+// 						// 	const facebookId = data.userID;
+// 						// 	handleSocialLogin(accessToken, 'FACEBOOK', '', val);
+// 						// })
+// 						afterLoginComplete(accessToken).then((resultdata) => {
+// 							handleSocialLogin(accessToken, 'FACEBOOK', resultdata.email, resultdata.name);
+// 							console.log("GETFBDATA:", resultdata)
 
-						});
+// 						});
 
 
-					}); // console.log("result", result); // handleSocialLogin("userId", "FACEBOOK", null, null); // console.log( //  "Login success with permissions: " + result.grantedPermissions.toString(), // );
-				}
-			},
-			error => {
-				console.log('Login fail with error: ' + error);
-			},
-		);
-	} else {
-		const manager = new OAuthManager('Tropy');
-		manager.configure({
-			facebook: {
-				client_id: FB_CLIENT_ID,
-				client_secret: FB_CLIENT_SECRET,
-			},
-		});
-		manager
-			.authorize('facebook')
-			.then(resp => {
-				console.log('FACEBOOKResponse:', resp);
-				const userId =
-					resp &&
-					resp.response &&
-					resp.response.credentials &&
-					resp.response.credentials.accessToken;
-				afterLoginComplete(resp.response.credentials.accessToken).then((resultdata) => {
-					handleSocialLogin(resp.response.credentials.accessToken, 'FACEBOOK', resultdata.email, resultdata.name);
-					console.log("GETFBDATA:", resultdata)
+// 					}); // console.log("result", result); // handleSocialLogin("userId", "FACEBOOK", null, null); // console.log( //  "Login success with permissions: " + result.grantedPermissions.toString(), // );
+// 				}
+// 			},
+// 			error => {
+// 				console.log('Login fail with error: ' + error);
+// 			},
+// 		);
+// 	} else {
+// 		const manager = new OAuthManager('Tropy');
+// 		manager.configure({
+// 			facebook: {
+// 				client_id: FB_CLIENT_ID,
+// 				client_secret: FB_CLIENT_SECRET,
+// 			},
+// 		});
+// 		manager
+// 			.authorize('facebook')
+// 			.then(resp => {
+// 				console.log('FACEBOOKResponse:', resp);
+// 				const userId =
+// 					resp &&
+// 					resp.response &&
+// 					resp.response.credentials &&
+// 					resp.response.credentials.accessToken;
+// 				afterLoginComplete(resp.response.credentials.accessToken).then((resultdata) => {
+// 					handleSocialLogin(resp.response.credentials.accessToken, 'FACEBOOK', resultdata.email, resultdata.name);
+// 					console.log("GETFBDATA:", resultdata)
 
-				});
-				//handleSocialLogin(userId, 'FACEBOOK', '', '');
-				console.log('Your users ID', resp);
-			})
-			.catch(err => {
-				console.log('There was an error', err.message);
-			});
+// 				});
+// 				//handleSocialLogin(userId, 'FACEBOOK', '', '');
+// 				console.log('Your users ID', resp);
+// 			})
+// 			.catch(err => {
+// 				console.log('There was an error', err.message);
+// 			});
 
-		manager.makeRequest('facebook', '/me', { scopes: 'email,profile' })
-			.then(resp => {
-				console.log('Data ->', resp.data);
-				handleSocialLogin(resp.data.id, 'FACEBOOK', '', resp.data.name);
-			});
-	}
-};
+// 		manager.makeRequest('facebook', '/me', { scopes: 'email,profile' })
+// 			.then(resp => {
+// 				console.log('Data ->', resp.data);
+// 				handleSocialLogin(resp.data.id, 'FACEBOOK', '', resp.data.name);
+// 			});
+// 	}
+// };
 
 const renderSocialLogin = handleSocialLogin => (
 	<View>
@@ -293,7 +293,7 @@ const renderSocialLogin = handleSocialLogin => (
 
 			<TouchableOpacity
 				onPress={() => {
-					faceBookLogin(handleSocialLogin);
+					// faceBookLogin(handleSocialLogin);
 				}}
 			>
 				<Icon

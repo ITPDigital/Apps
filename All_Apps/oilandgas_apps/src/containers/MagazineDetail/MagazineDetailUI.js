@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useRef, useEffect }  from "react";
 import {
 	StyleSheet,
 	View,
@@ -7,6 +7,8 @@ import {
 	TouchableOpacity,
 	ScrollView,
 	ActivityIndicator,
+	Animated,
+	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ProfileHeader } from "../../components";
@@ -19,6 +21,18 @@ type Props = {
 export default function MagazineListUI(props: Props) {
 	const { data, navigation, onItemPress, isBrandId, onDownloadPress } = props;
 	console.log("MAGAZINESDATA"+data);
+	const fadeAnim = useRef(new Animated.Value(0)).current ;
+	React.useEffect(() => {
+		Animated.timing(
+		  fadeAnim,
+		  {
+			toValue: 1,
+			duration: 3000, 
+			// easing: Easing.easeOutBack ,
+		  }
+		).start();
+	  }, [fadeAnim]);
+
 	return (
 		<View style={styles.container}>
 			<ProfileHeader
@@ -31,7 +45,13 @@ export default function MagazineListUI(props: Props) {
 				style={{ backgroundColor: '#000'}}
 			/>
 			{data && (
-				<ScrollView style={styles.dataView}>
+						<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
+					scale: fadeAnim.interpolate({   
+						inputRange: [0, 1],
+						outputRange: [-10, 1],
+						// extrapolate: 'clamp',// 0 : 150, 0.5 : 75, 1 : 0
+					}),
+				  }],}]}>
 					{/* <View style={styles.imageView}> */}
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
 						<ImageLoad
@@ -78,7 +98,7 @@ export default function MagazineListUI(props: Props) {
 							</Text>
 						</TouchableOpacity>
 					)} */}
-				</ScrollView>
+				</Animated.ScrollView>
 			)}
 			{!data && (
 				<View style={styles.loadingView}>

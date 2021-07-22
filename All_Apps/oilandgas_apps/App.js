@@ -40,7 +40,7 @@ export default class App extends PureComponent<Props> {
 		OneSignal.addEventListener("ids", this.onIds);
 
 		// setLanguage("Ar");
-		// I18nManager.forceRTL(true);
+		// I18nManager.forceRTL(false);  
 	}
 
 	componentWillUnmount() {

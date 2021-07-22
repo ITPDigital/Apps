@@ -20,11 +20,8 @@ export default function VideoCardLarge(props: Props) {
 		Animated.timing( 
 			fadeAnim,
 			{
-				toValue: 1,
-				friction: 3,
+				toValue: 1, 
 				duration:3000,
-				// tension: 40,
-				easing: Easing.linear 
 			}
 		).start();
 	}, [fadeAnim])
@@ -35,7 +32,7 @@ export default function VideoCardLarge(props: Props) {
 				opacity: fadeAnim, transform: [{   
 						translateY:fadeAnim.interpolate({  
 								inputRange: [0, 1],
-						outputRange: [-110, 0] })  // 0 : 150, 0.5 : 75, 1 : 0
+						outputRange: [200, 0] })  // 0 : 150, 0.5 : 75, 1 : 0
 					
 				}],
 			}]}>

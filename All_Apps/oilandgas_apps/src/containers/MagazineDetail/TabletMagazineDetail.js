@@ -14,7 +14,7 @@ import ImageLoad from "react-native-image-placeholder";
 import { ProfileHeader, BuildFeedButton } from "../../components";
 import { Metrics, Colors, ScalePerctFullWidth, Images, ScalePerctFullHeight } from "../../asset";
 
-type Props = {
+type Props = {  
 	data: any,
 };
 
@@ -36,7 +36,7 @@ export default function TabletMagazinedetail(props: Props) {
 		  {
 			toValue: 1,
 			duration: 3000, 
-			easing: Easing.easeOutBack ,
+			// easing: Easing.easeOutBack ,
 		  }
 		).start();
 	  }, [fadeAnim])
@@ -55,8 +55,9 @@ export default function TabletMagazinedetail(props: Props) {
 			{data && (
 				<Animated.ScrollView style={[styles.dataView,{opacity: fadeAnim,     transform: [{
 					scale: fadeAnim.interpolate({   
-						inputRange: [0, 0.5, 1],
-						outputRange: [1, 1.1, 1] // 0 : 150, 0.5 : 75, 1 : 0
+						inputRange: [0, 1],
+						outputRange: [-10, 1],
+						// extrapolate: 'clamp',// 0 : 150, 0.5 : 75, 1 : 0
 					}),
 				  }],}]}>
 					<TouchableOpacity onPress={onDownloadPress} style={styles.imageView}>
