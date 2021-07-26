@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<color name="status_bar_color">#000000</color>
-    <color name="primary_dark">#000000</color>
+<color name="status_bar_color">#fff</color> 
+    <color name="primary_dark">#fff</color>
     <color name="color_6c6c6c">#6C6C6C</color>
     <color name="color_1b1b1b">#1B1B1B</color>
 </resources>

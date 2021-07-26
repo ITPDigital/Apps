@@ -32,7 +32,7 @@ export default function TabletMagazinePrevListItem(props: Props) {
 			// easing:  Easing.bezier(0, 2, 1, -1) 
 		  }
 		).start();
-	  }, [fadeAnim])
+	  }, [fadeAnim]) 
 
 	// console.log("tab data for mag", data);
 	// console.log("data[0].nid", data && data[0] && data[0].nid);

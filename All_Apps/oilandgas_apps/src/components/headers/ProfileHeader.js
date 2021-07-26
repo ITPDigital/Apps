@@ -124,7 +124,7 @@ const renderActionbtn = (
 			  height: 35,
 			  width: 35,
 			  borderRadius: 17,
-			  backgroundColor: 'orange',
+			  backgroundColor: '#FFA500',
 			  borderColor: '#FFFFFF',
 			  borderWidth: 1,
 			  alignItems: 'center',

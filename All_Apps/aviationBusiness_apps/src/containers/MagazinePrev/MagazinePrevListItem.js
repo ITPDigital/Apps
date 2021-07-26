@@ -7,13 +7,13 @@ import {
 	TouchableOpacity,
 	TouchableWithoutFeedback,
 	I18nManager,
-	Animated,
+	Animated,  
 	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ScalePerctFullHeight, ScalePerctFullWidth, Metrics, Colors, Images } from "../../asset";
 
-type Props = {
+type Props = { 
 	onPress: Function, 
 	margin: number,
 	index: number,
@@ -43,7 +43,7 @@ export default function MagazineListItem(props: Props) {
 				inputRange: [0, 5],
 				outputRange: [0, -50] // 0 : 150, 0.5 : 75, 1 : 0
 			}),
-			}],}]}>
+			}],}]}> 
 				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
 					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
 					<ImageLoad

@@ -1,12 +1,14 @@
-import React from "react";
+import React , { useRef, useEffect } from "react"; 
 import {
 	View,
 	Text,
 	StyleSheet,
 	Image,
 	TouchableOpacity,
-	TouchableWithoutFeedback,
+	TouchableWithoutFeedback, 
 	I18nManager,
+	Animated,
+	Easing
 } from "react-native";
 import ImageLoad from "react-native-image-placeholder";
 import { ScalePerctFullHeight, ScalePerctFullWidth, Metrics, Colors, Images } from "../../asset";
@@ -21,9 +23,28 @@ type Props = {
 export default function MagazineListItem(props: Props) {
 	const { onPress, index, data } = props;
 	console.log(data);
+
+	const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+
+	React.useEffect(() => {
+		Animated.timing(
+		  fadeAnim,
+		  {
+			toValue: 1,
+			friction: 1,
+			// easing:  Easing.bezier(0, 2, 1, -1) 
+		  }
+		).start();
+	  }, [fadeAnim]);
+
 	return (
 		<View activeOpacity={1.0} style={[style.container]}>
-			<View style={style.imageContainer}>
+				<Animated.View style={[style.imageContainer,{opacity: fadeAnim,     transform: [{
+			scale: fadeAnim.interpolate({
+				inputRange: [0, 1],
+				outputRange: [0, 1] // 0 : 150, 0.5 : 75, 1 : 0
+			}),
+			}],}]}>
 				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
 					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
 					<ImageLoad
@@ -55,7 +76,7 @@ export default function MagazineListItem(props: Props) {
 						/>
 					</TouchableOpacity>
 				)}
-			</View>
+			</Animated.View>
 			{/* <Image source={Images.shelf} style={style.imageShelf} /> */}
 			<View style={style.titleContainer}>
 				<TouchableOpacity onPress={() => onPress(data[0])}>

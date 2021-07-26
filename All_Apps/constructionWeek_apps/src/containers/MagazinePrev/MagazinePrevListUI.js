@@ -12,7 +12,7 @@ import {
 import ImageLoad from "react-native-image-placeholder";
 import { ListLoading, ProfileHeader, AnimatedHeaderList } from "../../components";
 import {
-	TemplateConfig,
+	TemplateConfig,  
 	Metrics,
 	Constants,
 	Colors,
