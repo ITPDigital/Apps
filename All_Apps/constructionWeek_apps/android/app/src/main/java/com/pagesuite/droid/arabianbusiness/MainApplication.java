@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.inprogress.reactnativeyoutube.BuildConfig;
-import com.pritesh.calldetection.CallDetectionManager;
+import com.pritesh.calldetection.CallDetectionManager; 
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.react.ReactApplication;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
@@ -36,6 +36,8 @@ import cl.json.ShareApplication;
 import com.facebook.CallbackManager;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 
+import com.reactnativepagerview.PagerViewPackage;
+
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage; // <-- Add this line
 import com.dooboolab.RNIap.RNIapPackage;
 
@@ -63,7 +65,7 @@ public class MainApplication extends Application implements ShareApplication,Rea
 
 
     @Override
-    protected List<ReactPackage> getPackages() {
+    protected List<ReactPackage> getPackages() {  
       return Arrays.<ReactPackage>asList(
               new RNDeviceInfo(),
               new MainReactPackage(),
@@ -72,10 +74,10 @@ public class MainApplication extends Application implements ShareApplication,Rea
               new ReanimatedPackage(),
               new ReactNativeOneSignalPackage(),
               new RNFirebasePackage(),
-              new RNFirebaseAnalyticsPackage(),
+              new RNFirebaseAnalyticsPackage(), 
               new RNFirebaseLinksPackage(),
               new OAuthManagerPackage(),
-              new RNGoogleSigninPackage(),
+              new RNGoogleSigninPackage(), 
               //new CallDetectionManager(MainApplication.this),
               new FBSDKPackage(),
               new RNFetchBlobPackage(),
@@ -92,7 +94,9 @@ public class MainApplication extends Application implements ShareApplication,Rea
               new RNSharePackage(),
               new RNFirebaseCrashlyticsPackage(),
               new RNIapPackage(),
-              new BlueConicPackage()
+              new BlueConicPackage(),
+              new PagerViewPackage()
+
       );
     }
 

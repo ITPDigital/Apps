@@ -213,7 +213,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
 
-
+    implementation project(':react-native-pager-view')
     implementation project(':react-native-oauth')
     implementation project(':react-native-call-detection')
     implementation project(':react-native-google-signin')

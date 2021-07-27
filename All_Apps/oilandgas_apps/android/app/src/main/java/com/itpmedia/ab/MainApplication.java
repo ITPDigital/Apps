@@ -36,6 +36,9 @@ import com.facebook.appevents.AppEventsLogger;
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage; // <-- Add this line
 import com.dooboolab.RNIap.RNIapPackage;
 
+import com.reactnativepagerview.PagerViewPackage;
+
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -86,7 +89,9 @@ public class MainApplication extends Application implements ShareApplication,Rea
             new RNSharePackage(),
             new RNFirebaseCrashlyticsPackage(),
             new RNIapPackage(),
-            new BlueConicPackage()
+            new BlueConicPackage(),
+            new PagerViewPackage()
+
       );
     }
 
