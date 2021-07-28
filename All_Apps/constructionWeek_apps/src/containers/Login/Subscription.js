@@ -248,7 +248,7 @@ class Subscription extends Component {
             source={require('./assets/images/checkbox.png')}
           />
           <Text style={styles.note}>
-            Access to Arabian Business’ award- winning journalism, podcasts
+            Access to Construction Week’ award- winning journalism, podcasts
             &amp; videos
               </Text>
         </View>
@@ -283,7 +283,7 @@ class Subscription extends Component {
             source={require('./assets/images/checkbox.png')}
           />
           <Text style={styles.note}>
-            Digital access to Arabian Business magazine.
+            Digital access to Construction Week magazine.
               </Text>
         </View>
 

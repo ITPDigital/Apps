@@ -249,7 +249,7 @@ class Subscription extends Component {
             source={require('./assets/images/checkbox.png')}
           />
           <Text style={styles.note}>
-            Access to Arabian Business’ award- winning journalism, podcasts
+            Access to Hotelier Middle East’ award- winning journalism, podcasts
             &amp; videos
               </Text>
         </View>
@@ -279,12 +279,12 @@ class Subscription extends Component {
 
         <View style={styles.noteContainer}>
           <Image
-            resizeMode="contain"
+            resizeMode="contain" 
             style={styles.checkbox}
             source={require('./assets/images/checkbox.png')}
           />
           <Text style={styles.note}>
-            Digital access to Arabian Business magazine.
+            Digital access to Hotelier Middle East magazine.
               </Text>
         </View>
 

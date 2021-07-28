@@ -227,7 +227,7 @@ var styles = StyleSheet.create({
 		flexDirection: "row",
 	},
 	buttonLabel: {
-		color: "white",
+		color: "#000",
 		fontFamily: "BentonSans Regular",
 		fontSize: 11,
 		letterSpacing: 0,

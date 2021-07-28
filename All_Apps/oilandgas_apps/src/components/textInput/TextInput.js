@@ -26,23 +26,25 @@ export default function TextInputField(props: Props) {
 
 const mobileStyles = StyleSheet.create({
 	labelInput: {
-		color: Colors.bgPrimaryLight,
+		color: "#000",
 		fontFamily: "BentonSans Regular",
 		marginBottom: ScalePerctFullHeight(1),
 		letterSpacing: 0,
 	},
-	formContainer: {
+	formContainer: { 
 		alignSelf: "stretch",
+		color:"#000"
 	},
 	formInput: {
 		borderBottomWidth: (StyleSheet.hairlineWidth = 0.5),
 		alignSelf: "stretch",
 		borderColor: Colors.linePrimaryOpacity,
 		marginBottom: ScalePerctFullHeight(2),
+		color:"#000"
 	},
 	input: {
-		borderWidth: 0,
-		color: Colors.bgPrimaryLight,
+		borderWidth: 0, 
+		color: '#000',
 		fontSize: Metrics.MEDIUM_TEXT_SIZE,
 		letterSpacing: 0,
 	},

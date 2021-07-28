@@ -226,7 +226,7 @@ var styles = StyleSheet.create({
 	textInputContainer: {
 		flexDirection: "row",
 	},
-	buttonLabel: {
+	buttonLabel: { 
 		color: "grey", 
 		fontFamily: "BentonSans Regular",
 		fontSize: 11,

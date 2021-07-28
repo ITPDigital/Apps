@@ -12,6 +12,7 @@ import {
 	ActivityIndicator,
 } from "react-native";
 
+
 import PagerView from 'react-native-pager-view';
 
 /**

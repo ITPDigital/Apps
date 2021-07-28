@@ -19,7 +19,7 @@ const BY_CLICKING_ON = "By clicking on ";
 const TERMS_AND_CONDITION = "Terms and Conditions";
 const SUBMIT = "Submit";
 const MESSAGE_TITLE = "Message sent";
-const MESSAGE_DESCRIPTION = "Activation link sent to mail ";
+const MESSAGE_DESCRIPTION = "Activation link sent to mail "; 
 const OK = "OK";
 const CLICK_HERE = "Click here";
 const TO_RESEND_MAIL = "to resend mail.";
@@ -34,7 +34,7 @@ const UNSUBSCRIBE = "Unsubscribe";
 const ON_SUC_PROF_PIC_UPLOAD = "Image uploaded successfully. It will appear once approved";
 const ON_FAIL_PROF_PIC_UPLOAD = "Error! Uploaded file must be a valid image smaller than 2 MB.";
 const CHECK_CONNECTION = "Please check your internet connection and try again later";
-const I_AGREE_WITH_ARABIANBUSINESS = "I agree with Arabian Business";
+const I_AGREE_WITH_ARABIANBUSINESS = "I agree with Caterer Middle East";
 const RETRIEVE_PASSWORD = "Retrieve Password";
 
 export const Strings = {

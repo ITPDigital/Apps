@@ -182,14 +182,21 @@ class ListVideoScreen extends PureComponent<Props> {
 					item.video
 						? Platform.OS === "android"
 							? getCurrentUserToken().then((token: string) => {
-								NativeModules.BlueConic.setBlueconic(
-									nid,
-									item.site,
-									uid,
-									token,
-									link,
-								);
+							// 	NativeModules.BlueConic.setBlueconic(
+							// 		nid,
+							// 		item.site,
+							// 		uid,
+							// 		token,
+							// 		link,
+							// 	); 
+							//   })
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								video: item.video,
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
 							  })
+							})
 							: navigation.navigate("ArticleDisplayHomeScreen", {
 								video: item.video,
 								nid: item.nid,
@@ -220,7 +227,7 @@ class ListVideoScreen extends PureComponent<Props> {
 				<AnimatedHeaderList
 					header={() => (
 						<HomeHeaderContainer
-							navigation={this.props.navigation}
+							navigation={this.props.navigation} 
 							color={Colors.bgPrimaryLight}
 							title="Videos"
 						/>

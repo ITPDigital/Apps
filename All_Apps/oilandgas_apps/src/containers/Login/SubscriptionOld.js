@@ -240,7 +240,7 @@ export default class SubscriptionOld extends Component {
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
-                Access to Arabian Business’ award- winning journalism, podcasts
+                Access to Oil & Gas’ award- winning journalism, podcasts
                 &amp; videos
               </Text>
             </View>
@@ -275,7 +275,7 @@ export default class SubscriptionOld extends Component {
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
-                Digital access to Arabian Business magazine.
+                Digital access to Oil & Gas magazine.
               </Text>
             </View>
 

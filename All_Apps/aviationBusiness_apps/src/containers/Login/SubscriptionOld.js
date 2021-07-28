@@ -73,7 +73,7 @@ export default class SubscriptionOld extends Component {
 
     RNIap.getAvailablePurchases();
 
-    RNIap.buySubscription(this.state.productid)
+    RNIap.buySubscription(this.state.productid) 
       .then((purchase) => {
         console.log('purchaseID of IAP', purchase);
         const isIOS = Platform.OS === 'ios';
@@ -190,7 +190,7 @@ export default class SubscriptionOld extends Component {
             </View>
           </ImageBackground>
           {Dimensions.get('window').height > 800 ?
-            <View style={styles.computerContainer}>
+            <View style={styles.computerContainer}> 
               <Image
                 resizeMode="contain"
                 style={styles.computer}
@@ -204,7 +204,7 @@ export default class SubscriptionOld extends Component {
                 {this.state.subscriptionamount} 
                  {/* Rs.520 */}
                  {/* $5.99 */}
-              </Text>
+              </Text> 
               {/* } */}
               <Text style={{ fontSize: 22, color: '#D20A1E', marginTop: 5, fontFamily: "Roboto-Medium", }}>
                 {' '}
@@ -241,7 +241,7 @@ export default class SubscriptionOld extends Component {
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
-                Access to Arabian Business’ award- winning journalism, podcasts
+                Access to Aviation Business’ award- winning journalism, podcasts
                 &amp; videos
               </Text>
             </View>
@@ -276,7 +276,7 @@ export default class SubscriptionOld extends Component {
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
-                Digital access to Arabian Business magazine.
+                Digital access to Aviation Business magazine.
               </Text>
             </View>
 

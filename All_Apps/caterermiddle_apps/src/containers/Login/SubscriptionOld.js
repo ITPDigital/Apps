@@ -220,11 +220,11 @@ export default class SubscriptionOld extends Component {
 
           <View style={{ backgroundColor: '#CCC', height: 1, marginTop: 10, marginBottom: 10 }} />
 
-          <View style={styles.whiteContainer}>
+          <View style={styles.whiteContainer}> 
             <View style={styles.noteContainer}>
               <Image
                 resizeMode="contain"
-                style={styles.checkbox}
+                style={styles.checkbox} 
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
@@ -240,7 +240,7 @@ export default class SubscriptionOld extends Component {
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
-                Access to Arabian Business’ award- winning journalism, podcasts
+                Access to Caterer Middle East’ award- winning journalism, podcasts
                 &amp; videos
               </Text>
             </View>
@@ -275,7 +275,7 @@ export default class SubscriptionOld extends Component {
                 source={require('./assets/images/checkbox.png')}
               />
               <Text style={styles.note}>
-                Digital access to Arabian Business magazine.
+                Digital access to Caterer Middle East magazine.
               </Text>
             </View>
 

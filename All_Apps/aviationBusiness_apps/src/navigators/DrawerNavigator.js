@@ -75,7 +75,9 @@ let newarr = [
 		"isExapnded": false
 	}
 ];
+
 let previousExpandedIndex;
+
 class DrawerNavigator extends PureComponent<Props> {
 	constructor(props) {
 		super(props);
