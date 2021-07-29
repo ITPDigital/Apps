@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>239361211085-2rugfv38hml5a8sh5ms5nc811i14116u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.239361211085-2rugfv38hml5a8sh5ms5nc811i14116u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>239361211085-cg9e027s1sedvac2klap7c42e25ej0qa.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-GNczEnd8MmglA3CWg-hcY79stEHsG0o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>239361211085</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pagesuite.arabianbusiness</string>
+	<key>PROJECT_ID</key>
+	<string>trove-d009d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trove-d009d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:239361211085:ios:2e610007db8b3cafbf4784</string>
+	<key>DATABASE_URL</key>
+	<string>https://trove-d009d.firebaseio.com</string>
+</dict>
+</plist>

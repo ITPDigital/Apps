@@ -60,7 +60,7 @@ export default class LoginUI extends PureComponent<Props> {
 				<TextInput
 					label={Strings.authentication.PASSWORD}
 					//value="sagar@77"
-					secureTextEntry
+					secureTextEntry 
 					reference={(component: any) => {
 						this.password = component;
 					}}

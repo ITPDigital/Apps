@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Facilities Management</string> 
+    <string name="facebook_app_id">264360454444930</string>
+    <string name="fb_login_protocol_scheme">264360454444930</string>
+    <string name="playerview_text">player view</string>
+    <string name="error_player">Error occurred</string>
+    <string name="related_article">Related videos</string>
+</resources>

@@ -1,0 +1,6 @@
+module Pods_BusinessInventoryOrder {
+  umbrella header "Pods-BusinessInventoryOrder-umbrella.h"
+
+  export *
+  module * { export * }
+}
