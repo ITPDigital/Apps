@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2012 Google Inc. All Rights Reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_1b1b1b">
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       />
+
+    <LinearLayout
+        android:id="@+id/main_video_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:background="@android:color/black">
+        <TextView
+            android:id="@+id/main_video_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:textSize="22sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:id="@+id/comment_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                >
+                <ImageView
+                    android:layout_width="@dimen/size_18dp"
+                    android:layout_height="@dimen/size_18dp"
+                    android:src="@drawable/ic_comments"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 comments"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:textSize="@dimen/textsize_12sp"/>
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/share_video"
+                android:scaleType="fitXY"
+                android:layout_width="22dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="20dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_share"/>
+            <ImageView
+                android:id="@+id/bookmark_image"
+                android:layout_width="22dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:padding="4dp"
+                android:src="@drawable/ic_un_bookmark"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/main_video_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_6c6c6c"
+            android:layout_marginTop="10dp"
+            android:maxLines="3"
+            android:gravity="left"
+            android:scrollbars="vertical"
+            android:scrollbarSize="2dp"
+            android:scrollbarThumbVertical="@android:color/white"
+            android:visibility="visible"
+            android:textSize="@dimen/textsize_12sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/related_article_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/related_article"
+        android:textColor="@android:color/white" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/video_list_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        />
+
+</LinearLayout>
+    <ProgressBar
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/progress_indicator"
+        android:indeterminateOnly="true"
+        android:keepScreenOn="true"
+        android:layout_gravity="center"
+        />
+</FrameLayout>

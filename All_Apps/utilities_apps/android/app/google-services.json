@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "239361211085",
+    "firebase_url": "https://trove-d009d.firebaseio.com",
+    "project_id": "trove-d009d",
+    "storage_bucket": "trove-d009d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239361211085:android:779a7c05cc2125fa",
+        "android_client_info": {
+          "package_name": "com.itpmedia.ab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239361211085-hr2kl5kjkl5394qgpb60tquhm8a8001k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itpmedia.ab",
+            "certificate_hash": "649d6e126f1ba98a33a7a3027ee964b7a19fbb18"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA52YCUBRAWbelpwqL_CQTYOtrBO85jD2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239361211085-e6sgbsjvdrb43qglc7cqta9t9lfk5urq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "239361211085-2rugfv38hml5a8sh5ms5nc811i14116u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pagesuite.arabianbusiness",
+                "app_store_id": "1466594419"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239361211085:android:521f5c57515b2792bf4784",
+        "android_client_info": {
+          "package_name": "com.itpmedia.cwo_en"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239361211085-r8llrftrm3f7aivlaqf4vnelpp77j4r7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itpmedia.cwo_en",
+            "certificate_hash": "c0bac507fd81cfe094a363b18efd2ae47f848c14"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA52YCUBRAWbelpwqL_CQTYOtrBO85jD2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239361211085-e6sgbsjvdrb43qglc7cqta9t9lfk5urq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "239361211085-2rugfv38hml5a8sh5ms5nc811i14116u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pagesuite.arabianbusiness",
+                "app_store_id": "1466594419"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239361211085:android:e7361afd4217e60ebf4784",
+        "android_client_info": {
+          "package_name": "com.pagesuite.droid.arabianbusiness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239361211085-61lpb7u0mqcllau6mj1dud8ig99nr5rd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pagesuite.droid.arabianbusiness",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA52YCUBRAWbelpwqL_CQTYOtrBO85jD2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239361211085-e6sgbsjvdrb43qglc7cqta9t9lfk5urq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "239361211085-2rugfv38hml5a8sh5ms5nc811i14116u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pagesuite.arabianbusiness",
+                "app_store_id": "1466594419"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

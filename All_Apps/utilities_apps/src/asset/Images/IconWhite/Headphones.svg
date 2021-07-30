@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>headphones</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="UI-KIT" transform="translate(-1248.000000, -5178.000000)" stroke="#FFFFFF" stroke-width="1.5">
+            <g id="headphones" transform="translate(1249.000000, 5179.000000)">
+                <path d="M0,12.5 L0,7.5 C6.17226307e-08,3.35786442 3.35786442,1.11758708e-07 7.5,1.11758708e-07 C11.6421356,1.11758709e-07 14.9999999,3.35786442 15,7.5 L15,12.5" id="Shape"></path>
+                <path d="M15,13.3333333 C15,14.2538079 14.2538079,15 13.3333333,15 L12.5,15 C11.5795254,15 10.8333333,14.2538079 10.8333333,13.3333333 L10.8333333,10.8333333 C10.8333333,9.91285875 11.5795254,9.16666667 12.5,9.16666667 L15,9.16666667 L15,13.3333333 Z M0,13.3333333 C0,14.2538079 0.746192084,15 1.66666667,15 L2.5,15 C3.42047458,15 4.16666667,14.2538079 4.16666667,13.3333333 L4.16666667,10.8333333 C4.16666667,9.91285875 3.42047458,9.16666667 2.5,9.16666667 L0,9.16666667 L0,13.3333333 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
