@@ -41,7 +41,8 @@ class HistoryTablet extends PureComponent {
 		ShowHistoryApi(props.user.id, 0, this.onSuccess, this.onFailure, this.onError);
 	}
 
-	componentDidUpdate(prevProps) {
+	componentDidMonut(prevProps) {(prevProps) { 
+		
 		Analytics.setCurrentScreen("HISTORY");
 
 		const { user, history, setArticleHistory } = this.props;

@@ -9,7 +9,7 @@ import { BigImageHeader, PodcastPlayView, shareArticle } from "../../components"
 import GalleryImage from "./GalleryImage";
 import { Metrics, ScalePerctFullHeight, ScalePerctFullWidth, Colors, Images } from "../../asset";
 import { Analytics, Screen } from "../../Analytics";
-import Icon from "../../asset/fonts/icons";
+import Icon from "../../asset/fonts/icons"; 
 
 const share = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="5px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -27,7 +27,7 @@ const share = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>`;
 
 type Props = {
-	navigation: Function,
+	navigation: Function, 
 	flag: boolean,
 };
 
@@ -74,7 +74,7 @@ class BigImage extends PureComponent<Props> {
 						width: ScalePerctFullWidth(100),
 						height: ScalePerctFullHeight(10), 
 						alignItems: "center",
-						//padding: Metrics.DEFAULT_PADDING,
+						//padding: Metrics.DEFAULT_PADDING, 
 					}}
 				>
 					<TouchableOpacity onPress={() => navigation.goBack()} style={{}}>
@@ -82,7 +82,7 @@ class BigImage extends PureComponent<Props> {
 							name={Images.back}
 							size={14}
 							color={'#fff'}
-							style={styles.icon}
+							style={styles.icon} 
 						/>
 					</TouchableOpacity>
 					<TouchableOpacity

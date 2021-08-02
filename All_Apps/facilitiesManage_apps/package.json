@@ -97,7 +97,7 @@
 		"babel-eslint": "^11.0.0-beta.2",
 		"babel-jest": "26.3.0",
 		"babel-plugin-inline-import": "^3.0.0",
-		"eslint": "^7.8.1",
+		"eslint": "^7.8.1", 
 		"eslint-config-airbnb": "^18.2.0",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-jsx-a11y": "^6.3.1",

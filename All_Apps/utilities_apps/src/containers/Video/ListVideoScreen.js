@@ -218,10 +218,12 @@ class ListVideoScreen extends PureComponent<Props> {
 		) : (
 			<View style={style.container}>
 				<AnimatedHeaderList
+				
 					header={() => (
 						<HomeHeaderContainer
 							navigation={this.props.navigation}
 							color={Colors.bgPrimaryLight}
+							title="Videos"
 						/>
 					)}
 					flatListProps={{

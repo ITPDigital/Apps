@@ -34,9 +34,9 @@ const UNSUBSCRIBE = "Unsubscribe";
 const ON_SUC_PROF_PIC_UPLOAD = "Image uploaded successfully. It will appear once approved";
 const ON_FAIL_PROF_PIC_UPLOAD = "Error! Uploaded file must be a valid image smaller than 2 MB.";
 const CHECK_CONNECTION = "Please check your internet connection and try again later";
-const I_AGREE_WITH_ARABIANBUSINESS = "I agree with Facilities Management";
+const I_AGREE_WITH_ARABIANBUSINESS = "I agree with Utilities Middle East"; 
 const RETRIEVE_PASSWORD = "Retrieve Password";
-
+ 
 export const Strings = {
 	authentication: {
 		LOGIN_WITH_YOUR_EMAIL_ID,
