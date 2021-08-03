@@ -51,8 +51,8 @@ export default function MagazineListItem(props: Props) {
 						style={style.imageLeft}
 						placeholderStyle={style.imageLeft}
 						isShowActivity={false}
-						loadingStyle={{ size: "large", color: "grey" }}
-						source={{ uri: data[0].field_image }}
+						loadingStyle={{ size: "large", color: "grey" }} 
+						source={data[0].field_image != ""?{ uri: data[0].field_image }:Images.protrait}
 						placeholderSource={Images.protrait}
 						borderRadius={4}
 					/>
@@ -68,8 +68,8 @@ export default function MagazineListItem(props: Props) {
 							style={style.imageRight}
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
-							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[1].field_image }}
+							loadingStyle={{ size: "large", color: "grey" }} 
+							source={data[1].field_image != ""?{ uri: data[1].field_image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>

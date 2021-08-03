@@ -51,11 +51,11 @@ export default function MagazineListItem(props: Props) {
 						placeholderStyle={style.imageLeft}
 						isShowActivity={false}
 						loadingStyle={{ size: "large", color: "grey" }}
-						source={{ uri: data[0].field_image }}
+						source={data[0].field_image != ""?{ uri: data[0].field_image }:Images.protrait}
 						placeholderSource={Images.protrait}
 						borderRadius={4}
 					/>
-				</TouchableOpacity>
+				</TouchableOpacity> 
 				{data[1] && (
 					<TouchableOpacity
 						onPress={() => onPress(data[1])}
@@ -68,7 +68,7 @@ export default function MagazineListItem(props: Props) {
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[1].field_image }}
+							source={data[1].field_image != ""?{ uri: data[1].field_image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>

@@ -35,8 +35,8 @@ export default function TabletMagazinePrevListItem(props: Props) {
 						placeholderStyle={style.imageLeft}
 						isShowActivity={false}
 						loadingStyle={{ size: "large", color: "grey" }}
-						source={{ uri: data && data[0] && data[0].field_image }}
-						placeholderSource={Images.protrait}
+						source={data && data[0] && data[0].field_image != ""?{ uri: data && data[0] && data[0].field_image }:Images.protrait}
+						placeholderSource={Images.protrait} 
 						borderRadius={4}
 					/>
 				</TouchableOpacity>
@@ -48,11 +48,11 @@ export default function TabletMagazinePrevListItem(props: Props) {
 						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"cover"}
-							style={style.imageRight}
+							style={style.imageRight} 
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data && data[1] && data[1].field_image }}
+							source={data && data[1] && data[1].field_image != ""?{ uri: data && data[1] && data[1].field_image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
@@ -70,11 +70,11 @@ export default function TabletMagazinePrevListItem(props: Props) {
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data && data[2] && data[2].field_image }}
+							source={data && data[2] && data[2].field_image  != ""?{ uri: data && data[2] && data[2].field_image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
-					</TouchableOpacity>
+					</TouchableOpacity> 
 				)}
 				{data && data[3] && (
 					<TouchableOpacity
@@ -88,7 +88,7 @@ export default function TabletMagazinePrevListItem(props: Props) {
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data && data[3] && data[3].field_image }}
+							source={ data && data[3] && data[3].field_image != "" ?{ uri: data && data[3] && data[3].field_image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>

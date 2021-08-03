@@ -55,12 +55,12 @@ export default function MagazineListUI(props: Props) {
 						<ImageLoad
 							resizeMode={"contain"}
 							style={styles.imageOne}
-							placeholderStyle={styles.imageOne}
+							placeholderStyle={styles.imageOne} 
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{
+							source={data.field_image != ""?{
 								uri: data.field_image,
-							}}
+							}:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>

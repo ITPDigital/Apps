@@ -65,9 +65,9 @@ export default function TabletMagazinedetail(props: Props) {
 							placeholderStyle={styles.imageOne}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{
+							source={data.field_image != ""?{ 
 								uri: data.field_image,
-							}}
+							}:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>

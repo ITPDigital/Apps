@@ -61,12 +61,12 @@ export default function TabletMagazinedetail(props: Props) {
 						<ImageLoad
 							resizeMode={"stretch"}
 							style={styles.imageOne}
-							placeholderStyle={styles.imageOne}
+							placeholderStyle={styles.imageOne} 
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{
-								uri: data.field_image,
-							}}
+							source={data.field_image != ""?{ 
+								uri: data.field_image, 
+							}:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
