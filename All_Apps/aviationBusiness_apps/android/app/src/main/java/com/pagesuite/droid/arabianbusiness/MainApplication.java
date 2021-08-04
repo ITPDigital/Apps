@@ -65,7 +65,7 @@ public class MainApplication extends Application implements ShareApplication,Rea
 
 
     @Override
-    protected List<ReactPackage> getPackages() {  
+    protected List<ReactPackage> getPackages() {   
       return Arrays.<ReactPackage>asList(
               new RNDeviceInfo(),
               new MainReactPackage(),

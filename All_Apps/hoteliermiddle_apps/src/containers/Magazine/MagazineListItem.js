@@ -36,15 +36,14 @@ export default function MagazineListItem(props: Props) {
 	return (
 		<Animated.View activeOpacity={1.0} style={[style.container]}>
 			<Animated.View style={[style.imageContainer,{opacity: this.state._rowOpacity}]}>
-				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
-					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
+			<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
 					<ImageLoad
 						resizeMode={"contain"}    
 						style={style.imageLeft}
 						placeholderStyle={style.imageLeft} 
 						isShowActivity={false}
 						loadingStyle={{ size: "large", color: "grey" }}
-						source={{ uri: data[0].image }}
+						source={data[0].image != ""?{ uri: data[0].image }:Images.protrait}
 						placeholderSource={Images.protrait}
 						borderRadius={4} 
 					/>  
@@ -61,12 +60,12 @@ export default function MagazineListItem(props: Props) {
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[1].image }}
+							source={data[1].image != ""?{ uri: data[1].image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
-					</TouchableOpacity>
-				)}
+					</TouchableOpacity>  
+				)} 
 			</Animated.View>
 			<Image source={Images.shelf} style={style.imageShelf} />
 			<View style={style.titleContainer}>

@@ -29,15 +29,14 @@ export default function TabletMagazineListItem(props: Props) {
 	return (
 		<Animated.View activeOpacity={1.0} style={[style.container]}>
 			<Animated.View style={style.imageContainer}>
-				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
-					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
+			<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
 					<ImageLoad
 						resizeMode={"contain"}
 						style={style.imageLeft}
 						placeholderStyle={style.imageLeft}
 						isShowActivity={false}
 						loadingStyle={{ size: "large", color: "grey" }}
-						source={{ uri: data[0].image }}
+						source={data[0].image != ""?{ uri: data[0].image }:Images.protrait} 
 						placeholderSource={Images.protrait}
 						borderRadius={4}
 					/>
@@ -54,10 +53,10 @@ export default function TabletMagazineListItem(props: Props) {
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[1].image }}
+							source={data[1].image != ""?{ uri: data[1].image }:Images.protrait} 
 							placeholderSource={Images.protrait}
 							borderRadius={4}
-						/>
+						/> 
 					</TouchableOpacity>
 				)}
 				{data[2] && (

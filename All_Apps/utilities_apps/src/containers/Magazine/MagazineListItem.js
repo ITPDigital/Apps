@@ -39,29 +39,29 @@ export default function MagazineListItem(props: Props) {
 				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
 					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
 					<ImageLoad
-						resizeMode={"contain"}    
-						style={style.imageLeft}
-						placeholderStyle={style.imageLeft} 
+						resizeMode={"contain"}     
+						style={style.imageLeft} 
+						placeholderStyle={style.imageLeft}  
 						isShowActivity={false}
 						loadingStyle={{ size: "large", color: "grey" }}
-						source={{ uri: data[0].image }}
+						source={data[0].image  != ""?{ uri: data[0].image }:Images.protrait} 
 						placeholderSource={Images.protrait}
 						borderRadius={4} 
 					/>  
 				</TouchableOpacity>  x 
-				{data[1] && (
-					<TouchableOpacity
-						onPress={() => onPress(data[1])} 
-						style={style.imageRightCont}
+				{data[1] && ( 
+					<TouchableOpacity    
+						onPress={() => onPress(data[1])}      
+						style={style.imageRightCont}   
 					>
 						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
-							resizeMode={"contain"}  
+							resizeMode={"contain"}   
 							style={style.imageRight}
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[1].image }}
+							source={data[1].image != ""?{ uri: data[1].image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
