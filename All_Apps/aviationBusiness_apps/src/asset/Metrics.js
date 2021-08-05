@@ -25,15 +25,17 @@ const LARGE_RADIUS = 25;
 
 const LINE_WIDTH = 1;
 
-const fullHeight = ScalePerctFullHeight(100);
-const getStatusBarHeight = () => {
-	if (Platform.OS === "android" && Platform.Version < 21) return 0;
-	if (Platform.OS === "ios" && (fullHeight === 812 || fullHeight === 896)) return 34;
-	return 24;
-};
+const fullHeight = ScalePerctFullHeight(100); 
 
+const getStatusBarHeight = () => { 
+	if (Platform.OS === "android" && Platform.Version < 21) return 0 
+	if (Platform.OS === "ios" && (fullHeight === 812 || fullHeight === 896)) return 34;
+	return 34;
+};
+     
 const getHeaderHeight = () => {
 	if (Platform.OS === "android" && Platform.Version < 21) return HEADER_HEIGHT_PERT - 24;
+	if (Platform.OS === "android" && Platform.Version > 21) return HEADER_HEIGHT_PERT + 15;
 	if (Platform.OS === "ios" && (fullHeight === 812 || fullHeight === 896)) {
 		return HEADER_HEIGHT_PERT + 10;
 	}

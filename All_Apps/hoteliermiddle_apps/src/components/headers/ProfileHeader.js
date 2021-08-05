@@ -235,10 +235,10 @@ export default function ProfileHeader(props: Props) {
   //console.log("source value: "+ JSON.stringify(source));
 
   return (
+    
     <View style={StyleSheet.flatten([styles.container, style])}>
-      <StatusBar
-        //backgroundColor={color || "transparent"}
-        backgroundColor="#fff" 
+       <StatusBar
+        backgroundColor={Platform.OS == 'ios'?"#fff": "transparent"} 
         animated={true} 
         translucent
         barStyle="dark-content"

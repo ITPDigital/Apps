@@ -236,15 +236,14 @@ export default function ProfileHeader(props: Props) {
 
   return (
     <View style={StyleSheet.flatten([styles.container, style])}> 
+ 
       <StatusBar
-        //backgroundColor={color || "transparent"}
-        backgroundColor="#b8292f" 
+        backgroundColor={Platform.OS == 'ios'?"#b8292f": "transparent"} 
         animated={true} 
         translucent
         barStyle="dark-content"
-      /> 
-      
-      
+      />  
+        
        <View style={[styles.headerContainer]}> 
        {/* <ImageBackground source={isCollapsed ? Images.whiteGradient :Images.blackGradient}
        style={{width:'100%',height: 138 ,flex:1,flexDirection:"row"}}> */}

@@ -200,11 +200,11 @@ class ArticleListContainer extends PureComponent<Props> {
         articleArr.filter(function (itemId) {
           I18nManager.isRTL ? ArticleDisplayOnBackgroundReq(
             `${itemId}`,
-            this.onBackgroundSuccess
+            // this.onBackgroundSuccess
           ) :
           ArticleDisplayOnBackgroundReq(
             `${itemId}~${site}`,
-            this.onBackgroundSuccess
+            // this.onBackgroundSuccess
           );
         });
       }
@@ -214,7 +214,7 @@ class ArticleListContainer extends PureComponent<Props> {
   onItemPress = (nid: number, site: string, item: any) => {
     const {screenProps, user} = this.props;
     const userId = user.id;
-
+        // alert("778");
     if (item.content_type === 'video') {
       item.video
         ? Platform.OS === 'android'
@@ -226,6 +226,11 @@ class ArticleListContainer extends PureComponent<Props> {
                 token,
                 item.link
               );
+              screenProps.navigation.navigate('ArticleDisplayHomeScreen', {
+                video: item.video,
+                nid: item.nid,
+                site: item.site,
+              });
             })
           : getArticleBackgroundData( item.nid).then((response) => {
             if (response) {

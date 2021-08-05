@@ -237,12 +237,11 @@ export default function ProfileHeader(props: Props) {
   return (
     <View style={StyleSheet.flatten([styles.container, style])}>
       <StatusBar
-        //backgroundColor={color || "transparent"}
-        backgroundColor="black"
-        animated={true}
+        backgroundColor={Platform.OS == 'ios'?"#000": "transparent"} 
+        animated={true} 
         translucent
         barStyle="dark-content"
-      />
+      /> 
       
       
        <View style={[styles.headerContainer]}> 
