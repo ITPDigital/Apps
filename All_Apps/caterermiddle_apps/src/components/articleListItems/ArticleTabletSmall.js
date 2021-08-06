@@ -117,19 +117,19 @@ export default class ArticletabletSmall extends PureComponent<Props> {
 								<Touchable
 									style={[styles.rightContainer]}
 									onPress={() => onPress()}
-									underlayColor={"#00000010"}
+									underlayColor={"#00000010"} 
 								>
-									<ImageLoad
+										<ImageLoad
 										resizeMode={"stretch"}
 										style={styles.imageStyle}
 										placeholderStyle={styles.imageStyle}
 										isShowActivity={false}
 										loadingStyle={{ size: "large", color: "grey" }}
-										source={{ uri: data.image_crop_landscape }}
+										source={data.image_crop_landscape != ""?{ uri: data.image_crop_landscape }:Images.landscape}
 										placeholderSource={Images.landscape}
 										borderRadius={Metrics.SMOOTH_CORNER}
-									/>
-								</Touchable>
+									/>   
+								</Touchable>     
 							</View>
 						)}
 					</TouchableOpacity>

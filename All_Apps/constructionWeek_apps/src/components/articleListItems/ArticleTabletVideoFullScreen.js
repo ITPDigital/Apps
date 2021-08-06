@@ -92,7 +92,7 @@ export default class ArticleTabletVideoFullScreen extends PureComponent<Props> {
 										onPress={onPress}
 										underlayColor={"#00000010"}
 									>
-										<ImageLoad
+									<ImageLoad
 											resizeMode={"cover"}
 											style={styles.imageStyle}
 											placeholderStyle={styles.imageStyle}
@@ -101,9 +101,9 @@ export default class ArticleTabletVideoFullScreen extends PureComponent<Props> {
 												size: "large",
 												color: "grey",
 											}}
-											source={{
+											source={data.image_crop_landscape != ""?{
 												uri: data.image_crop_landscape,
-											}}
+											}:Images.landscape}
 											placeholderSource={Images.landscape}
 										/>
 									</Touchable>

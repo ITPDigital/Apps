@@ -115,9 +115,9 @@ export default class ArticleTabletSmallFullImage extends PureComponent<Props> {
 												size: "large",
 												color: "grey",
 											}}
-											source={{
+											source={data.image_crop_landscape != ""?{
 												uri: data.image_crop_landscape,
-											}}
+											}:Images.landscape}
 											placeholderSource={Images.landscape}
 											borderRadius={Metrics.SMOOTH_CORNER}
 										/>

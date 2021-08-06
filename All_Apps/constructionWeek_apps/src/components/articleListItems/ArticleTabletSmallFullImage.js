@@ -105,7 +105,7 @@ export default class ArticleTabletSmallFullImage extends PureComponent<Props> {
 										style={[styles.rightContainer]}
 										onPress={onPress}
 										underlayColor={"#00000010"}
-									>
+									> 
 										<ImageLoad
 											resizeMode={"cover"}
 											style={styles.imageStyle}
@@ -115,9 +115,9 @@ export default class ArticleTabletSmallFullImage extends PureComponent<Props> {
 												size: "large",
 												color: "grey",
 											}}
-											source={{
+											source={data.image_crop_landscape != ""?{
 												uri: data.image_crop_landscape,
-											}}
+											}:Images.landscape}
 											placeholderSource={Images.landscape}
 											borderRadius={Metrics.SMOOTH_CORNER}
 										/>

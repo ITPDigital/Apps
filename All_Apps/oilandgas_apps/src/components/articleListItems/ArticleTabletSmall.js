@@ -125,10 +125,10 @@ export default class ArticletabletSmall extends PureComponent<Props> {
 										placeholderStyle={styles.imageStyle}
 										isShowActivity={false}
 										loadingStyle={{ size: "large", color: "grey" }}
-										source={{ uri: data.image_crop_landscape }}
+										source={data.image_crop_landscape != ""?{ uri: data.image_crop_landscape }:Images.landscape}
 										placeholderSource={Images.landscape}
 										borderRadius={Metrics.SMOOTH_CORNER}
-									/>
+									/> 
 								</Touchable>
 							</View>
 						)}
