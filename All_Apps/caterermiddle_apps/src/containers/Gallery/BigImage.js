@@ -74,15 +74,16 @@ class BigImage extends PureComponent<Props> {
 						width: ScalePerctFullWidth(100),
 						height: ScalePerctFullHeight(10), 
 						alignItems: "center",
-						//padding: Metrics.DEFAULT_PADDING,
+						marginTop:20
+						//padding: Metrics.DEFAULT_PADDING, 
 					}}
 				>
-					<TouchableOpacity onPress={() => navigation.goBack()} style={{}}>
+					<TouchableOpacity onPress={() => navigation.pop()} style={{}}>
 						<Icon
 							name={Images.back}
 							size={14}
 							color={'#fff'}
-							style={styles.icon}
+							style={styles.icon} 
 						/>
 					</TouchableOpacity>
 					<TouchableOpacity

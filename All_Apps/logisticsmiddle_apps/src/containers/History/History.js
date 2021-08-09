@@ -352,6 +352,13 @@ class History extends PureComponent<Props>  {
 								token,
 								item.link,
 							);
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								video: item.video,
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  });
+
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							video: item.video,

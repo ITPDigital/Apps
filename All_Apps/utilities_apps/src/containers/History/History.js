@@ -340,7 +340,7 @@ class History extends PureComponent<Props>  {
 		const { navigation, user } = this.props;
 
 		const userId = user.id;
-		if (item.content_type === "video") {
+		if (item.content_type === "video") { 
 			item.video
 				? Platform.OS === "android"
 					? getCurrentUserToken().then((token: string) => {
@@ -350,7 +350,13 @@ class History extends PureComponent<Props>  {
 								userId.toString(),
 								token,
 								item.link,
-							);
+							);  
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								video: item.video,
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  }) 
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							video: item.video,
@@ -390,7 +396,7 @@ class History extends PureComponent<Props>  {
 		return Metrics.isTablet ? this.renderTabPlayScreen() : navigation.navigate("PlayScreen");
 	};
 
-	onPressBrand = (site, brandLogo) => {
+	onPressBrand = (site, brandLogo) => { 
 		const { navigation } = this.props;
 		navigation.navigate("BrandsPage", {
 			brand: site,
@@ -398,7 +404,7 @@ class History extends PureComponent<Props>  {
 		});
 	};
 
-	onEndReached = () => {
+	onEndReached = () => {  
 		const { user } = this.props;
 		const { pageNumber, flag } = this.state;
 

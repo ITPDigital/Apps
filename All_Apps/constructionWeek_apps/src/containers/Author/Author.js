@@ -126,6 +126,11 @@ class Author extends PureComponent<Props> {
 								token,
 								item.link,
 							);
+							screenProps.navigation.navigate("ArticleDisplayHomeScreen", {
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  }); 
 					  })
 					: screenProps.navigation.navigate("ArticleDisplayHomeScreen", {
 							nid: item.nid,
