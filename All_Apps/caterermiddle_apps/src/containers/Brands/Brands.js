@@ -170,10 +170,15 @@ class Brand extends PureComponent {
 							NativeModules.BlueConic.setBlueconic(
 								item.nid.toString(),
 								item.site,
-								userId.toString(),
+								userId.toString(), 
 								token,
 								item.link,
 							);
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  })
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							nid: item.nid,

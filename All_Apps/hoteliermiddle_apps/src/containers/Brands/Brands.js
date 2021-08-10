@@ -174,6 +174,11 @@ class Brand extends PureComponent {
 								token,
 								item.link,
 							);
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  });   
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							nid: item.nid,
