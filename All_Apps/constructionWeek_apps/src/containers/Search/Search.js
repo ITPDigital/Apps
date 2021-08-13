@@ -205,6 +205,12 @@ class Search extends PureComponent {
 								token,
 								item.link,
 							);
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								video: item.video,
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  });
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							video: item.video,
@@ -390,7 +396,7 @@ const style = StyleSheet.create({
 		height: ScalePerctFullHeight(4),
 		width: ScalePerctFullWidth(95),
 		alignSelf: "center",
-		marginTop: 30,
+		marginTop: 40,
 		marginHorizontal: ScalePerctFullWidth(2.5),
 	},
 	searchIcon: {

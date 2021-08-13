@@ -206,6 +206,12 @@ class Search extends PureComponent {
 								token,
 								item.link,
 							);
+							navigation.navigate("ArticleDisplayHomeScreen", {
+								video: item.video,
+								nid: item.nid,
+								site: item.site,
+								refreshKey: Math.random(),
+						  });
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							video: item.video,
@@ -384,23 +390,26 @@ const style = StyleSheet.create({
 		alignItems: "center",
 		backgroundColor: "#00000080",
 	},
+
 	searchHeader: {
 		flexDirection: "row",
 		backgroundColor: Colors.searchHeader,
 		borderRadius: 20,
-		height: ScalePerctFullHeight(4),
-		width: ScalePerctFullWidth(95),
+		height: ScalePerctFullHeight(4), 
+		width: ScalePerctFullWidth(95),    
 		alignSelf: "center",
-		marginTop: 30,
+		marginTop: 40,
 		marginHorizontal: ScalePerctFullWidth(2.5),
 	},
+
 	searchIcon: {
 		color: Colors.searchIcon,
 		alignSelf: "center",
 		//marginVertical: ScalePerctFullHeight(0.75),
 		marginLeft: 10,
 	},
-	searchKey: {
+
+	searchKey: { 
 		width: ScalePerctFullWidth(70),
 		alignSelf: "center",
 		//marginVertical: ScalePerctFullHeight(0.75),
@@ -409,12 +418,13 @@ const style = StyleSheet.create({
 		fontSize: 14,
 		marginLeft: 15,
 	},
-	emptyResult: {
+
+	emptyResult: { 
 		color: Colors.bgPrimaryDark,
 		fontFamily: "BentonSans Bold",
 		fontSize: 18,
 		marginLeft: 15,
-	},
+	}, 
 	textContainer: {
 		marginTop: 38,
 		marginLeft: 21,

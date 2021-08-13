@@ -199,13 +199,12 @@ class Search extends PureComponent {
 			item.video
 				? Platform.OS === "android"
 					? getCurrentUserToken().then((token: string) => {
-							NativeModules.BlueConic.setBlueconic(
-								item.nid.toString(),
-								item.site,
-								userId.toString(),
-								token,
-								item.link,
-							);
+						navigation.navigate("ArticleDisplayHomeScreen", {
+							video: item.video,
+							nid: item.nid,
+							site: item.site,
+							refreshKey: Math.random(),
+					  });
 					  })
 					: navigation.navigate("ArticleDisplayHomeScreen", {
 							video: item.video,
@@ -391,7 +390,7 @@ const style = StyleSheet.create({
 		height: ScalePerctFullHeight(4),
 		width: ScalePerctFullWidth(95),
 		alignSelf: "center",
-		marginTop: 30,
+		marginTop: 40, 
 		marginHorizontal: ScalePerctFullWidth(2.5),
 	},
 	searchIcon: {
