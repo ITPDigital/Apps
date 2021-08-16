@@ -56,9 +56,9 @@ const renderImage = (
         ]}
         isShowActivity={false}
         loadingStyle={{size: 'large', color: 'grey'}}
-        source={{uri: image}}
+        source={image != ""?{uri: image}:Images.landscape} 
         placeholderSource={Images.landscape}
-        borderRadius={isOpinionArticle ? 44 : 0}
+        borderRadius={isOpinionArticle ? 44 : 0} 
       />
     </View>
   );
