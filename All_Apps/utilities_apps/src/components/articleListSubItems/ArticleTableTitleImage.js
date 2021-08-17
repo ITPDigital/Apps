@@ -10,6 +10,7 @@ type Props = {
 	isTitleImage?: boolean,
 };
 
+
 const renderImage = (image: string, imageStyle: any, imagePlaceHolderStyle: any) => {
 	// return <Image source={{ uri: image }} style={StyleSheet.flatten([styles.imageOne])} />;
 	return (
