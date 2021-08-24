@@ -9,7 +9,7 @@ type Props = {
 	isCenter?: boolean,
 	isTitleImage?: boolean,
 };
-
+ 
 const renderImage = (image: string, imageStyle: any, imagePlaceHolderStyle: any) => {
 	// return <Image source={{ uri: image }} style={StyleSheet.flatten([styles.imageOne])} />;
 	return (
@@ -19,12 +19,12 @@ const renderImage = (image: string, imageStyle: any, imagePlaceHolderStyle: any)
 			placeholderStyle={[styles.imageOnePlaceHolder, imagePlaceHolderStyle || null]}
 			isShowActivity={false}
 			loadingStyle={{ size: "large", color: "grey" }}
-			source={{ uri: image }}
+			source={image != ""?{ uri: image }:Images.landscape} 
 			placeholderSource={Images.landscape}
-			borderRadius={Metrics.SMALL_RADIUS}
+			borderRadius={Metrics.SMALL_RADIUS}   
 		/>
 	);
-};
+};  
 
 export default function ArticleTabletListTitleImage(props: Props) {
 	const {

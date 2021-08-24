@@ -66,8 +66,8 @@ const renderImage = (
           imagePlaceHolderStyle || null,
         ]}
         isShowActivity={false}
-        loadingStyle={{size: 'large', color: 'grey'}}
-        source={{uri: image}}
+        loadingStyle={{size: 'large', color: 'grey'}} 
+        source={image != ""?{uri: image}:Images.landscape} 
         placeholderSource={Images.landscape}
         //borderRadius={Metrics.SMALL_RADIUS}
       />

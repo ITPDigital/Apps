@@ -56,7 +56,7 @@ const renderImage = (
             //  right: 0,
             //top: 0,
             // bottom: 8,
-            // justifyContent: 'center',
+            // justifyContent: 'center', 
             // flex: 1,
             // marginBottom: 8,
           },
@@ -66,8 +66,8 @@ const renderImage = (
           imagePlaceHolderStyle || null,
         ]}
         isShowActivity={false}
-        loadingStyle={{size: 'large', color: 'grey'}}
-        source={{uri: image}}
+        loadingStyle={{size: 'large', color: 'grey'}} 
+        source={image != ""?{uri: image}:Images.landscape} 
         placeholderSource={Images.landscape}
         //borderRadius={Metrics.SMALL_RADIUS}
       />

@@ -15,11 +15,11 @@ const renderImage = (image: string, imageStyle: any, imagePlaceHolderStyle: any)
 	return (
 		<ImageLoad
 			resizeMode={"cover"}
-			style={[styles.imageOne, imageStyle || null]}
+			style={[styles.imageOne, imageStyle || null]} 
 			placeholderStyle={[styles.imageOnePlaceHolder, imagePlaceHolderStyle || null]}
 			isShowActivity={false}
-			loadingStyle={{ size: "large", color: "grey" }}
-			source={{ uri: image }}
+			loadingStyle={{ size: "large", color: "grey" }} 
+			source={image != ""?{ uri: image }:Images.landscape} 
 			placeholderSource={Images.landscape}
 			borderRadius={Metrics.SMALL_RADIUS}
 		/>
