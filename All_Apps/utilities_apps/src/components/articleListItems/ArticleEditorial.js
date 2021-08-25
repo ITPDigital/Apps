@@ -43,9 +43,9 @@ export default class ArticleEditorial extends PureComponent<Props> {
 							placeholderStyle={styles.image}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: url }}
+							source={url != ""?{ uri: url }:Images.landscape}
 							placeholderSource={Images.landscape}
-							borderRadius={10}
+							borderRadius={10}  
 						/>
 					</View>
 
@@ -85,7 +85,7 @@ export default class ArticleEditorial extends PureComponent<Props> {
 		);
 	};
 
-	onItemChanged = (index: number) => {
+	onItemChanged = (index: number) => { 
 		this.setState({ index });
 	};
 

@@ -33,8 +33,8 @@ export default class ArticleListItem extends PureComponent<Props> {
           style={styles.image}
           placeholderStyle={styles.image}
           isShowActivity={false}
-          loadingStyle={{size: 'large', color: 'grey'}}
-          source={{uri: url}}
+          loadingStyle={{size: 'large', color: 'grey'}} 
+          source={url != ""?{uri: url}:Images.landscape}
           placeholderSource={Images.landscape}
         />
         <Text style={[styles.titleText]}>
@@ -63,8 +63,8 @@ export default class ArticleListItem extends PureComponent<Props> {
           }}
           placeholderStyle={styles.image}
           isShowActivity={false}
-          loadingStyle={{size: 'large', color: 'grey'}}
-          source={{uri: url}}
+          loadingStyle={{size: 'large', color: 'grey'}} 
+          source={url != ""?{uri: url}:Images.landscape}
           placeholderSource={Images.landscape}
         />
         <View

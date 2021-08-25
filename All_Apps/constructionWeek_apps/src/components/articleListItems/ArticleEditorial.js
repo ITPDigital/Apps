@@ -38,13 +38,13 @@ export default class ArticleEditorial extends PureComponent<Props> {
 				<TouchableOpacity onPress={() => onPress(item.nid, item.site, item)}>
 					<View style={styles.imageEditorialContainer}>
 						<ImageLoad
-							resizeMode={"stretch"}
+							resizeMode={"stretch"} 
 							style={styles.image}
 							placeholderStyle={styles.image}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: url }}
-							placeholderSource={Images.landscape}
+							source={url != ""?{ uri: url }:Images.landscape}
+							placeholderSource={Images.landscape} 
 							borderRadius={10}
 						/>
 					</View>

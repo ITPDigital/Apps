@@ -43,7 +43,7 @@ export default class ArticleEditorial extends PureComponent<Props> {
 							placeholderStyle={styles.image}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: url }}
+							source={url != ""?{ uri: url }:Images.landscape}  
 							placeholderSource={Images.landscape}
 							borderRadius={10}
 						/>

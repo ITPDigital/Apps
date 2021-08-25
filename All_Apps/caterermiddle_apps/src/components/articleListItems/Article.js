@@ -113,7 +113,7 @@ export default class ArticleListItem extends PureComponent<Props> {
               style={{
                 aspectRatio: 16 / 9,
                 flex: 1,
-              }}
+              }}     
               placeholderStyle={{aspectRatio: 16 / 9, flex: 1}}
               loadingStyle={{size: 'large', color: 'grey'}}
               source={{

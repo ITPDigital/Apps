@@ -34,7 +34,7 @@ export default class ArticleListItem extends PureComponent<Props> {
           placeholderStyle={styles.image}
           isShowActivity={false}
           loadingStyle={{size: 'large', color: 'grey'}}
-          source={{uri: url}}
+          source={url != ""?{uri: url}:Images.landscape} 
           placeholderSource={Images.landscape}
         />
         <Text style={[styles.titleText]}>
@@ -44,7 +44,7 @@ export default class ArticleListItem extends PureComponent<Props> {
     );
   };
 
-  renderImageHome = (item: any, userId: any) => {
+  renderImageHome = (item: any, userId: any) => { 
     console.log('itemvideolatest', item);
     const url =
       !item.image_crop_square || item.image_crop_square.includes('public://')
@@ -63,8 +63,8 @@ export default class ArticleListItem extends PureComponent<Props> {
           }}
           placeholderStyle={styles.image}
           isShowActivity={false}
-          loadingStyle={{size: 'large', color: 'grey'}}
-          source={{uri: url}}
+          loadingStyle={{size: 'large', color: 'grey'}}  
+          source={url != ""?{uri: url}:Images.landscape}
           placeholderSource={Images.landscape}
         />
         <View

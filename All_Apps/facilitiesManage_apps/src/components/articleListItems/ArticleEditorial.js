@@ -40,10 +40,10 @@ export default class ArticleEditorial extends PureComponent<Props> {
 						<ImageLoad
 							resizeMode={"stretch"}
 							style={styles.image}
-							placeholderStyle={styles.image}
+							placeholderStyle={styles.image} 
 							isShowActivity={false}
-							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: url }}
+							loadingStyle={{ size: "large", color: "grey" }} 
+							source={url != ""?{ uri: url }:Images.landscape}
 							placeholderSource={Images.landscape}
 							borderRadius={10}
 						/>

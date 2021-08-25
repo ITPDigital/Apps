@@ -32,9 +32,9 @@ export default class ArticleListItem extends PureComponent<Props> {
           resizeMode={'stretch'}
           style={styles.image}
           placeholderStyle={styles.image}
-          isShowActivity={false}
+          isShowActivity={false} 
           loadingStyle={{size: 'large', color: 'grey'}}
-          source={{uri: url}}
+          source={url != ""?{uri: url}:Images.landscape} 
           placeholderSource={Images.landscape}
         />
         <Text style={[styles.titleText]}>
@@ -59,12 +59,12 @@ export default class ArticleListItem extends PureComponent<Props> {
           resizeMode={'cover'}
           style={{
             aspectRatio: 1,
-            flex: 1,
-          }}
-          placeholderStyle={styles.image}
-          isShowActivity={false}
+            flex: 1, 
+          }}  
+          placeholderStyle={styles.image} 
+          isShowActivity={false} 
           loadingStyle={{size: 'large', color: 'grey'}}
-          source={{uri: url}}
+          source={url != ""?{uri: url}:Images.landscape}  
           placeholderSource={Images.landscape}
         />
         <View

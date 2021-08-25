@@ -116,7 +116,7 @@ export default class ArticleListItem extends PureComponent<Props> {
               }}
               placeholderStyle={{aspectRatio: 16 / 9, flex: 1}}
               loadingStyle={{size: 'large', color: 'grey'}}
-              source={{
+              source={{ 
                 uri:
                   data.image_crop_square != ''
                     ? data.image_crop_landscape //NTODO use landscape
