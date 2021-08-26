@@ -12,7 +12,7 @@ import ImageLoad from "react-native-image-placeholder";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { ListLoading, Button, TextInput } from '../../components';
 import {
-	TemplateConfig,
+	TemplateConfig, 
 	Metrics,
 	Constants,
 	Colors,

@@ -52,7 +52,6 @@ export default function MagazineListItem(props: Props) {
 						onPress={() => onPress(data[1])} 
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"contain"}  
 							style={style.imageRight}

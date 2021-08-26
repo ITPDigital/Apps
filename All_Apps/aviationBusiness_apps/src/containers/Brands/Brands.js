@@ -30,14 +30,14 @@ const abLogo = Images.abLogo;
 class Brand extends PureComponent {
 	constructor(props) {
 		super(props);
-		this.state = {
+		this.state = {  
 			topStories: [],
-			editorsChoise: [],
+			editorsChoise: [], 
 			podcast: [],
 			storiesList: [],
 			loading: true,
 			refreshKey: 1,
-			manageHistoryLoad: false,
+			manageHistoryLoad: false, 
 			pageNumber: 0,
 			imageUrl: "https://facebook.github.io/react-native/docs/assets/favicon.png",
 		};

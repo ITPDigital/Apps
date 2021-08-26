@@ -14,7 +14,7 @@ import { Metrics } from "../../asset";
 class TabletVideoHome extends PureComponent<Props> {
 	constructor(props) {
 		super(props);
-		this.state = {
+		this.state = { 
 			video: {},
 			pageNumber: 0,
 			showLoader: true,

@@ -46,7 +46,6 @@ export default function MagazineListItem(props: Props) {
 			}),
 			}],}]}>
 				<TouchableOpacity onPress={() => onPress(data[0])} style={style.imageLeftCont}>
-					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
 					<ImageLoad
 						resizeMode={"contain"}
 						style={style.imageLeft}
@@ -63,7 +62,6 @@ export default function MagazineListItem(props: Props) {
 						onPress={() => onPress(data[1])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"contain"}
 							style={style.imageRight}

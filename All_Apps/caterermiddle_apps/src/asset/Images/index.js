@@ -1,5 +1,5 @@
 export const Images = {
-	play: "playCircle",
+	play: "playCircle", 
 	heart: "smallHeart",
 	share: "share",
 	search: "search",
@@ -52,5 +52,6 @@ export const Images = {
 	unbookmark: require("./bookmark.png"),
 	blackGradient:require("./gradient_black.png"),
 	whiteGradient:require("./gradient_white.png"),
-	abLogoBlack:require("./AB_Black.png")
+	abLogoBlack:require("./AB_Black.png"),
+	fb_fav:"https://facebook.github.io/react-native/docs/assets/favicon.png"
 };

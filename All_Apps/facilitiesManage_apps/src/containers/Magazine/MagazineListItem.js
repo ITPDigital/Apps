@@ -50,10 +50,9 @@ export default function MagazineListItem(props: Props) {
 				</TouchableOpacity>  x 
 				{data[1] && (
 					<TouchableOpacity
-						onPress={() => onPress(data[1])} 
+						onPress={() => onPress(data[1])}  
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"contain"}  
 							style={style.imageRight}

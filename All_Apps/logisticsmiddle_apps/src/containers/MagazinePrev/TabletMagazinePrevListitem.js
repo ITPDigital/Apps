@@ -28,9 +28,8 @@ export default function TabletMagazinePrevListItem(props: Props) {
 					onPress={() => onPress(data && data[0])}
 					style={style.imageLeftCont}
 				>
-					{/* <Image source={{ uri: data[0].image }} style={style.imageLeft} /> */}
 					<ImageLoad
-						resizeMode={"cover"}
+						resizeMode={"cover"} 
 						style={style.imageLeft}
 						placeholderStyle={style.imageLeft}
 						isShowActivity={false}
@@ -45,7 +44,6 @@ export default function TabletMagazinePrevListItem(props: Props) {
 						onPress={() => onPress(data && data[1])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"cover"}
 							style={style.imageRight} 
@@ -63,7 +61,6 @@ export default function TabletMagazinePrevListItem(props: Props) {
 						onPress={() => onPress(data && data[2])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"cover"}
 							style={style.imageRight}
@@ -81,7 +78,6 @@ export default function TabletMagazinePrevListItem(props: Props) {
 						onPress={() => onPress(data && data[1])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"cover"}
 							style={style.imageRight}
