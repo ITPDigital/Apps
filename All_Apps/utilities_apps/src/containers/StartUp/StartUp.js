@@ -3,11 +3,11 @@ import {View, StyleSheet, Image, Dimensions, AsyncStorage, Linking, Animated} fr
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Actions} from '../../redux';
-import {Colors, ScalePerctFullWidth, ScalePerctFullHeight} from '../../asset';
+import {Colors, ScalePerctFullWidth, ScalePerctFullHeight, Images} from '../../asset';
 import {
   getCurrentUserIdStorage,
   getCurrentUserToken,
-  getSubscribeUserIdStorage,
+  getSubscribeUserIdStorage, 
   setMenuTopics,
   getSubscriptionStatus,
 } from '../../storage';
@@ -130,7 +130,7 @@ class StartUpScreen extends PureComponent<Props> {
          // navigation.navigate('SubscriptionPaywall');
           //navigation.navigate('HomeNavigation');
   
-          //Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+          //Linking.openURL(Images.subscription_link);
           navigation.navigate("LoginAuthScreen");
   
         

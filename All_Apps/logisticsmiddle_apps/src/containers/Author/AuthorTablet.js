@@ -42,7 +42,7 @@ class Author extends PureComponent<Props> {
 					)}`,
 				) > -1,
 			refreshKey: 1,
-			imageUrl: "https://facebook.github.io/react-native/docs/assets/favicon.png",
+			imageUrl: Images.fb_fav,
 		};
 	}
 

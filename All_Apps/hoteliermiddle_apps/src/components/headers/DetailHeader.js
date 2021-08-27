@@ -236,7 +236,7 @@ DetailHeader.defaultProps = {
 	onBack: undefined,
 	onAction: undefined,
 	onGrid: undefined,
-	imageUrl: "https://facebook.github.io/react-native/docs/assets/favicon.png",
+	imageUrl: Images.fb_fav, 
 	title: "",
 	isLogo: false,
 	logoUrl: undefined,

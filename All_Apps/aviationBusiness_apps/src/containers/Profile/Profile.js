@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import ImagePicker from "react-native-image-picker";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "react-native-vector-icons/FontAwesome"; 
 import ProfilePageHeader from "./ProfilePageHeader";
 import { ProfilePicUpload, ChangePasswordAPI, updatenameAPI } from "../../service";
 import InputTextField from "./InputTextField";
@@ -13,7 +13,7 @@ import NormalTextField from "./normalTextField";
 import { Line, AlertComp } from "../../components"; 
 import { Analytics, Screen, Events } from "../../Analytics";
 
-import { Actions } from "../../redux";
+import { Actions } from "../../redux"; 
 import {
 	ScalePerctFullWidth,
 	ScalePerctFullHeight,

@@ -40,7 +40,7 @@ export default function AuthBackground(props: Props) {
 		// const {navigation} = this.props;
 		// navigation.navigate('SignUpAuthScreen');
 	
-		Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+		Linking.openURL(Images.subscription_link);
 	
 	  };
 

@@ -13,8 +13,8 @@ import {
 	setCurrentUserEmailStorage,
 	setMenuTopics,
 } from "../../storage";
-import { AlertComp } from "../../components";
-import { Strings, Constants, Colors } from "../../asset";
+import { AlertComp } from "../../components"; 
+import { Strings, Constants, Colors, Images } from "../../asset";
 import { Analytics, Screen, Events } from "../../Analytics";
 import { setUserActionInAsync } from '../../storage/AsyncStore';
 
@@ -127,7 +127,7 @@ class FirstAuthScreen extends PureComponent<Props> {
 	handleSignUp = () => {
 		// const { navigation } = this.props;
 		// navigation.navigate("SignUpAuthScreen");
-		Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+		Linking.openURL(Images.subscription_link);
 	};
 
 	onSuccess = (data: Object) => {

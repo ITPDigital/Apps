@@ -4,7 +4,7 @@ import { NativeModules } from "react-native";
 import { Actions, Store } from "./../../redux";
 import { NavigationService } from "../Common";
 import { getCurrentUserToken } from "../../storage";
-import { siteKey } from "../Constant";
+import { mainSiteLink, siteKey, siteLink } from "../Constant";
 
 export class DeeplinkService {
 	static deeplinkInstance = null;
@@ -16,7 +16,7 @@ export class DeeplinkService {
 			DeeplinkService.deeplinkInstance = new DeeplinkService();
 		}
 
-		return this.deeplinkInstance;
+		return this.deeplinkInstance; 
 	}
 
 	setDeeplinkOnMount() {
@@ -77,8 +77,8 @@ export class DeeplinkService {
 		if (
 			event
 			&& event.url
-			&& (event.url.startsWith("https://www.arabianbusiness.com/")
-				|| event.url.startsWith("https://arabianbusiness.page.link/"))
+			&& (event.url.startsWith(mainSiteLink)
+				|| event.url.startsWith(siteLink))
 		) {
 			console.log("deeplink onDeeplinkURLReceived111 - ");
 

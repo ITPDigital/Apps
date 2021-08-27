@@ -40,7 +40,6 @@ export default function TabletMagazineListItem(props: Props) {
 						onPress={() => onPress(data[1])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"contain"}
 							style={style.imageRight}
@@ -58,34 +57,32 @@ export default function TabletMagazineListItem(props: Props) {
 						onPress={() => onPress(data[2])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"contain"}
 							style={style.imageRight}
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[2].image }}
+							source={data[2].image != ""?{ uri: data[2].image }:Images.protrait}
 							placeholderSource={Images.protrait}
 							borderRadius={4}
 						/>
-					</TouchableOpacity>
+					</TouchableOpacity> 
 				)}
 				{data[3] && (
 					<TouchableOpacity
 						onPress={() => onPress(data[3])}
 						style={style.imageRightCont}
 					>
-						{/* <Image source={{ uri: data[1].image }} style={style.imageRight} /> */}
 						<ImageLoad
 							resizeMode={"contain"}
 							style={style.imageRight}
 							placeholderStyle={style.imageRight}
 							isShowActivity={false}
 							loadingStyle={{ size: "large", color: "grey" }}
-							source={{ uri: data[3].image }}
+							source={data[3].image != ""?{ uri: data[3].image }:Images.protrait}
 							placeholderSource={Images.protrait}
-							borderRadius={4}
+							borderRadius={4} 
 						/>
 					</TouchableOpacity>
 				)}

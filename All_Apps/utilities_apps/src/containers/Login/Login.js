@@ -14,7 +14,7 @@ import {bindActionCreators} from 'redux';
 import {Actions} from '../../redux';
 import LoginUI from './LoginUI';
 import LoginTabletUI from './LoginTabletUI';
-import {Metrics, emailValidator, Strings, Constants, Colors} from '../../asset';
+import {Metrics, emailValidator, Strings, Constants, Colors, Images} from '../../asset';
 import {
   LoginApi,
   StartUp,
@@ -70,12 +70,12 @@ class Login extends PureComponent<Props> {
     });
 
   }
-
+  
   handleSignUp = () => {
     // const {navigation} = this.props;
     // navigation.navigate('SignUpAuthScreen');
 
-    Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+    Linking.openURL(Images.subscription_link);
 
   };
 
@@ -117,7 +117,7 @@ class Login extends PureComponent<Props> {
         Strings.authentication.ALERT,
         'Enter the valid email and password'
       );
-    } else if (!emailValidator(email)) {
+    } else if (!emailValidator(email)) { 
       AlertComp(
         Strings.authentication.ALERT,
         Strings.authentication.ENTER_VALID_EMAIL
@@ -174,7 +174,7 @@ class Login extends PureComponent<Props> {
     if(JSON.stringify(data.data[0]) == undefined){
       console.log('LOGINDATA11:  ' + JSON.stringify(data.data[0]));
       this.setState({showLoader: false});
-      Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+      Linking.openURL(Images.subscription_link);
     }else{
       console.log('LOGINDATA22:  ' + JSON.stringify(data.data[0]));
 
@@ -234,7 +234,7 @@ class Login extends PureComponent<Props> {
           // NTodo: Redirect to SubscriptionPaywall 
           //navigation.navigate('SubscriptionPaywall');  
          //navigation.navigate('HomeNavigation'); 
-         Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+         Linking.openURL(Images.subscription_link);
   
   
         }

@@ -30,7 +30,7 @@ export const Images = {
 	// square: require("./square.png"),
 	//landscape: require("./landscape.png"),
 	landscape: require("./defaultImage.png"),
-	//defaultProfilePic: require("./defaultProilePic.png"),
+	//defaultProfilePic: require("./defaultProilePic.png"), 
 	defaultProfilePic: require("./noImage.png"),
 	closeButton: require("./close.png"),
 	ABlogo: require("./AB_White.png"),
@@ -51,6 +51,9 @@ export const Images = {
 	ABlogoWhite: require("./ArabianBusinessWhite.png"),
 	unbookmark: require("./bookmark.png"),
 	blackGradient:require("./gradient_black.png"),
-	whiteGradient:require("./gradient_white.png"),
-	abLogoBlack:require("./AB_Black.png")
-};
+	whiteGradient:require("./gradient_white.png"), 
+	abLogoBlack:require("./AB_Black.png"),  
+	fb_fav:"https://facebook.github.io/react-native/docs/assets/favicon.png",
+	subscription_link:"https://www.arabianbusiness.com/subscriptions/index.html"
+}; 
+ 

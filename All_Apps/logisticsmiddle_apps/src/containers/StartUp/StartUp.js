@@ -3,14 +3,14 @@ import {View, StyleSheet, Image, Dimensions, AsyncStorage, Linking, Animated, Ea
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Actions} from '../../redux';
-import {Colors, ScalePerctFullWidth, ScalePerctFullHeight} from '../../asset';
+import {Colors, ScalePerctFullWidth, ScalePerctFullHeight, Images} from '../../asset';
 import {
-  getCurrentUserIdStorage,
+  getCurrentUserIdStorage, 
   getCurrentUserToken,
   getSubscribeUserIdStorage,
   setMenuTopics,
   getSubscriptionStatus,
-} from '../../storage';
+} from '../../storage'; 
 import {
   StartUp,
   StartBrandsService,
@@ -28,7 +28,7 @@ type Props = {
   navigation: any,
   setUserAction: Function,
 };
-
+ 
 class StartUpScreen extends PureComponent<Props> {
   constructor(props) {
     super(props);
@@ -94,7 +94,7 @@ class StartUpScreen extends PureComponent<Props> {
       this.onFailure,
       this.onError
     );
-  };
+  }; 
 
   setAllSections = (HomeScreenData) => {
     const {setMyTroveAction} = this.props;
@@ -104,7 +104,7 @@ class StartUpScreen extends PureComponent<Props> {
       const SectionKey = key === 'home' ? '0' : key;
       setMyTroveAction(SectionKey, HomeScreenData[key], 'topic');
     }
-  };
+  };  
 
   onFetchSuccess = (response) => {
     const {navigation, setUserAction} = this.props;
@@ -114,7 +114,7 @@ class StartUpScreen extends PureComponent<Props> {
     this.setAllSections(response);
     this.setState({canNavigate: true});
     // console.log("isSubscribe: before " + AsyncStorage.getItem('isSubscribe'));
-
+  
 
 
     setTimeout(()=>{
@@ -131,13 +131,13 @@ class StartUpScreen extends PureComponent<Props> {
          // navigation.navigate('SubscriptionPaywall');
           //navigation.navigate('HomeNavigation');
   
-          //Linking.openURL("https://www.arabianbusiness.com/subscriptions/index.html");
+          //Linking.openURL(Images.subscription_link);
           navigation.navigate("LoginAuthScreen");
   
         
         }
   
-       
+        
       })
 
           //console.log('isSubscribe: ' + isSubscribe);
@@ -152,11 +152,11 @@ class StartUpScreen extends PureComponent<Props> {
 
     },2000)
 
-
+ 
 
   };
 
-  onSuccess = (response: 'string') => {
+  onSuccess = (response: 'string') => { 
     // const {navigation, setUserAction} = this.props;
     // setUserAction(response);
     // // if (response.topics === null) {

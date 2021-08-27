@@ -72,7 +72,7 @@ export default function ProfilePageHeader(props: Props) {
 				{renderTitle(title)}
 				{renderActionbtn(onAction, imageUrl, navigation)}
 			</View>
-		</View>
+		</View>  
 	);
 }
 
@@ -81,7 +81,7 @@ ProfilePageHeader.defaultProps = {
 	onBack: undefined,
 	onAction: undefined,
 	onGrid: undefined,
-	imageUrl: "https://facebook.github.io/react-native/docs/assets/favicon.png",
+	imageUrl: Images.fb_fav, 
 	title: "",
 };
 

@@ -61,4 +61,6 @@ export const Images = {
 	homewhite : require("./home2.png"),
 	magzinegrey: require("./magzine1.png"),
 	magzinewhite : require("./magzine2.png"),
+	fb_fav:"https://facebook.github.io/react-native/docs/assets/favicon.png",
+	subscription_link:"https://www.arabianbusiness.com/subscriptions/index.html"
 };
