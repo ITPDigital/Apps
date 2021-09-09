@@ -19,7 +19,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Actions } from "../redux";
-import { Colors, Constants, ScalePerctFullHeight } from "../asset";
+import { Colors, Constants, Images, ScalePerctFullHeight } from "../asset";
 import { Line, AlertComp } from "../components";
 import { setCurrentUserIdStorage } from "../storage";
 import { Analytics, Screen, Events } from "../Analytics";
@@ -174,7 +174,7 @@ class DrawerNavigator extends PureComponent<Props> {
 				setArticleBookmark(true);
 				navigation.navigate('BookmarkDrawerScreen')
 			}else if(item.name == "Terms & Conditions"){
-				Linking.openURL("https://www.itp.com/terms");
+				Linking.openURL(Images.terms_link); 
 			}else {
 				// setArticleHistory(true);
 				navigation.navigate('HistoryDrawerScreen');

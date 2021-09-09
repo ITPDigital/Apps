@@ -54,5 +54,7 @@ export const Images = {
 	whiteGradient:require("./gradient_white.png"),
 	abLogoBlack:require("./AB_Black.png"),
 	fb_fav:"https://facebook.github.io/react-native/docs/assets/favicon.png",
-	subscription_link:"https://www.arabianbusiness.com/subscriptions/index.html"
+	subscription_link:"https://www.arabianbusiness.com/subscriptions/index.html",
+	contact_us_link:"https://www.arabianbusiness.com/contact-us",
+	terms_link : "https://www.itp.com/terms"
 };

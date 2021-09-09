@@ -62,6 +62,8 @@ export const Images = {
 	magzinegrey: require("./magzine1.png"),
 	magzinewhite : require("./magzine2.png"),
 	fb_fav:"https://facebook.github.io/react-native/docs/assets/favicon.png",
-	subscription_link:"https://www.arabianbusiness.com/subscriptions/index.html"
+	subscription_link:"https://www.arabianbusiness.com/subscriptions/index.html",
+	contact_us_link:"https://www.arabianbusiness.com/contact-us",
+	terms_link : "https://www.itp.com/terms"
 
 };

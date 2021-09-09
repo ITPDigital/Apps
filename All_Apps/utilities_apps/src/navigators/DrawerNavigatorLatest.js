@@ -15,10 +15,10 @@ import {
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Actions } from "../redux";
-import { Colors, Constants, ScalePerctFullHeight } from "../asset";
+import { Colors, Constants, ScalePerctFullHeight, Images } from "../asset";
 import { Line, AlertComp } from "../components";
 import { setCurrentUserIdStorage } from "../storage";
-import { Analytics, Screen, Events } from "../Analytics";
+import { Analytics, Screen, Events, } from "../Analytics";
 import { Icon } from "react-native-vector-icons/Icon";
 
 type Props = {
@@ -155,10 +155,10 @@ class DrawerNavigatorLatest extends PureComponent<Props> {
 		} else if (routeName === "BookmarkDrawerScreen") {
 			setArticleBookmark(true);
 			navigation.navigate(routeName);
-		} else if (routeName === "TosDrawerScreen") {
-			Linking.openURL("https://www.itp.com/terms");
+		} else if (routeName === "TosDrawerScreen") {  
+			Linking.openURL(Images.terms_link);
 		} else if (routeName === "HelpDrawerScreen") {
-			Linking.openURL("https://www.arabianbusiness.com/contact-us");
+			Linking.openURL(Images.contact_us_link);
 		} else if (routeName === "SettingsDrawerScreen") {
 			//setArticleBookmark(true);
 			// navigation.navigate(routeName);
